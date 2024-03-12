@@ -14,8 +14,8 @@ const Navbar = () => {
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
+          <a href="/" className="-m-1.5 p-1.5">
+            <span className="sr-only">Pitcairn Aviation</span>
             <img
               className="h-12 lg:h-20 w-auto"
               src="/src/assets/pitcairn-logo.webp"
@@ -47,16 +47,28 @@ const Navbar = () => {
           </button>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
-          <a href="#" className="text-sm leading-6 text-white">
+          <a
+            href="#"
+            className="text-sm leading-6 text-white hover:text-blue-900"
+          >
             Airport information
           </a>
-          <a href="#" className="text-sm leading-6 text-white">
+          <a
+            href="#"
+            className="text-sm leading-6 text-white hover:text-blue-900"
+          >
             Partners
           </a>
-          <a href="#" className="text-sm leading-6 text-white">
+          <a
+            href="#"
+            className="text-sm leading-6 text-white hover:text-blue-900"
+          >
             Charter
           </a>
-          <a href="#" className="text-sm leading-6 text-white">
+          <a
+            href="#"
+            className="text-sm leading-6 text-white hover:text-blue-900"
+          >
             Contact
           </a>
         </div>
