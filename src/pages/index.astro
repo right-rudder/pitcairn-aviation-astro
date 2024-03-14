@@ -1,50 +1,121 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import Passenger from "../assets/passenger-in-a-car.jpg";
+import London from "../assets/london.jpg";
+import AirplaneWing from "../assets/airplane-wing.jpg";
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/pages/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<BaseLayout>
+  <section class="flex overflow-hidden h-96 relative">
+    <div
+      class="bg-blue-950 w-[calc(50%+5rem)] h-full -left-20 -skew-x-12 absolute -z-10"
+    >
+    </div>
+    <div
+      class="bg-blue-950 lg:bg-white w-[calc(50%+5rem)] translate-x-[calc(100%-5rem)] h-full -skew-x-12 absolute -z-10"
+    >
+    </div>
+
+    <div
+      class="flex flex-col lg:flex-row max-w-7xl mx-auto h-full lg:items-center lg:gap-72 p-5 justify-center gap-10"
+    >
+      <h2 class="lg:flex-1 text-3xl lg:text-5xl text-white">
+        YOUR FULL SERVICE AVIATION PARTNER
+      </h2>
+      <div class="lg:flex-1 text-white lg:text-black flex flex-col gap-3">
+        <p>
+          Pentastar operates a diverse, young fleet of private charter aircraft
+          to service both regional and international travelers. With access to
+          an expansive network of vetted, global partners to supplement our
+          fleet, we can always provide the ideal aircraft to take you wherever
+          you need to go.
+        </p>
+        <p>
+          Whether you are traveling for business or leisure, you can be
+          confident in the personnel, aircraft, and service excellence in every
+          charter flight we provide.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="h-[35rem] relative overflow-hidden">
+    <Image
+      src={Passenger}
+      class="absolute top-0 -z-50 object-cover min-h-[35rem]"
+      alt="A description of my image."
+    />
+    <div
+      class="absolute inset-0 bg-black/50 bg-gradient-to-t from-black -z-40 to-40%"
+    >
+    </div>
+    <div
+      class="max-w-7xl mx-auto flex flex-col justify-center h-full text-white gap-5 p-5"
+    >
+      <h2 class="text-blue-800 text-sm font-bold uppercase">
+        Operational excellence
+      </h2>
+      <p class="text-2xl font-semibold max-w-md">
+        We deliver operational excellence, helping clients move seamlessly from
+        plane to car in less than two minutes.
+      </p>
+      <p class="max-w-md text-lg">
+        We can also offer 24/7 availability, direct ramp access for vehicles,
+        onsite immigration and customs, with pre-clearance availability to
+        qualifying visitors.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto p-5 flex flex-col lg:flex-row gap-10">
+      <div class="flex-1">
+        <Image src={London} class="" alt="A description of my image." />
+      </div>
+      <div class="flex-1 flex flex-col gap-3 pt-3">
+        <h2 class="text-blue-800 text-sm font-bold uppercase">
+          Quick journey times to London
+        </h2>
+        <p class="text-2xl font-semibold">
+          London Southend Jet Centre is in the perfect location for clients
+          wanting to get in and out of London quickly.
+        </p>
+        <p class="text-lg">
+          We offer a full range of aviation services, including aircraft
+          management, maintenance, avionics, and interior refurbishment. Our
+          team of experts is dedicated to providing the highest level of service
+          to our clients.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="h-[35rem] relative overflow-hidden">
+    <Image
+      src={AirplaneWing}
+      class="absolute -top-[50%] -z-50 object-cover min-h-[55rem]"
+      alt="A description of my image."
+    />
+    <div
+      class="absolute inset-0 bg-black/50 bg-gradient-to-t from-black -z-40 to-40%"
+    >
+    </div>
+    <div
+      class="max-w-7xl mx-auto flex flex-col justify-center h-full text-white gap-5 p-5"
+    >
+      <h2 class="text-blue-800 text-sm font-bold uppercase">
+        Operational excellence
+      </h2>
+      <p class="text-2xl font-semibold max-w-md">
+        We deliver operational excellence, helping clients move seamlessly from
+        plane to car in less than two minutes.
+      </p>
+      <p class="max-w-md text-lg">
+        We can also offer 24/7 availability, direct ramp access for vehicles,
+        onsite immigration and customs, with pre-clearance availability to
+        qualifying visitors.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
