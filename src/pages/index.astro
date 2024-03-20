@@ -5,10 +5,14 @@ import Passenger from "../assets/passenger-in-a-car.jpg";
 import London from "../assets/london.jpg";
 import AirplaneWing from "../assets/airplane-wing.jpg";
 import FuelPrices from "../components/FuelPrices.jsx";
+import Hangar from "../assets/hangar.jpg";
+import Airport from "../assets/heritage-field-airport.webp";
+import PitcairnFlightAcademyLogo from "../assets/pitcairn-flight-academy-logo.webp";
+import PennairLogo from "../assets/pennair-logo.png";
 ---
 
 <HomeLayout>
-  <section class="flex overflow-hidden h-96 relative">
+  <section class="flex overflow-hidden lg:h-96 relative">
     <div
       class="bg-main-red w-[calc(50%+5rem)] h-full -left-20 -skew-x-12 absolute -z-10"
     >
@@ -19,7 +23,7 @@ import FuelPrices from "../components/FuelPrices.jsx";
     </div>
 
     <div
-      class="flex flex-col lg:flex-row max-w-7xl mx-auto h-full lg:items-center lg:gap-72 p-5 justify-center gap-10"
+      class="flex py-16 flex-col lg:flex-row max-w-7xl mx-auto h-full lg:items-center lg:gap-72 p-5 justify-center gap-10"
     >
       <h2 class="lg:flex-1 text-3xl lg:text-5xl text-white uppercase">
         Your full service aviation partner
@@ -63,16 +67,17 @@ import FuelPrices from "../components/FuelPrices.jsx";
       class="max-w-7xl mx-auto flex flex-col justify-center h-full text-white gap-5 p-5"
     >
       <h2 class="text-light-red text-sm font-bold uppercase">
-        Operational excellence
+        Services and Team
       </h2>
       <p class="text-2xl font-semibold max-w-md">
-        We deliver operational excellence, helping clients move seamlessly from
-        plane to car in less than two minutes.
+        Our Experienced Team is Here to Serve
       </p>
       <p class="max-w-md text-lg">
-        We can also offer 24/7 availability, direct ramp access for vehicles,
-        onsite immigration and customs, with pre-clearance availability to
-        qualifying visitors.
+        From the moment you land, our friendly team of aviation experts is ready
+        to make your visit exceptional. In addition to swift fueling and
+        marshaling, we offer a wide range of professional services including
+        aircraft detailing, concierge arrangements, crew cars, and more. We aim
+        to ensure your every need is met with efficiency and a smile.
       </p>
     </div>
   </section>
@@ -80,21 +85,18 @@ import FuelPrices from "../components/FuelPrices.jsx";
   <section class="py-16">
     <div class="max-w-7xl mx-auto p-5 flex flex-col lg:flex-row gap-10">
       <div class="flex-1">
-        <Image src={London} class="" alt="A description of my image." />
+        <Image src={Hangar} class="" alt="A description of my image." />
       </div>
       <div class="flex-1 flex flex-col gap-3 pt-3">
         <h2 class="text-light-red text-sm font-bold uppercase">
-          Quick journey times to London
+          Hangar Rentals
         </h2>
-        <p class="text-2xl font-semibold">
-          London Southend Jet Centre is in the perfect location for clients
-          wanting to get in and out of London quickly.
-        </p>
+        <p class="text-2xl font-semibold">Looking for a hangar?</p>
         <p class="text-lg">
-          We offer a full range of aviation services, including aircraft
-          management, maintenance, avionics, and interior refurbishment. Our
-          team of experts is dedicated to providing the highest level of service
-          to our clients.
+          Pitcairn Aviation provides secure hangar facilities to protect your
+          aircraft from the elements. Our heated hangars can accommodate
+          aircraft up to [maximum dimensions]. Monthly and yearly rental options
+          are available.
         </p>
       </div>
     </div>
@@ -102,29 +104,83 @@ import FuelPrices from "../components/FuelPrices.jsx";
 
   <section class="h-[35rem] relative overflow-hidden">
     <Image
-      src={AirplaneWing}
-      class="absolute -top-[50%] -z-50 object-cover min-h-[55rem]"
+      src={Airport}
+      class="absolute -top-[50%] -z-50 object-cover min-h-[55rem] w-full"
       alt="A description of my image."
     />
     <div
-      class="absolute inset-0 bg-black/50 bg-gradient-to-t from-black -z-40 to-40%"
+      class="absolute inset-0 bg-black/40 bg-gradient-to-t from-black -z-40 to-40%"
     >
     </div>
     <div
       class="max-w-7xl mx-auto flex flex-col justify-center h-full text-white gap-5 p-5"
     >
       <h2 class="text-light-red text-sm font-bold uppercase">
-        Operational excellence
+        Heritage Field Airport
       </h2>
       <p class="text-2xl font-semibold max-w-md">
-        We deliver operational excellence, helping clients move seamlessly from
-        plane to car in less than two minutes.
+        Visit Heritage Field Airport
       </p>
       <p class="max-w-md text-lg">
-        We can also offer 24/7 availability, direct ramp access for vehicles,
-        onsite immigration and customs, with pre-clearance availability to
-        qualifying visitors.
+        Experience the award-winning service that's made Pitcairn Aviation a
+        trusted name in the region. Plan your visit to Heritage Field (KPTW) and
+        discover our beautiful facility tucked into the rolling Pennsylvania
+        countryside. Our central location and proximity to Philadelphia make us
+        an ideal tech stop.
       </p>
+    </div>
+  </section>
+
+  <section class="flex overflow-hidden lg:h-96 relative">
+    <div
+      class="bg-main-red w-[calc(50%+5rem)] h-full -left-20 -skew-x-12 absolute -z-10"
+    >
+    </div>
+    <div
+      class="bg-main-red lg:bg-white w-[calc(50%+5rem)] translate-x-[calc(100%-5rem)] h-full -skew-x-12 absolute -z-10"
+    >
+    </div>
+
+    <div
+      class="flex py-16 flex-col lg:flex-row max-w-7xl mx-auto h-full lg:items-center lg:gap-72 p-5 justify-center gap-10"
+    >
+      <div class="lg:flex-1 flex flex-col gap-2">
+        <h2 class="text-2xl lg:text-4xl text-white uppercase">
+          Other Companies at Heritage Field
+        </h2>
+        <h3 class="text-base lg:text-lg text-white">
+          Heritage Field Airport is also home to several specialized aviation
+          businesses to meet all your needs:
+        </h3>
+        <ul class="text-white list-disc ml-6">
+          <li>
+            <strong>Pitcairn Flight Academy:</strong> Providing top-rated pilot training
+            and certifications
+          </li>
+          <li>
+            <strong>PennAir Repair:</strong> Experts in aircraft maintenance and
+            inspections
+          </li>
+          <li>
+            <strong>PennJet Charter Services:</strong> Luxury private charter and
+            aircraft management
+          </li>
+        </ul>
+      </div>
+      <div
+        class="lg:flex-1 text-white lg:text-black flex flex-col items-center gap-10"
+      >
+        <Image
+          src={PitcairnFlightAcademyLogo}
+          class="h-auto w-1/2 lg:w-3/4"
+          alt="A description of my image."
+        />
+        <Image
+          src={PennairLogo}
+          class="h-auto w-1/2 lg:w-3/4"
+          alt="A description of my image."
+        />
+      </div>
     </div>
   </section>
 </HomeLayout>
