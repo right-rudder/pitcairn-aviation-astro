@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 import Passenger from "../assets/passenger-in-a-car.jpg";
 import London from "../assets/london.jpg";
 import AirplaneWing from "../assets/airplane-wing.jpg";
+import FuelPrices from "../components/FuelPrices.jsx";
 ---
 
 <HomeLayout>
@@ -25,18 +26,26 @@ import AirplaneWing from "../assets/airplane-wing.jpg";
       </h2>
       <div class="lg:flex-1 text-white lg:text-black flex flex-col gap-3">
         <p>
-          Pentastar operates a diverse, young fleet of private charter aircraft
-          to service both regional and international travelers. With access to
-          an expansive network of vetted, global partners to supplement our
-          fleet, we can always provide the ideal aircraft to take you wherever
-          you need to go.
-        </p>
-        <p>
-          Whether you are traveling for business or leisure, you can be
-          confident in the personnel, aircraft, and service excellence in every
-          charter flight we provide.
+          For over 50 years, Pitcairn Aviation LLC has been the trusted
+          fixed-base operator (FBO) at Heritage Field Airport (KPTW) in
+          Pottstown, PA. Just a short 30-minute flight from Philadelphia, our
+          full-service FBO offers a warm welcome and modern amenities for pilots
+          and aircraft visiting the scenic southeastern Pennsylvania region.
+          From efficient fueling and ground handling to well-appointed lounges
+          and hangars, we ensure your stopover is comfortable and hassle-free.
         </p>
       </div>
+    </div>
+  </section>
+
+  <section class="bg-main-black py-10 px-5">
+    <div class="max-w-7xl mx-auto flex flex-col gap-2">
+      <h2 class="text-white text-5xl font-bold">Fuel Prices</h2>
+      <h3 class="text-white text-2xl">
+        We prioritize keeping our fuel prices competitive for your convenience.
+      </h3>
+      <FuelPrices client:visible />
+      <p class="text-gray-400 self-end">Updated as of 3/20/2024</p>
     </div>
   </section>
 
