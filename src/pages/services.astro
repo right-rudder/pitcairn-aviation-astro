@@ -1,12 +1,12 @@
 ---
-import HomeLayout from "../layouts/HomeLayout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 import Passenger from "../assets/passenger-in-a-car.jpg";
 import London from "../assets/london.jpg";
 import AirplaneWing from "../assets/airplane-wing.jpg";
 ---
 
-<HomeLayout>
+<BaseLayout>
   <section class="flex overflow-hidden h-96 relative">
     <div
       class="bg-main-red w-[calc(50%+5rem)] h-full -left-20 -skew-x-12 absolute -z-10"
@@ -118,4 +118,4 @@ import AirplaneWing from "../assets/airplane-wing.jpg";
       </p>
     </div>
   </section>
-</HomeLayout>
+</BaseLayout>

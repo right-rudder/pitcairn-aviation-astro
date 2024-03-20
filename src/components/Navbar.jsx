@@ -1,4 +1,5 @@
 import { useState } from "react";
+import logo from "/src/assets/pitcairn-logo.webp";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,8 +19,8 @@ const Navbar = () => {
             <span className="sr-only">Pitcairn Aviation</span>
             <img
               className="h-12 lg:h-20 w-auto"
-              src="/src/assets/pitcairn-logo.webp"
-              alt=""
+              src={logo.src}
+              alt="Pitcairn Logo"
             />
           </a>
         </div>
@@ -48,28 +49,28 @@ const Navbar = () => {
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           <a
-            href="#"
-            className="text-sm leading-6 text-white hover:text-blue-900"
+            href="/services"
+            className="text-base font-medium leading-6 text-white hover:text-gray-300 duration-100"
           >
-            Airport information
+            Services
           </a>
           <a
-            href="#"
-            className="text-sm leading-6 text-white hover:text-blue-900"
+            href="/about-us"
+            className="text-base font-medium leading-6 text-white hover:text-gray-300 duration-100"
           >
-            Partners
+            About Us
           </a>
           <a
-            href="#"
-            className="text-sm leading-6 text-white hover:text-blue-900"
+            href="/plan-your-visit"
+            className="text-base font-medium leading-6 text-white hover:text-gray-300 duration-100"
           >
-            Charter
+            Plan Your Visit
           </a>
           <a
-            href="#"
-            className="text-sm leading-6 text-white hover:text-blue-900"
+            href="/contact-us"
+            className="text-base font-medium leading-6 text-white hover:text-gray-300 duration-100"
           >
-            Contact
+            Contact Us
           </a>
         </div>
       </nav>
@@ -80,7 +81,7 @@ const Navbar = () => {
         aria-modal="true"
       >
         {/* <!-- Background backdrop, show/hide based on slide-over state. --> */}
-        <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-blue-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-main-red px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Pitcairn Aviation</span>
@@ -116,28 +117,28 @@ const Navbar = () => {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:bg-gray-50"
+                  href="/services"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:bg-gray-50 hover:text-main-red"
                 >
-                  Airport information
+                  Services
                 </a>
                 <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:bg-gray-50"
+                  href="/about-us"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:bg-gray-50 hover:text-main-red"
                 >
-                  Partners
+                  About Us
                 </a>
                 <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:bg-gray-50"
+                  href="/plan-your-visit"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:bg-gray-50 hover:text-main-red"
                 >
-                  Charter
+                  Plan Your Visit
                 </a>
                 <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:bg-gray-50"
+                  href="/contact-us"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:bg-gray-50 hover:text-main-red"
                 >
-                  Contact
+                  Contact Us
                 </a>
               </div>
             </div>

@@ -6,6 +6,17 @@ export default {
       fontFamily: {
         inter: ["Inter", "sans-serif"],
       },
+      colors: {
+        "main-red": "#500000",
+        "light-red": "#A43737",
+        "main-black": "#101820",
+        "main-green": "#004F16",
+        "light-green": "#37A456",
+        "main-blue": "#00314F",
+        "light-blue": "#67A7CF",
+        "main-yellow": "#4F4E00",
+        "light-yellow": "#CFCD67",
+      },
     },
   },
   plugins: [],
