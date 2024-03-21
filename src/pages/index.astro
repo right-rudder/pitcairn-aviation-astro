@@ -13,28 +13,32 @@ import PennairLogo from "../assets/pennair-logo.png";
 
 <HomeLayout>
   <section
-    class="flex overflow-hidden lg:h-96 relative bg-main-red lg:bg-white -z-50"
+    class="flex overflow-hidden lg:h-96 relative bg-main-red lg:bg-main-red -z-50"
   >
     <div
-      class="bg-main-red w-[calc(50%+5rem)] h-full -left-24 absolute -skew-x-12 -z-10"
+      class="bg-main-red w-[calc(50%+65rem)] duration-700 ease-in-out h-full -left-24 absolute -skew-x-12 -z-10 slide"
     >
     </div>
     <div
-      class="bg-main-red w-[calc(50%+5rem)] h-full -left-24 absolute skew-x-12 -z-10"
+      class="bg-main-red w-[calc(50%+65rem)] duration-700 ease-in-out h-full -left-24 absolute skew-x-12 -z-10 slide"
     >
     </div>
     <div
-      class="bg-main-red lg:bg-white w-[calc(50%+5rem)] translate-x-[calc(100%-5rem)] h-full absolute -z-20"
+      class="bg-main-red lg:bg-white w-[calc(50%+3rem)] translate-x-[calc(100%-5rem)] h-full absolute -z-20"
     >
     </div>
 
     <div
       class="flex py-16 flex-col lg:flex-row max-w-7xl mx-auto h-full lg:items-center lg:gap-72 p-5 justify-center gap-10"
     >
-      <h2 class="lg:flex-1 text-4xl lg:text-5xl text-white uppercase">
+      <h2
+        class="lg:flex-1 text-4xl lg:text-5xl text-white uppercase fade-in opacity-0 duration-700"
+      >
         Your full service aviation partner
       </h2>
-      <div class="lg:flex-1 text-white lg:text-black flex flex-col gap-3">
+      <div
+        class="lg:flex-1 text-white lg:text-black flex flex-col gap-3 fade-left opacity-0 translate-x-10 duration-700 delay-500"
+      >
         <p>
           For over 50 years, Pitcairn Aviation LLC has been the trusted
           fixed-base operator (FBO) at Heritage Field Airport (KPTW) in
@@ -61,13 +65,17 @@ import PennairLogo from "../assets/pennair-logo.png";
     <div
       class="max-w-7xl mx-auto flex flex-col justify-center h-full text-white gap-5 p-5"
     >
-      <h2 class="text-light-red text-sm font-bold uppercase">
+      <h2
+        class="text-light-red text-sm font-bold uppercase fade-in duration-500 opacity-0 delay-100"
+      >
         Services and Team
       </h2>
-      <p class="text-2xl font-semibold max-w-md">
+      <p
+        class="text-2xl font-semibold max-w-md fade-in duration-500 opacity-0 delay-200"
+      >
         Our Experienced Team is Here to Serve
       </p>
-      <p class="max-w-md text-lg">
+      <p class="max-w-md text-lg fade-in duration-500 opacity-0 delay-300">
         From the moment you land, our friendly team of aviation experts is ready
         to make your visit exceptional. In addition to swift fueling and
         marshaling, we offer a wide range of professional services including
@@ -83,11 +91,17 @@ import PennairLogo from "../assets/pennair-logo.png";
         <Image src={Hangar} class="" alt="A description of my image." />
       </div>
       <div class="flex-1 flex flex-col gap-3 pt-3">
-        <h2 class="text-light-red text-sm font-bold uppercase">
+        <h2
+          class="text-light-red text-sm font-bold uppercase fade-in duration-500 opacity-0 delay-100"
+        >
           Hangar Rentals
         </h2>
-        <p class="text-2xl font-semibold">Looking for a hangar?</p>
-        <p class="text-lg">
+        <p
+          class="text-2xl font-semibold fade-in duration-500 opacity-0 delay-200"
+        >
+          Looking for a hangar?
+        </p>
+        <p class="text-lg fade-in duration-500 opacity-0 delay-300">
           Pitcairn Aviation provides secure hangar facilities to protect your
           aircraft from the elements. Our heated hangars can accommodate
           aircraft up to [maximum dimensions]. Monthly and yearly rental options
@@ -110,13 +124,17 @@ import PennairLogo from "../assets/pennair-logo.png";
     <div
       class="max-w-7xl mx-auto flex flex-col justify-center h-full text-white gap-5 p-5"
     >
-      <h2 class="text-light-red text-sm font-bold uppercase">
+      <h2
+        class="text-light-red text-sm font-bold uppercase fade-in duration-500 opacity-0 delay-100"
+      >
         Heritage Field Airport
       </h2>
-      <p class="text-2xl font-semibold max-w-md">
+      <p
+        class="text-2xl font-semibold max-w-md fade-in duration-500 opacity-0 delay-200"
+      >
         Visit Heritage Field Airport
       </p>
-      <p class="max-w-md text-lg">
+      <p class="max-w-md text-lg fade-in duration-500 opacity-0 delay-300">
         Experience the award-winning service that's made Pitcairn Aviation a
         trusted name in the region. Plan your visit to Heritage Field (KPTW) and
         discover our beautiful facility tucked into the rolling Pennsylvania
@@ -140,7 +158,7 @@ import PennairLogo from "../assets/pennair-logo.png";
         </h3>
       </div>
       <div
-        class="lg:text-black flex flex-col lg:flex-row items-center justify-center gap-10 my-10"
+        class="lg:text-black flex flex-col lg:flex-row items-center justify-center gap-10 my-10 fade-up delay-100 duration-700 translate-y-10 opacity-0"
       >
         <Image
           src={PitcairnFlightAcademyLogo}
@@ -180,3 +198,75 @@ import PennairLogo from "../assets/pennair-logo.png";
     </div>
   </section>
 </HomeLayout>
+
+<script>
+  const fadeUpObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("translate-y-0", "opacity-100");
+        entry.target.classList.remove("translate-y-10", "opacity-0");
+      }
+    });
+  });
+
+  const fadeUpElements = document.querySelectorAll(".fade-up");
+  fadeUpElements.forEach((element) => {
+    fadeUpObserver.observe(element);
+  });
+
+  const fadeRightObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("translate-x-0", "opacity-100");
+        entry.target.classList.remove("-translate-x-10", "opacity-0");
+      }
+    });
+  });
+
+  const fadeRightElements = document.querySelectorAll(".fade-right");
+  fadeRightElements.forEach((element) => {
+    fadeRightObserver.observe(element);
+  });
+
+  const fadeLeftObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("translate-x-0", "opacity-100");
+        entry.target.classList.remove("translate-x-10", "opacity-0");
+      }
+    });
+  });
+
+  const fadeLeftElements = document.querySelectorAll(".fade-left");
+  fadeLeftElements.forEach((element) => {
+    fadeLeftObserver.observe(element);
+  });
+
+  const fadeInObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("opacity-100");
+        entry.target.classList.remove("opacity-0");
+      }
+    });
+  });
+
+  const fadeInElements = document.querySelectorAll(".fade-in");
+  fadeInElements.forEach((element) => {
+    fadeInObserver.observe(element);
+  });
+
+  const slideObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("w-[calc(50%+5rem)]");
+        entry.target.classList.remove("w-[calc(50%+65rem)]");
+      }
+    });
+  });
+
+  const slideElements = document.querySelectorAll(".slide");
+  slideElements.forEach((element) => {
+    slideObserver.observe(element);
+  });
+</script>

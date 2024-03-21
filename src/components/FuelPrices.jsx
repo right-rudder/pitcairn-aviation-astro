@@ -1,5 +1,4 @@
 import { BsFuelPumpFill } from "react-icons/bs";
-
 const FuelPrices = () => {
   const stats = [
     {
@@ -35,7 +34,7 @@ const FuelPrices = () => {
       {stats.map((stat, index) => (
         <div
           key={index}
-          className={`flex relative overflow-hidden flex-wrap items-baseline justify-between gap-x-4 gap-y-2 bg-gradient-to-b from-light-${stat.color} to-main-${stat.color} rounded-xl px-4 py-10 sm:px-6 xl:px-8`}
+          className={`fade-up delay-100 duration-700 translate-y-10 opacity-0 flex relative overflow-hidden flex-wrap items-baseline justify-between gap-x-4 gap-y-2 bg-gradient-to-b from-light-${stat.color} to-main-${stat.color} rounded-xl px-4 py-10 sm:px-6 xl:px-8`}
         >
           <p className="text-white/5 absolute -bottom-3 -right-2 text-8xl font-extrabold whitespace-nowrap">
             {stat.name}
