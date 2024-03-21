@@ -4,16 +4,51 @@ import { Image } from "astro:assets";
 import Passenger from "../assets/passenger-in-a-car.jpg";
 import London from "../assets/london.jpg";
 import AirplaneWing from "../assets/airplane-wing.jpg";
+import FuelPrices from "../components/FuelPrices";
+import ServiceCard from "../components/ServiceCard";
+
+const services = [
+  {
+    title: "Hassle-Free Refueling",
+    subtitle: "Reliable Phillips 66 AvGas pumps",
+  },
+  {
+    title: "Safe Storage Solutions",
+    subtitle: "Tiedowns and heated hangar rentals",
+  },
+  {
+    title: "Convenient Transportation",
+    subtitle: "Crew car and rental car access",
+  },
+  {
+    title: "Modern Amenities",
+    subtitle: "Conference rooms, lounges, and businesses",
+  },
+  {
+    title: "Attentive Ground Support",
+    subtitle: "GPU services and jump-starts",
+  },
+  {
+    title: "Peace of Mind",
+    subtitle: "Secured airfield access and parking",
+  },
+];
 ---
 
 <BaseLayout>
-  <section class="flex overflow-hidden h-96 relative">
+  <section
+    class="flex overflow-hidden h-96 relative bg-main-red lg:bg-white -z-50"
+  >
     <div
-      class="bg-main-red w-[calc(50%+5rem)] h-full -left-20 -skew-x-12 absolute -z-10"
+      class="bg-main-red w-[calc(50%+5rem)] h-full -left-24 absolute -skew-x-12 -z-10"
     >
     </div>
     <div
-      class="bg-main-red lg:bg-white w-[calc(50%+5rem)] translate-x-[calc(100%-5rem)] h-full -skew-x-12 absolute -z-10"
+      class="bg-main-red w-[calc(50%+5rem)] h-full -left-24 absolute skew-x-12 -z-10"
+    >
+    </div>
+    <div
+      class="bg-main-red lg:bg-white w-[calc(50%+5rem)] translate-x-[calc(100%-5rem)] h-full absolute -z-20"
     >
     </div>
 
@@ -21,22 +56,30 @@ import AirplaneWing from "../assets/airplane-wing.jpg";
       class="flex flex-col lg:flex-row max-w-7xl mx-auto h-full lg:items-center lg:gap-72 p-5 justify-center gap-10"
     >
       <h2 class="lg:flex-1 text-3xl lg:text-5xl text-white uppercase">
-        Your full service aviation partner
+        Your one-stop solution at pitcairn aviation
       </h2>
       <div class="lg:flex-1 text-white lg:text-black flex flex-col gap-3">
         <p>
-          Pentastar operates a diverse, young fleet of private charter aircraft
-          to service both regional and international travelers. With access to
-          an expansive network of vetted, global partners to supplement our
-          fleet, we can always provide the ideal aircraft to take you wherever
-          you need to go.
+          At Pitcairn Aviation LLC, we go above and beyond to provide a full
+          suite of services that cater to the diverse needs of pilots and
+          aircraft owners.
         </p>
         <p>
-          Whether you are traveling for business or leisure, you can be
-          confident in the personnel, aircraft, and service excellence in every
-          charter flight we provide.
+          From self-serve fueling options to secure hangars and ground support,
+          our commitment to exceptional service ensures a seamless and enjoyable
+          experience every time you visit.
         </p>
       </div>
+    </div>
+  </section>
+
+  <section class="bg-zinc-200">
+    <div class="max-w-7xl mx-auto grid grid-cols-3 place-items-center">
+      {
+        services.map((service) => (
+          <ServiceCard service={service} client:visible />
+        ))
+      }
     </div>
   </section>
 
@@ -116,6 +159,17 @@ import AirplaneWing from "../assets/airplane-wing.jpg";
         onsite immigration and customs, with pre-clearance availability to
         qualifying visitors.
       </p>
+    </div>
+  </section>
+
+  <section class="bg-main-black py-10 px-5">
+    <div class="max-w-7xl mx-auto flex flex-col gap-2">
+      <h2 class="text-white text-5xl font-bold">Fuel Prices</h2>
+      <h3 class="text-white text-2xl">
+        We prioritize keeping our fuel prices competitive for your convenience.
+      </h3>
+      <FuelPrices client:visible />
+      <p class="text-gray-400 self-end">Updated as of 3/20/2024</p>
     </div>
   </section>
 </BaseLayout>
