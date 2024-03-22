@@ -6,75 +6,64 @@ import London from "../assets/london.jpg";
 import AirplaneWing from "../assets/airplane-wing.jpg";
 import FuelPrices from "../components/FuelPrices";
 import ServiceCard from "../components/ServiceCard";
+import Intro from "../components/Intro.astro";
+import Header2 from "../components/Header2.astro";
+import AddingFuel from "../assets/adding-fuel.png";
+import PrivateJet from "../assets/private-jet-in-hangar.png";
 
 const services = [
   {
     title: "Hassle-Free Refueling",
     subtitle: "Reliable Phillips 66 AvGas pumps",
+    id: "hassle-free-refueling",
   },
   {
     title: "Safe Storage Solutions",
     subtitle: "Tiedowns and heated hangar rentals",
+    id: "safe-storage-solutions",
   },
   {
     title: "Convenient Transportation",
     subtitle: "Crew car and rental car access",
+    id: "convenient-transportation",
   },
   {
     title: "Modern Amenities",
     subtitle: "Conference rooms, lounges, and businesses",
+    id: "modern-amenities",
   },
   {
     title: "Attentive Ground Support",
     subtitle: "GPU services and jump-starts",
+    id: "attentive-ground-support",
   },
   {
     title: "Peace of Mind",
     subtitle: "Secured airfield access and parking",
+    id: "peace-of-mind",
   },
 ];
 ---
 
 <BaseLayout>
-  <section
-    class="flex overflow-hidden h-96 relative bg-main-red lg:bg-white -z-50"
-  >
-    <div
-      class="bg-main-red w-[calc(50%+5rem)] h-full -left-24 absolute -skew-x-12 -z-10"
-    >
-    </div>
-    <div
-      class="bg-main-red w-[calc(50%+5rem)] h-full -left-24 absolute skew-x-12 -z-10"
-    >
-    </div>
-    <div
-      class="bg-main-red lg:bg-white w-[calc(50%+5rem)] translate-x-[calc(100%-5rem)] h-full absolute -z-20"
-    >
-    </div>
+  <Header2 slot="header" />
 
-    <div
-      class="flex flex-col lg:flex-row max-w-7xl mx-auto h-full lg:items-center lg:gap-72 p-5 justify-center gap-10"
-    >
-      <h2 class="lg:flex-1 text-3xl lg:text-5xl text-white uppercase">
-        Your one-stop solution at pitcairn aviation
-      </h2>
-      <div class="lg:flex-1 text-white lg:text-black flex flex-col gap-3">
-        <p>
-          At Pitcairn Aviation LLC, we go above and beyond to provide a full
+  <Intro
+    title="Your one-stop solution at pitcairn aviation"
+    description={[
+      `At Pitcairn Aviation LLC, we go above and beyond to provide a full
           suite of services that cater to the diverse needs of pilots and
-          aircraft owners.
-        </p>
-        <p>
-          From self-serve fueling options to secure hangars and ground support,
+          aircraft owners.`,
+      `From self-serve fueling options to secure hangars and ground support,
           our commitment to exceptional service ensures a seamless and enjoyable
-          experience every time you visit.
-        </p>
-      </div>
-    </div>
-  </section>
+          experience every time you visit.`,
+    ]}
+  />
 
-  <section class="bg-zinc-200">
-    <div class="max-w-7xl mx-auto grid grid-cols-3 place-items-center">
+  <section class="bg-zinc-200 py-10">
+    <div
+      class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-5 px-5"
+    >
       {
         services.map((service) => (
           <ServiceCard service={service} client:visible />
@@ -83,61 +72,34 @@ const services = [
     </div>
   </section>
 
-  <section class="h-[35rem] relative overflow-hidden">
-    <Image
-      src={Passenger}
-      class="absolute top-0 -z-50 object-cover min-h-[35rem]"
-      alt="A description of my image."
-    />
-    <div
-      class="absolute inset-0 bg-black/50 bg-gradient-to-t from-black -z-40 to-40%"
-    >
-    </div>
-    <div
-      class="max-w-7xl mx-auto flex flex-col justify-center h-full text-white gap-5 p-5"
-    >
-      <h2 class="text-light-red text-sm font-bold uppercase">
-        Operational excellence
-      </h2>
-      <p class="text-2xl font-semibold max-w-md">
-        We deliver operational excellence, helping clients move seamlessly from
-        plane to car in less than two minutes.
-      </p>
-      <p class="max-w-md text-lg">
-        We can also offer 24/7 availability, direct ramp access for vehicles,
-        onsite immigration and customs, with pre-clearance availability to
-        qualifying visitors.
-      </p>
-    </div>
-  </section>
-
-  <section class="py-16">
+  <section id="hassle-free-refueling" class="py-16">
     <div class="max-w-7xl mx-auto p-5 flex flex-col lg:flex-row gap-10">
       <div class="flex-1">
-        <Image src={London} class="" alt="A description of my image." />
+        <Image src={AddingFuel} class="" alt="A description of my image." />
       </div>
       <div class="flex-1 flex flex-col gap-3 pt-3">
         <h2 class="text-light-red text-sm font-bold uppercase">
-          Quick journey times to London
+          Hassle-Free Refueling
         </h2>
-        <p class="text-2xl font-semibold">
-          London Southend Jet Centre is in the perfect location for clients
-          wanting to get in and out of London quickly.
-        </p>
+        <p class="text-2xl font-semibold">Reliable Phillips 66 AvGas pumps</p>
         <p class="text-lg">
-          We offer a full range of aviation services, including aircraft
-          management, maintenance, avionics, and interior refurbishment. Our
-          team of experts is dedicated to providing the highest level of service
-          to our clients.
+          Our self-serve AvGas pumps make refueling simple and hassle-free.
+          Enjoy the convenience of topping up your tanks 24/7 with our reliable
+          Phillips 66 fuel. We offer both 100LL AvGas and Jet A options to meet
+          your aircraft's needs. Our pumps accept all major credit cards for
+          your convenience.
         </p>
       </div>
     </div>
   </section>
 
-  <section class="h-[35rem] relative overflow-hidden">
+  <section
+    id="safe-storage-solutions"
+    class="h-[35rem] relative overflow-hidden"
+  >
     <Image
-      src={AirplaneWing}
-      class="absolute -top-[50%] -z-50 object-cover min-h-[55rem]"
+      src={PrivateJet}
+      class="absolute -top-[50%] w-full -z-50 object-cover min-h-[55rem]"
       alt="A description of my image."
     />
     <div
@@ -148,16 +110,17 @@ const services = [
       class="max-w-7xl mx-auto flex flex-col justify-center h-full text-white gap-5 p-5"
     >
       <h2 class="text-light-red text-sm font-bold uppercase">
-        Operational excellence
+        Safe Storage Solutions
       </h2>
       <p class="text-2xl font-semibold max-w-md">
-        We deliver operational excellence, helping clients move seamlessly from
-        plane to car in less than two minutes.
+        Tiedowns and heated hangar rentals
       </p>
       <p class="max-w-md text-lg">
-        We can also offer 24/7 availability, direct ramp access for vehicles,
-        onsite immigration and customs, with pre-clearance availability to
-        qualifying visitors.
+        Protect your aircraft with our secure tiedown spaces and heated hangar
+        facilities. Choose from our newly renovated hangars that can accommodate
+        aircraft up to [dimensions]. Long-term and overnight hangar rental
+        options are available. Our professional line staff will ensure your
+        aircraft is safely tucked away.
       </p>
     </div>
   </section>
@@ -173,3 +136,5 @@ const services = [
     </div>
   </section>
 </BaseLayout>
+
+<script src="../scripts/animate-on-scroll.js"></script>

@@ -1,5 +1,5 @@
 ---
-import HomeLayout from "../layouts/HomeLayout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 import Passenger from "../assets/passenger-in-a-car.jpg";
 import London from "../assets/london.jpg";
@@ -9,48 +9,25 @@ import Hangar from "../assets/hangar.jpg";
 import Airport from "../assets/heritage-field-airport.webp";
 import PitcairnFlightAcademyLogo from "../assets/pitcairn-flight-academy-logo.webp";
 import PennairLogo from "../assets/pennair-logo.png";
+import Intro from "../components/Intro.astro";
+import Header from "../components/Header.astro";
 ---
 
-<HomeLayout>
-  <section
-    class="flex overflow-hidden lg:h-96 relative bg-main-red lg:bg-main-red -z-50"
-  >
-    <div
-      class="bg-main-red w-[calc(50%+65rem)] duration-700 ease-in-out h-full -left-24 absolute -skew-x-12 -z-10 slide"
-    >
-    </div>
-    <div
-      class="bg-main-red w-[calc(50%+65rem)] duration-700 ease-in-out h-full -left-24 absolute skew-x-12 -z-10 slide"
-    >
-    </div>
-    <div
-      class="bg-main-red lg:bg-white w-[calc(50%+3rem)] translate-x-[calc(100%-5rem)] h-full absolute -z-20"
-    >
-    </div>
+<BaseLayout>
+  <Header slot="header" />
 
-    <div
-      class="flex py-16 flex-col lg:flex-row max-w-7xl mx-auto h-full lg:items-center lg:gap-72 p-5 justify-center gap-10"
-    >
-      <h2
-        class="lg:flex-1 text-4xl lg:text-5xl text-white uppercase fade-in opacity-0 duration-700"
-      >
-        Your full service aviation partner
-      </h2>
-      <div
-        class="lg:flex-1 text-white lg:text-black flex flex-col gap-3 fade-left opacity-0 translate-x-10 duration-700 delay-500"
-      >
-        <p>
-          For over 50 years, Pitcairn Aviation LLC has been the trusted
-          fixed-base operator (FBO) at Heritage Field Airport (KPTW) in
-          Pottstown, PA. Just a short 30-minute flight from Philadelphia, our
-          full-service FBO offers a warm welcome and modern amenities for pilots
-          and aircraft visiting the scenic southeastern Pennsylvania region.
-          From efficient fueling and ground handling to well-appointed lounges
-          and hangars, we ensure your stopover is comfortable and hassle-free.
-        </p>
-      </div>
-    </div>
-  </section>
+  <Intro
+    title="Your full service aviation partner"
+    description={[
+      `For over 50 years, Pitcairn Aviation LLC has been the trusted
+      fixed-base operator (FBO) at Heritage Field Airport (KPTW) in
+      Pottstown, PA. Just a short 30-minute flight from Philadelphia, our
+      full-service FBO offers a warm welcome and modern amenities for pilots
+      and aircraft visiting the scenic southeastern Pennsylvania region.`,
+      `From efficient fueling and ground handling to well-appointed lounges
+          and hangars, we ensure your stopover is comfortable and hassle-free.`,
+    ]}
+  />
 
   <section class="h-[35rem] relative overflow-hidden">
     <Image
@@ -153,7 +130,7 @@ import PennairLogo from "../assets/pennair-logo.png";
           Other Companies at Heritage Field
         </h2>
         <h3 class="text-base lg:text-lg">
-          Heritage Field Airport is also home to several specialized aviation
+          Heritage Field Airport is also Base to several specialized aviation
           businesses to meet all your needs:
         </h3>
       </div>
@@ -197,76 +174,6 @@ import PennairLogo from "../assets/pennair-logo.png";
       <p class="text-gray-400 self-end">Updated as of 3/20/2024</p>
     </div>
   </section>
-</HomeLayout>
+</BaseLayout>
 
-<script>
-  const fadeUpObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("translate-y-0", "opacity-100");
-        entry.target.classList.remove("translate-y-10", "opacity-0");
-      }
-    });
-  });
-
-  const fadeUpElements = document.querySelectorAll(".fade-up");
-  fadeUpElements.forEach((element) => {
-    fadeUpObserver.observe(element);
-  });
-
-  const fadeRightObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("translate-x-0", "opacity-100");
-        entry.target.classList.remove("-translate-x-10", "opacity-0");
-      }
-    });
-  });
-
-  const fadeRightElements = document.querySelectorAll(".fade-right");
-  fadeRightElements.forEach((element) => {
-    fadeRightObserver.observe(element);
-  });
-
-  const fadeLeftObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("translate-x-0", "opacity-100");
-        entry.target.classList.remove("translate-x-10", "opacity-0");
-      }
-    });
-  });
-
-  const fadeLeftElements = document.querySelectorAll(".fade-left");
-  fadeLeftElements.forEach((element) => {
-    fadeLeftObserver.observe(element);
-  });
-
-  const fadeInObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("opacity-100");
-        entry.target.classList.remove("opacity-0");
-      }
-    });
-  });
-
-  const fadeInElements = document.querySelectorAll(".fade-in");
-  fadeInElements.forEach((element) => {
-    fadeInObserver.observe(element);
-  });
-
-  const slideObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("w-[calc(50%+5rem)]");
-        entry.target.classList.remove("w-[calc(50%+65rem)]");
-      }
-    });
-  });
-
-  const slideElements = document.querySelectorAll(".slide");
-  slideElements.forEach((element) => {
-    slideObserver.observe(element);
-  });
-</script>
+<script src="../scripts/animate-on-scroll.js"></script>
