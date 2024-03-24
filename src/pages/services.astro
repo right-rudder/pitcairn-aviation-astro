@@ -10,6 +10,13 @@ import Intro from "../components/Intro.astro";
 import Header2 from "../components/Header2.astro";
 import AddingFuel from "../assets/adding-fuel.png";
 import PrivateJet from "../assets/private-jet-in-hangar.png";
+import Section2 from "../components/Section2.astro";
+import Section1 from "../components/Section1.astro";
+import RentalCar from "../assets/rental-car.png";
+import AirportLounge from "../assets/airport-lounge.png";
+import JetTowing from "../assets/jet-towing.png";
+import SecurityGuards from "../assets/security-guards.png";
+import HeroImage from "../assets/view-from-airport.jpg";
 
 const services = [
   {
@@ -46,7 +53,11 @@ const services = [
 ---
 
 <BaseLayout>
-  <Header2 slot="header" />
+  <Header2 slot="header" image={HeroImage}>
+    <Fragment slot="title"
+      >Comprehensive Aviation <span class="text-light-red">Services</span>
+    </Fragment>
+  </Header2>
 
   <Intro
     title="Your one-stop solution at pitcairn aviation"
@@ -72,58 +83,61 @@ const services = [
     </div>
   </section>
 
-  <section id="hassle-free-refueling" class="py-16">
-    <div class="max-w-7xl mx-auto p-5 flex flex-col lg:flex-row gap-10">
-      <div class="flex-1">
-        <Image src={AddingFuel} class="" alt="A description of my image." />
-      </div>
-      <div class="flex-1 flex flex-col gap-3 pt-3">
-        <h2 class="text-light-red text-sm font-bold uppercase">
-          Hassle-Free Refueling
-        </h2>
-        <p class="text-2xl font-semibold">Reliable Phillips 66 AvGas pumps</p>
-        <p class="text-lg">
-          Our self-serve AvGas pumps make refueling simple and hassle-free.
-          Enjoy the convenience of topping up your tanks 24/7 with our reliable
-          Phillips 66 fuel. We offer both 100LL AvGas and Jet A options to meet
-          your aircraft's needs. Our pumps accept all major credit cards for
-          your convenience.
-        </p>
-      </div>
-    </div>
-  </section>
+  <Section2
+    id="hassle-free-refueling"
+    image={AddingFuel}
+    title="Hassle-Free Refueling"
+    subtitle="Reliable Phillips 66 AvGas pumps"
+    content=`Our self-serve AvGas pumps make refueling simple and hassle-free.
+  Enjoy the convenience of topping up your tanks 24/7 with our reliable
+  Phillips 66 fuel. We offer both 100LL AvGas and Jet A options to meet
+  your aircraft's needs. Our pumps accept all major credit cards for
+  your convenience.`
+  />
 
-  <section
+  <Section1
     id="safe-storage-solutions"
-    class="h-[35rem] relative overflow-hidden"
-  >
-    <Image
-      src={PrivateJet}
-      class="absolute -top-[50%] w-full -z-50 object-cover min-h-[55rem]"
-      alt="A description of my image."
-    />
-    <div
-      class="absolute inset-0 bg-black/50 bg-gradient-to-t from-black -z-40 to-40%"
-    >
-    </div>
-    <div
-      class="max-w-7xl mx-auto flex flex-col justify-center h-full text-white gap-5 p-5"
-    >
-      <h2 class="text-light-red text-sm font-bold uppercase">
-        Safe Storage Solutions
-      </h2>
-      <p class="text-2xl font-semibold max-w-md">
-        Tiedowns and heated hangar rentals
-      </p>
-      <p class="max-w-md text-lg">
-        Protect your aircraft with our secure tiedown spaces and heated hangar
-        facilities. Choose from our newly renovated hangars that can accommodate
-        aircraft up to [dimensions]. Long-term and overnight hangar rental
-        options are available. Our professional line staff will ensure your
-        aircraft is safely tucked away.
-      </p>
-    </div>
-  </section>
+    image={PrivateJet}
+    title="Safe Storage Solutions"
+    subtitle="Tiedowns and heated hangar rentals"
+    content=`Protect your aircraft with our secure tiedown spaces and heated hangar
+  facilities. Choose from our newly renovated hangars that can accommodate
+  aircraft up to [dimensions]. Long-term and overnight hangar rental
+  options are available. Our professional line staff will ensure your
+  aircraft is safely tucked away.`
+  />
+
+  <Section2
+    id="convenient-transportation"
+    image={RentalCar}
+    title="Convenient Transportation"
+    subtitle="Crew car and rental car access"
+    content=`Enhance your visit with access to our courtesy crew cars or rental car services to explore the area. Our crew cars are complimentary for pilots refueling with us. For longer stays, take advantage of our partnership with Enterprise, Hertz, and Avis for rental cars delivered right to our FBO.`
+  />
+
+  <Section1
+    id="modern-amenities"
+    image={AirportLounge}
+    title="Modern Amenities"
+    subtitle="Conference rooms, lounges, and businesses"
+    content=`While at our FBO, take advantage of our comfortable lounges with TV, workspaces, and conference rooms. Stay productive with access to Wi-Fi, printing, and refreshments. Other aviation businesses on the field include Pitcairn Flight Academy, PennAir Repair, and PennJet Charter Services for additional services.`
+  />
+
+  <Section2
+    id="attentive-ground-support"
+    image={JetTowing}
+    title="Attentive Ground Support"
+    subtitle="GPU services and jump-starts"
+    content=`You can count on our line staff for prompt ground power unit hookups to get you powered on. We also offer battery jump-start services and aircraft towing/repositioning handled by our experienced team members.`
+  />
+
+  <Section1
+    id="peace-of-mind"
+    image={SecurityGuards}
+    title="Peace of Mind"
+    subtitle="Secured airfield access and parking"
+    content=`We make security a top priority with controlled gate access requiring a secure code. Our ramp and parking areas are monitored 24/7 by surveillance cameras for added peace of mind during your stay.`
+  />
 
   <section class="bg-main-black py-10 px-5">
     <div class="max-w-7xl mx-auto flex flex-col gap-2">

@@ -2,8 +2,9 @@
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
 import { Image } from "astro:assets";
-import HeroImage from "../assets/view-from-airport.jpg";
+
 import Navbar from "./Navbar";
+const { image } = Astro.props;
 ---
 
 <header>
@@ -13,7 +14,7 @@ import Navbar from "./Navbar";
     class="relative isolate pt-14 overflow-hidden h-[28rem] text-white flex items-center"
   >
     <Image
-      src={HeroImage}
+      src={image}
       alt="A description of my image."
       class="absolute top-0 h-full object-cover -z-50"
     />
@@ -26,7 +27,7 @@ import Navbar from "./Navbar";
         <h1
           class="text-5xl font-medium tracking-tight sm:text-6xl uppercase animate-fade-in"
         >
-          Comprehensive Aviation <span class="text-light-red">Services</span>
+          <slot name="title" />
         </h1>
       </div>
     </div>

@@ -1,0 +1,111 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import Passenger from "../assets/passenger-in-a-car.jpg";
+import London from "../assets/london.jpg";
+import AirplaneWing from "../assets/airplane-wing.jpg";
+import FuelPrices from "../components/FuelPrices";
+import ServiceCard from "../components/ServiceCard";
+import Intro from "../components/Intro.astro";
+import Header2 from "../components/Header2.astro";
+import AddingFuel from "../assets/adding-fuel.png";
+import PrivateJet from "../assets/private-jet-in-hangar.png";
+import Section2 from "../components/Section2.astro";
+import Section1 from "../components/Section1.astro";
+import RentalCar from "../assets/rental-car.png";
+import AirportLounge from "../assets/airport-lounge.png";
+import JetTowing from "../assets/jet-towing.png";
+import SecurityGuards from "../assets/security-guards.png";
+import HeroImage from "../assets/view-from-airport.jpg";
+import PitcairnTeam from "../assets/pitcairn-team.webp";
+---
+
+<BaseLayout>
+  <Header2 slot="header" image={HeroImage}>
+    <Fragment slot="title"
+      >Get to Know <span class="text-light-red">Pitcairn FBO</span>
+    </Fragment>
+  </Header2>
+
+  <Intro
+    title="Our story, location, and FAA information"
+    description={[
+      `Located at Heritage Field Airport (KPTW) near Pottstown, Pennsylvania, Pitcairn Aviation LLC is a full-service fixed-base operator dedicated to providing exceptional services and amenities to pilots and aircraft owners.`,
+    ]}
+  />
+
+  <section class="bg-zinc-200 py-10 lg:py-20">
+    <div class="max-w-7xl mx-auto flex flex-col gap-20 px-5">
+      <div class="text-center max-w-5xl flex flex-col gap-5 mx-auto">
+        <h2 class="text-main-red font-semibold text-4xl uppercase">
+          About the FBO
+        </h2>
+        <p class="text-xl">
+          At Pitcairn Aviation LLC, our mission is to create a welcoming and
+          vibrant aviation community at Heritage Field Airport. We offer a wide
+          range of services to support both local and transient aircraft
+          operations, including fuel sales, aircraft maintenance, hangar
+          rentals, and concierge services for pilots and passengers.
+        </p>
+      </div>
+      <div
+        class="bg-white px-5 py-20 md:p-20 flex flex-col lg:flex-row gap-10 lg:mr-40"
+      >
+        <div class="flex-1 flex flex-col gap-10">
+          <h3
+            class="text-3xl uppercase font-semibold fade-up translate-y-10 opacity-0 duration-300"
+          >
+            Welcome to Pitcairn Aviation LLC.
+          </h3>
+          <div class="flex flex-col gap-5">
+            <p class="fade-up translate-y-10 opacity-0 duration-300 delay-100">
+              Our team of experienced aviation professionals is dedicated to
+              providing exceptional customer service and ensuring a seamless
+              experience for all who visit our FBO. From the moment you land at
+              Heritage Field Airport, you'll be greeted with a warm welcome and
+              assisted with any needs you may have.
+            </p>
+            <p class="fade-up translate-y-10 opacity-0 duration-300 delay-100">
+              Pitcairn Aviation LLC is committed to the continuous improvement
+              and development of Heritage Field Airport. We have plans to
+              construct additional commercial hangars and enhance the airport's
+              infrastructure, making it an even more attractive destination for
+              aviators and aviation enthusiasts alike.
+            </p>
+            <p class="fade-up translate-y-10 opacity-0 duration-300 delay-100">
+              With a deep appreciation for the rich history of aviation and a
+              passion for paving the way for future generations of pilots,
+              Pitcairn Aviation LLC invites you to experience the exceptional
+              services and amenities we have to offer. Whether you're a local
+              pilot, an aircraft owner, or simply an aviation enthusiast, our
+              FBO is your gateway to the skies and the heart of the aviation
+              community at Heritage Field Airport.
+            </p>
+          </div>
+        </div>
+        <div
+          class="flex-1 fade-up translate-y-10 opacity-0 duration-300 delay-300"
+        >
+          <Image
+            src={PitcairnTeam}
+            alt="Pitcairn Team"
+            class="lg:scale-150 lg:translate-x-32 lg:translate-y-44 shadow-lg shadow-gray-600"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-main-black py-10 px-5">
+    <div class="max-w-7xl mx-auto flex flex-col gap-2">
+      <h2 class="text-white text-5xl font-bold">Fuel Prices</h2>
+      <h3 class="text-white text-2xl">
+        We prioritize keeping our fuel prices competitive for your convenience.
+      </h3>
+      <FuelPrices client:visible />
+      <p class="text-gray-400 self-end">Updated as of 3/20/2024</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<script src="../scripts/animate-on-scroll.js"></script>
