@@ -87,16 +87,7 @@ import VisitUs from "../components/VisitUs.astro";
 
   <VisitUs />
 
-  <section class="bg-main-black py-10 px-5">
-    <div class="max-w-7xl mx-auto flex flex-col gap-2">
-      <h2 class="text-white text-5xl font-bold">Fuel Prices</h2>
-      <h3 class="text-white text-2xl">
-        We prioritize keeping our fuel prices competitive for your convenience.
-      </h3>
-      <FuelPrices client:visible />
-      <p class="text-gray-400 self-end">Updated as of 3/20/2024</p>
-    </div>
-  </section>
+  <FuelPrices client:visible />
 </BaseLayout>
 
 <script src="../scripts/animate-on-scroll.js"></script>
