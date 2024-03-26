@@ -21,19 +21,15 @@ import Section2 from "../components/Section2.astro";
   <Intro
     title="Your full service aviation partner"
     description={[
-      `For over 50 years, Pitcairn Aviation LLC has been the trusted
-      fixed-base operator (FBO) at Heritage Field Airport (KPTW) in
-      Pottstown, PA. Just a short 30-minute flight from Philadelphia, our
-      full-service FBO offers a warm welcome and modern amenities for pilots
-      and aircraft visiting the scenic southeastern Pennsylvania region.`,
-      `From efficient fueling and ground handling to well-appointed lounges
-          and hangars, we ensure your stopover is comfortable and hassle-free.`,
+      `Pitcairn Aviation LLC is been the trusted fixed-base operator (FBO) at Heritage Field Airport (KPTW) in Pottstown, PA. Just a short 30-minute flight from Philadelphia, our full-service FBO offers a warm welcome and modern amenities for pilots and aircraft visiting the scenic southeastern Pennsylvania region.`,
+      `From efficient fueling and ground handling to well-appointed lounges and hangars, we ensure your stopover is comfortable and hassle-free.`,
     ]}
+    cta="Reach Out Today"
   />
 
   <Section1
     image={Passenger}
-    title="Services and Team"
+    title="The Pitcairn Promise"
     subtitle="Our Experienced Team is Here to Serve"
     content=`From the moment you land, our friendly team of aviation experts is ready
   to make your visit exceptional. In addition to swift fueling and
@@ -46,15 +42,13 @@ import Section2 from "../components/Section2.astro";
     image={Hangar}
     title="Hangar Rentals"
     subtitle="Looking for a hangar?"
-    content=`Pitcairn Aviation provides secure hangar facilities to protect your
-  aircraft from the elements. Our heated hangars can accommodate
-  aircraft up to [maximum dimensions]. Monthly and yearly rental options
-  are available.`
+    content=`Pitcairn Aviation provides secure hangar facilities to protect your aircraft from the elements. Our hangars can accommodate aircraft up to [maximum dimensions]. Monthly and yearly rental options are available. If interested, please visit our Hangar Rental form below to submit an inquiry.`
+    cta="Rent Hangar Space"
   />
 
   <Section1
     image={Airport}
-    title="Heritage Field Airport"
+    title="Stop by and say hi"
     subtitle="Visit Heritage Field Airport"
     content=`Experience the award-winning service that's made Pitcairn Aviation a
   trusted name in the region. Plan your visit to Heritage Field (KPTW) and
@@ -79,16 +73,24 @@ import Section2 from "../components/Section2.astro";
       <div
         class="lg:text-black flex flex-col lg:flex-row items-center justify-center gap-10 my-10 fade-up delay-100 duration-700 translate-y-10 opacity-0"
       >
-        <Image
-          src={PitcairnFlightAcademyLogo}
-          class="h-auto w-1/2 lg:w-1/4"
-          alt="A description of my image."
-        />
-        <Image
-          src={PennairLogo}
-          class="h-auto w-1/2 lg:w-1/4"
-          alt="A description of my image."
-        />
+        <a
+          href="https://pitcairnflightacademy.com/"
+          target="_blank"
+          class="h-auto w-1/2 lg:w-1/4 hover:scale-105 duration-300"
+        >
+          <Image
+            src={PitcairnFlightAcademyLogo}
+            class=""
+            alt="Pitcairn Flight Academy logo"
+          />
+        </a>
+        <a
+          href="https://pennair.com/"
+          target="_blank"
+          class="h-auto w-1/2 lg:w-1/4 hover:scale-105 duration-300"
+        >
+          <Image src={PennairLogo} alt="Pennair logo" />
+        </a>
       </div>
       <ul class="text-center">
         <li>
@@ -106,16 +108,7 @@ import Section2 from "../components/Section2.astro";
     </div>
   </section>
 
-  <section class="bg-main-black py-10 px-5">
-    <div class="max-w-7xl mx-auto flex flex-col gap-2">
-      <h2 class="text-white text-5xl font-bold">Fuel Prices</h2>
-      <h3 class="text-white text-2xl">
-        We prioritize keeping our fuel prices competitive for your convenience.
-      </h3>
-      <FuelPrices client:visible />
-      <p class="text-gray-400 self-end">Updated as of 3/20/2024</p>
-    </div>
-  </section>
+  <FuelPrices client:visible />
 </BaseLayout>
 
 <script src="../scripts/animate-on-scroll.js"></script>

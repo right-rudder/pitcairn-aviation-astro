@@ -1,25 +1,25 @@
 ---
-const { title, description } = Astro.props;
+const { title, description, cta } = Astro.props;
 ---
 
-<section
-  class="flex overflow-hidden lg:h-96 relative bg-main-red lg:bg-main-red -z-50"
->
-  <div
-    class="bg-main-red w-[calc(50%+65rem)] duration-700 ease-in-out h-full -left-24 absolute -skew-x-12 -z-10 slide"
-  >
-  </div>
-  <div
-    class="bg-main-red w-[calc(50%+65rem)] duration-700 ease-in-out h-full -left-24 absolute skew-x-12 -z-10 slide"
-  >
-  </div>
-  <div
-    class="bg-main-red lg:bg-white w-[calc(50%+3rem)] translate-x-[calc(100%-5rem)] h-full absolute -z-20"
-  >
+<section class="relative overflow-hidden">
+  <div class="lg:flex relative hidden lg:h-96 bg-main-red lg:bg-main-red -z-50">
+    <div
+      class="bg-main-red w-[calc(50%+65rem)] duration-700 ease-in-out h-full -left-24 absolute -skew-x-12 -z-10 slide"
+    >
+    </div>
+    <div
+      class="bg-main-red w-[calc(50%+65rem)] duration-700 ease-in-out h-full -left-24 absolute skew-x-12 -z-10 slide"
+    >
+    </div>
+    <div
+      class="bg-main-red lg:bg-white w-[calc(50%+3rem)] translate-x-[calc(100%-5rem)] h-full absolute -z-20"
+    >
+    </div>
   </div>
 
   <div
-    class="flex py-16 flex-col lg:flex-row max-w-7xl mx-auto h-full lg:items-center lg:gap-72 p-5 justify-center gap-10"
+    class="flex py-16 flex-col lg:flex-row max-w-7xl mx-auto h-full lg:items-center lg:gap-72 p-5 justify-center gap-10 lg:absolute lg:top-0 lg:left-1/2 lg:-translate-x-1/2 w-full bg-main-red lg:bg-transparent"
   >
     <h2
       class="lg:flex-1 text-4xl lg:text-5xl text-white uppercase fade-in opacity-0 duration-700"
@@ -27,9 +27,18 @@ const { title, description } = Astro.props;
       {title}
     </h2>
     <div
-      class="lg:flex-1 text-white lg:text-black flex flex-col gap-3 fade-left opacity-0 translate-x-10 duration-700 delay-500"
+      class="lg:flex-1 flex flex-col items-start gap-5 fade-left opacity-0 translate-x-10 duration-700 delay-500"
     >
-      {description.map((paragraph: string) => <p>{paragraph}</p>)}
+      <div class="text-white lg:text-black flex flex-col gap-3">
+        {description.map((paragraph: string) => <p>{paragraph}</p>)}
+      </div>
+      {
+        cta && (
+          <a href="#" class="btn-red">
+            {cta}
+          </a>
+        )
+      }
     </div>
   </div>
 </section>
