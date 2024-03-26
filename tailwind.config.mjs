@@ -61,5 +61,7 @@ export default {
     "to-main-yellow",
     "from-light-yellow",
     "to-light-yellow",
+    "-translate-x-10",
+    "translate-x-10",
   ],
 };

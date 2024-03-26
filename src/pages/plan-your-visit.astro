@@ -1,0 +1,280 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import Passenger from "../assets/passenger-in-a-car.jpg";
+import London from "../assets/london.jpg";
+import AirplaneWing from "../assets/airplane-wing.jpg";
+import FuelPrices from "../components/FuelPrices";
+import ServiceCard from "../components/ServiceCard";
+import Intro from "../components/Intro.astro";
+import Header2 from "../components/Header2.astro";
+import AddingFuel from "../assets/adding-fuel.png";
+import PrivateJet from "../assets/private-jet-in-hangar.png";
+import Section2 from "../components/Section2.astro";
+import Section1 from "../components/Section1.astro";
+import RentalCar from "../assets/rental-car.png";
+import AirportLounge from "../assets/airport-lounge.png";
+import JetTowing from "../assets/jet-towing.png";
+import SecurityGuards from "../assets/security-guards.png";
+import HeroImage from "../assets/view-from-airport.jpg";
+import PitcairnTeam from "../assets/pitcairn-team.webp";
+import CrewCar from "../assets/crew-car.png";
+import DemoCard from "../components/DemoCard.astro";
+import CarOptions from "../assets/car-options.png";
+import HangarRentals from "../assets/hangar-rentals.png";
+import HotelsNearby from "../assets/hotels-nearby.png";
+import BusinessSpaces from "../assets/business-spaces.png";
+---
+
+<BaseLayout>
+  <Header2 slot="header" image={AirplaneWing}>
+    <Fragment slot="title"
+      >Plan a Visit to <span class="text-light-red">KPTW</span>
+    </Fragment>
+  </Header2>
+
+  <Intro
+    title="What to expect when visiting Pitcairn Aviation LLC’s FBO"
+    description={[
+      `lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
+    ]}
+  />
+
+  <section id="timeline" class="bg-zinc-200 font-normal">
+    <h1 class="text-center text-5xl font-semibold mb-5">Title Lorem</h1>
+    <p class="text-center text-lg mb-5">
+      lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+    </p>
+    <div class="demo-card-wrapper">
+      <DemoCard
+        title="The Crew Car"
+        stepNumber={1}
+        image={CrewCar}
+        description=`After landing, our friendly line staff will greet you and offer the use of
+      one of our courtesy crew cars–perfect for running into town for a bite to
+      eat or taking care of any local errands during your stay.`
+      />
+
+      <DemoCard
+        title="Rental Car Options"
+        stepNumber={2}
+        image={CarOptions}
+        description=`For longer visits, rental cars offer great flexibility. Enterprise Rent-A-Car has a conveniently located rental counter right on the field. We can also arrange delivery of rental vehicles from Avis and Hertz. After hours? No problem–simply submit a request through our "Contact Us" form for car rental drop-off and pick-up.
+        `
+      />
+      <DemoCard
+        title="Hangar Rentals"
+        stepNumber={3}
+        image={HangarRentals}
+        description=`Protect your aircraft investment with our newly renovated, heated hangar facilities. We offer daily, weekly, and monthly rental options to meet your storage needs. Our staff will ensure your plane is safely secured in one of our spacious hangars. Tie-down spaces are also available.
+        (Hangar Rental Request CTA)`
+      />
+      <DemoCard
+        title="Hotels Nearby"
+        stepNumber={4}
+        image={HotelsNearby}
+        description=`After a long flight, relax at one of the nearby hotels just a short drive from the airfield. We are conveniently located near _____. Our line staff can assist with reserving a room and arranging transportation.`
+      />
+      <DemoCard
+        title="Business Spaces"
+        stepNumber={5}
+        image={BusinessSpaces}
+        description=`If you need to work on-site, take advantage of our business amenities including conference rooms, workstations, and comfortable lounges. High-speed WiFi and refreshments are complimentary to make your stay more productive and even more comfortable.`
+      />
+    </div>
+  </section>
+
+  <section class="bg-main-red text-white py-20 px-5">
+    <div class="flex flex-col-reverse lg:flex-row max-w-7xl mx-auto gap-10">
+      <div class="flex-1">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3045.655001903629!2d-75.5594981877404!3d40.238972371349654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c685aa8ae55be1%3A0x31181fad0855ab8!2sPitcairn%20Flight%20Academy!5e0!3m2!1sen!2sgt!4v1711259612954!5m2!1sen!2sgt"
+          width="100%"
+          height="600"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+      </div>
+      <div class="flex-1 flex flex-col gap-10">
+        <div class="flex flex-col gap-5">
+          <h2
+            class="text-5xl font-bold fade-left translate-x-10 opacity-0 duration-500"
+          >
+            Visit Us
+          </h2>
+          <p
+            class="text-lg fade-left translate-x-10 opacity-0 duration-500 delay-100"
+          >
+            We are located at the Heritage Field Airport (KPTW) in Pottstown,
+            PA. Our clients come from all over the SE Pennsylvania area to take
+            advantage of our services for their aircraft. Whether you’re a
+            pilot, aircraft owner, or aviation enthusiast, Pitcairn Aviation LLC
+            is here to cater to your needs and support you in an outstanding
+            flight experience.
+          </p>
+        </div>
+
+        <div
+          class="flex flex-col gap-3 fade-left translate-x-10 opacity-0 duration-500 delay-200"
+        >
+          <div class="flex gap-3">
+            <svg
+              class="size-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z"
+                stroke="#FFFFFF"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M12 12C13.1046 12 14 11.1046 14 10C14 8.89543 13.1046 8 12 8C10.8954 8 10 8.89543 10 10C10 11.1046 10.8954 12 12 12Z"
+                stroke="#FFFFFF"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+            <div class="flex flex-col">
+              <p>7310 HIGHLAND RD</p>
+              <p>WATERFORD, MI 48327</p>
+            </div>
+          </div>
+
+          <div class="flex gap-3">
+            <svg
+              class="size-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14.3308 15.9402L15.6608 14.6101C15.8655 14.403 16.1092 14.2384 16.3778 14.1262C16.6465 14.014 16.9347 13.9563 17.2258 13.9563C17.517 13.9563 17.8052 14.014 18.0739 14.1262C18.3425 14.2384 18.5862 14.403 18.7908 14.6101L20.3508 16.1702C20.5579 16.3748 20.7224 16.6183 20.8346 16.887C20.9468 17.1556 21.0046 17.444 21.0046 17.7351C21.0046 18.0263 20.9468 18.3146 20.8346 18.5833C20.7224 18.8519 20.5579 19.0954 20.3508 19.3L19.6408 20.02C19.1516 20.514 18.5189 20.841 17.8329 20.9541C17.1469 21.0672 16.4427 20.9609 15.8208 20.6501C10.4691 17.8952 6.11008 13.5396 3.35083 8.19019C3.03976 7.56761 2.93414 6.86242 3.04914 6.17603C3.16414 5.48963 3.49384 4.85731 3.99085 4.37012L4.70081 3.65015C5.11674 3.23673 5.67937 3.00464 6.26581 3.00464C6.85225 3.00464 7.41488 3.23673 7.83081 3.65015L9.40082 5.22021C9.81424 5.63615 10.0463 6.19871 10.0463 6.78516C10.0463 7.3716 9.81424 7.93416 9.40082 8.3501L8.0708 9.68018C8.95021 10.8697 9.91617 11.9926 10.9608 13.04C11.9994 14.0804 13.116 15.04 14.3008 15.9102L14.3308 15.9402Z"
+                stroke="#FFFFFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M18.2109 8.84009C18.0578 8.09677 17.6931 7.41362 17.1609 6.87256C16.6288 6.33149 15.9516 5.95549 15.2109 5.79004"
+                stroke="#FFFFFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M22 7.51001C21.6283 6.19924 20.928 5.00529 19.9655 4.04102C19.003 3.07674 17.8101 2.37408 16.5 2"
+                stroke="#FFFFFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+            <p>800.662.9612</p>
+          </div>
+
+          <div class="flex gap-3">
+            <svg
+              class="size-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M3.75 5.25L3 6V18L3.75 18.75H20.25L21 18V6L20.25 5.25H3.75ZM4.5 7.6955V17.25H19.5V7.69525L11.9999 14.5136L4.5 7.6955ZM18.3099 6.75H5.68986L11.9999 12.4864L18.3099 6.75Z"
+                fill="#FFFFFF"></path>
+            </svg>
+            <p>info@pitcairnaviation.com</p>
+          </div>
+        </div>
+
+        <div class="fade-left translate-x-10 opacity-0 duration-500 delay-300">
+          <h3 class="text-2xl font-semibold">Hours of Operation</h3>
+          <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+          <p>Saturday - Sunday: 9:00 AM - 5:00 PM</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-main-black py-10 px-5">
+    <div class="max-w-7xl mx-auto flex flex-col gap-2">
+      <h2 class="text-white text-5xl font-bold">Fuel Prices</h2>
+      <h3 class="text-white text-2xl">
+        We prioritize keeping our fuel prices competitive for your convenience.
+      </h3>
+      <FuelPrices client:visible />
+      <p class="text-gray-400 self-end">Updated as of 3/20/2024</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<script src="../scripts/animate-on-scroll.js"></script>
+
+<style>
+  .demo-card:nth-child(1) {
+    order: 1;
+  }
+
+  .demo-card:nth-child(2) {
+    order: 4;
+  }
+
+  .demo-card:nth-child(3) {
+    order: 2;
+  }
+
+  .demo-card:nth-child(4) {
+    order: 5;
+  }
+
+  .demo-card:nth-child(5) {
+    order: 3;
+  }
+
+  .demo-card:nth-child(6) {
+    order: 6;
+  }
+
+  #timeline {
+    padding: 100px 0;
+  }
+  #timeline .demo-card-wrapper {
+    position: relative;
+    margin: auto;
+  }
+  @media (min-width: 1100px) {
+    #timeline .demo-card-wrapper {
+      display: flex;
+      flex-flow: column wrap;
+      width: 1170px;
+      height: 1700px;
+      margin: 0 auto;
+    }
+  }
+  #timeline .demo-card-wrapper::after {
+    z-index: 1;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    border-left: 1px solid rgba(191, 191, 191, 0.4);
+  }
+  @media (min-width: 1100px) {
+    #timeline .demo-card-wrapper::after {
+      border-left: 1px solid #bdbdbd;
+    }
+  }
+  #timeline .demo-card {
+    position: relative;
+    display: block;
+    margin: 10px auto 30px;
+    max-width: 94%;
+    z-index: 2;
+  }
+</style>
