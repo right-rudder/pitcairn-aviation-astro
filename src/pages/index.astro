@@ -8,7 +8,7 @@ import FuelPrices from "../components/FuelPrices.jsx";
 import Hangar from "../assets/hangar.jpg";
 import Airport from "../assets/heritage-field-airport.webp";
 import PitcairnFlightAcademyLogo from "../assets/pitcairn-flight-academy-logo.webp";
-import PennairLogo from "../assets/pennair-logo.png";
+import PennairLogo from "../assets/pennair-logo.webp";
 import Intro from "../components/Intro.astro";
 import Header from "../components/Header.astro";
 import Section1 from "../components/Section1.astro";
@@ -25,6 +25,7 @@ import Section2 from "../components/Section2.astro";
       `From efficient fueling and ground handling to well-appointed lounges and hangars, we ensure your stopover is comfortable and hassle-free.`,
     ]}
     cta="Reach Out Today"
+    ctaLink="/contact-us#contact-us-form"
   />
 
   <Section1
@@ -36,6 +37,8 @@ import Section2 from "../components/Section2.astro";
   marshaling, we offer a wide range of professional services including
   aircraft detailing, concierge arrangements, crew cars, and more. We aim
   to ensure your every need is met with efficiency and a smile.`
+    cta="Explore our services"
+    ctaLink="/services"
   />
 
   <Section2
@@ -55,6 +58,8 @@ import Section2 from "../components/Section2.astro";
   discover our beautiful facility tucked into the rolling Pennsylvania
   countryside. Our central location and proximity to Philadelphia make us
   an ideal tech stop.`
+    cta="Plan Your Visit"
+    ctaLink="/plan-your-visit"
   />
 
   <section class="flex overflow-hidden relativebg-white -z-50">
@@ -66,7 +71,7 @@ import Section2 from "../components/Section2.astro";
           Other Companies at Heritage Field
         </h2>
         <h3 class="text-base lg:text-lg">
-          Heritage Field Airport is also Base to several specialized aviation
+          Heritage Field Airport is also home to several specialized aviation
           businesses to meet all your needs:
         </h3>
       </div>
@@ -76,18 +81,17 @@ import Section2 from "../components/Section2.astro";
         <a
           href="https://pitcairnflightacademy.com/"
           target="_blank"
-          class="h-auto w-1/2 lg:w-1/4 hover:scale-105 duration-300"
+          class="h-auto w-1/2 lg:w-1/2 hover:scale-105 duration-300"
         >
           <Image
             src={PitcairnFlightAcademyLogo}
-            class=""
             alt="Pitcairn Flight Academy logo"
           />
         </a>
         <a
-          href="https://pennair.com/"
+          href="http://97.107.141.212:45071/"
           target="_blank"
-          class="h-auto w-1/2 lg:w-1/4 hover:scale-105 duration-300"
+          class="h-auto w-1/4 lg:w-1/5 hover:scale-105 duration-300"
         >
           <Image src={PennairLogo} alt="Pennair logo" />
         </a>

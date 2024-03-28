@@ -37,52 +37,68 @@ import VisitUs from "../components/VisitUs.astro";
   <Intro
     title="What to expect when visiting Pitcairn Aviation LLC’s FBO"
     description={[
-      `lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
+      `Our visitors use the FBO for multiple purposes–allow us to be as flexible as you need us. Explore how Pitcairn Aviation’s FBO can best serve you and your needs upon arrival from crew cars to fueling stations. We welcome any and all requests!`,
     ]}
   />
 
   <section id="timeline" class="bg-zinc-200 font-normal">
-    <h1 class="text-center text-5xl font-semibold mb-5">Title Lorem</h1>
-    <p class="text-center text-lg mb-5">
-      lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+    <h1 class="text-5xl uppercase text-light-red text-center mb-5 px-5">
+      The Pitcairn Experience
+    </h1>
+    <p class="text-center text-lg mb-5 px-5">
+      Leverage any combination of our unique services and FBO amenities
     </p>
     <div class="demo-card-wrapper">
       <DemoCard
         title="The Crew Car"
         stepNumber={1}
         image={CrewCar}
-        description=`After landing, our friendly line staff will greet you and offer the use of
+        description={[
+          `After landing, our friendly line staff will greet you and offer the use of
       one of our courtesy crew cars–perfect for running into town for a bite to
-      eat or taking care of any local errands during your stay.`
+      eat or taking care of any local errands during your stay.`,
+        ]}
       />
 
       <DemoCard
         title="Rental Car Options"
         stepNumber={2}
         image={CarOptions}
-        description=`For longer visits, rental cars offer great flexibility. Enterprise Rent-A-Car has a conveniently located rental counter right on the field. We can also arrange delivery of rental vehicles from Avis and Hertz. After hours? No problem–simply submit a request through our "Contact Us" form for car rental drop-off and pick-up.
-        `
+        description={[
+          `For longer visits, rental cars offer great flexibility. Enterprise Rent-A-Car has a conveniently located rental counter right on the field. We can also arrange delivery of rental vehicles from Avis and Hertz.`,
+          `After hours? No problem–simply submit a request through our "Contact Us" form for car rental drop-off and pick-up.`,
+        ]}
       />
       <DemoCard
         title="Hangar Rentals"
         stepNumber={3}
         image={HangarRentals}
-        description=`Protect your aircraft investment with our newly renovated, heated hangar facilities. We offer daily, weekly, and monthly rental options to meet your storage needs. Our staff will ensure your plane is safely secured in one of our spacious hangars. Tie-down spaces are also available.
-        (Hangar Rental Request CTA)`
+        description={[
+          `Protect your aircraft investment with our newly renovated, heated hangar facilities. We offer daily, weekly, and monthly rental options to meet your storage needs. Our staff will ensure your plane is safely secured in one of our spacious hangars. Tie-down spaces are also available.`,
+        ]}
+        cta="Hangar Rental Request"
+        ctaLink="#"
       />
       <DemoCard
         title="Hotels Nearby"
         stepNumber={4}
         image={HotelsNearby}
-        description=`After a long flight, relax at one of the nearby hotels just a short drive from the airfield. We are conveniently located near _____. Our line staff can assist with reserving a room and arranging transportation.`
+        description={[
+          `After a long flight, relax at one of the nearby hotels just a short drive from the airfield. We are conveniently located near _____. Our line staff can assist with reserving a room and arranging transportation.`,
+        ]}
       />
       <DemoCard
         title="Business Spaces"
         stepNumber={5}
         image={BusinessSpaces}
-        description=`If you need to work on-site, take advantage of our business amenities including conference rooms, workstations, and comfortable lounges. High-speed WiFi and refreshments are complimentary to make your stay more productive and even more comfortable.`
+        description={[
+          `If you need to work on-site, take advantage of our business amenities including conference rooms, workstations, and comfortable lounges. High-speed WiFi and refreshments are complimentary to make your stay more productive and even more comfortable.`,
+        ]}
       />
     </div>
+    <a href="/contact-us" class="btn-red mx-auto w-fit block mt-10"
+      >Contact Us for More</a
+    >
   </section>
 
   <VisitUs />
@@ -129,7 +145,7 @@ import VisitUs from "../components/VisitUs.astro";
       display: flex;
       flex-flow: column wrap;
       width: 1170px;
-      height: 1700px;
+      height: 1750px;
       margin: 0 auto;
     }
   }

@@ -1,5 +1,5 @@
 ---
-const { title, stepNumber, description, image } = Astro.props;
+const { title, stepNumber, description, image, cta, ctaLink } = Astro.props;
 import { Image } from "astro:assets";
 ---
 
@@ -8,9 +8,20 @@ import { Image } from "astro:assets";
     <h2 class="p-7 text-3xl font-semibold text-white">{title}</h2>
   </div>
   <div class="body">
-    <p>
-      {description}
-    </p>
+    
+    {description.map((paragraph) => (
+      <p>{paragraph}</p>
+    ))}
+  
+    {cta && (
+      <a
+        href={ctaLink}
+        class="block px-4 py-2 my-4 text-black text-center font-medium uppercase border border-main-blue duration-300 hover:text-white bg-white hover:bg-main-blue"
+      >
+        {cta}
+      </a>
+    )}
+
     <Image
       src={image}
       alt="The Crew Car"

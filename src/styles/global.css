@@ -3,8 +3,11 @@
 @tailwind utilities;
 
 @layer components {
+  .btn-red-responsive {
+    @apply text-black cursor-pointer hover:border-white font-medium lg:text-white bg-white lg:bg-main-red py-3 px-5 text-center uppercase rounded-md shadow-md duration-300 ease-in-out lg:hover:bg-white hover:text-white lg:hover:text-main-red border hover:bg-main-red lg:hover:border-main-red;
+  }
   .btn-red {
-    @apply text-black cursor-pointer font-medium lg:text-white bg-white lg:bg-main-red py-3 px-5 text-center uppercase rounded-md shadow-md duration-300 ease-in-out hover:bg-white hover:text-main-red border hover:border-main-red;
+    @apply cursor-pointer text-white font-medium bg-main-red py-3 px-5 text-center uppercase rounded-md shadow-md duration-300 ease-in-out hover:bg-white hover:text-main-red border hover:border-main-red;
   }
   .btn-hover-red {
     @apply rounded-md bg-main-red py-3 px-5 duration-300 ease-in-out uppercase cursor-pointer font-medium text-white shadow-sm hover:bg-light-red focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-main-red;

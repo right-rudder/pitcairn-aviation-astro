@@ -30,10 +30,10 @@ const FuelPrices = () => {
     return classes.filter(Boolean).join(" ");
   }
   return (
-    <section class="bg-main-black py-10 px-5" id="fuel-prices">
-      <div class="max-w-7xl mx-auto flex flex-col gap-2">
-        <h2 class="text-white text-4xl uppercase">Fuel Prices</h2>
-        <h3 class="text-white text-lg">
+    <section className="bg-main-black py-10 px-5" id="fuel-prices">
+      <div className="max-w-7xl mx-auto flex flex-col gap-2">
+        <h2 className="text-white text-4xl uppercase">Fuel Prices</h2>
+        <h3 className="text-white text-lg">
           We prioritize keeping our fuel prices competitive for your
           convenience.
         </h3>
@@ -69,7 +69,7 @@ const FuelPrices = () => {
             </div>
           ))}
         </dl>
-        <p class="text-gray-400 self-end">Updated as of 3/20/2024</p>
+        <p className="text-gray-400 self-end">Updated as of 3/20/2024</p>
       </div>
     </section>
   );

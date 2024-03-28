@@ -1,5 +1,5 @@
 ---
-const { title, description, cta } = Astro.props;
+const { title, description, cta, ctaLink } = Astro.props;
 ---
 
 <section class="relative overflow-hidden">
@@ -34,7 +34,7 @@ const { title, description, cta } = Astro.props;
       </div>
       {
         cta && (
-          <a href="#" class="btn-red">
+          <a href={ctaLink} class="btn-red-responsive">
             {cta}
           </a>
         )
