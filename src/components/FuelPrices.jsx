@@ -63,9 +63,7 @@ const FuelPrices = () => {
       color: "blue",
     },
   ];
-  function classNames(...classes) {
-    return classes.filter(Boolean).join(" ");
-  }
+
   return (
     <section className="bg-main-black py-10 px-5" id="fuel-prices">
       <div className="max-w-7xl mx-auto flex flex-col gap-2">
@@ -90,16 +88,6 @@ const FuelPrices = () => {
               <dt className="text-sm font-medium leading-6 text-gray-200">
                 {stat.type}
               </dt>
-              <dd
-                className={classNames(
-                  stat.changeType === "negative"
-                    ? "text-rose-600"
-                    : "text-gray-700",
-                  "text-xs font-medium",
-                )}
-              >
-                {stat.change}
-              </dd>
               <dd className="w-full flex-none text-5xl font-medium leading-10 tracking-tight text-white">
                 {stat.value}
               </dd>
