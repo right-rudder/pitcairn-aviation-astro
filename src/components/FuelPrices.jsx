@@ -1,5 +1,42 @@
 import { BsFuelPumpFill } from "react-icons/bs";
+import { useEffect, useState } from "react";
+
 const FuelPrices = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    // Function to fetch data from API
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://www.iflightplanner.com/API/FuelPrices/PricesForLocation.aspx?ID=FyERFc2d",
+        );
+        const jsonData = await response.json();
+        setData(jsonData);
+
+        // Save data to localStorage
+        localStorage.setItem("cachedData", JSON.stringify(jsonData));
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    // Check if cached data exists in localStorage
+    const cachedData = localStorage.getItem("cachedData");
+    if (cachedData) {
+      setData(JSON.parse(cachedData));
+    } else {
+      // If no cached data, fetch from API
+      fetchData();
+    }
+
+    // Set up interval to fetch data every 30 minutes
+    const interval = setInterval(fetchData, 30 * 60 * 1000);
+
+    // Clean up interval on component unmount
+    return () => clearInterval(interval);
+  }, []);
+
   const stats = [
     {
       type: "Self Service",
