@@ -1,68 +1,52 @@
 import { BsFuelPumpFill } from "react-icons/bs";
-import { useEffect, useState } from "react";
 
-const FuelPrices = () => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    // Function to fetch data from API
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          "https://www.iflightplanner.com/API/FuelPrices/PricesForLocation.aspx?ID=FyERFc2d",
-        );
-        const jsonData = await response.json();
-        setData(jsonData);
-
-        // Save data to localStorage
-        localStorage.setItem("cachedData", JSON.stringify(jsonData));
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    // Check if cached data exists in localStorage
-    const cachedData = localStorage.getItem("cachedData");
-    if (cachedData) {
-      setData(JSON.parse(cachedData));
-    } else {
-      // If no cached data, fetch from API
-      fetchData();
-    }
-
-    // Set up interval to fetch data every 30 minutes
-    const interval = setInterval(fetchData, 30 * 60 * 1000);
-
-    // Clean up interval on component unmount
-    return () => clearInterval(interval);
-  }, []);
-
+const FuelPrices = ({
+  fullServeJetAUnitPrice,
+  selfServe100LLUnitPrice,
+  fullServe100LLUnitPrice,
+  reportDate,
+}) => {
   const stats = [
     {
       type: "Self Service",
-      value: "$6.20",
+      value: `$${selfServe100LLUnitPrice}`,
       name: "100 LL",
       color: "green",
     },
     {
       type: "Full Service",
-      value: "$6.45",
+      value: `$${fullServe100LLUnitPrice}`,
       name: "100 LL",
       color: "green",
     },
     {
       type: "Self Service",
-      value: "$6.17",
+      value: `$${fullServeJetAUnitPrice}`,
       name: "Jet A",
       color: "blue",
     },
     {
       type: "Full Service",
-      value: "$6.27",
+      value: `$${fullServeJetAUnitPrice}`,
       name: "Jet A",
       color: "blue",
     },
   ];
+
+  function formatReportDate(timestamp) {
+    const date = new Date(timestamp * 1000);
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const year = date.getFullYear();
+    const hours = date.getHours();
+    const minutes = date.getMinutes().toString().padStart(2, "0");
+    const seconds = date.getSeconds().toString().padStart(2, "0");
+
+    const formattedDateTime = `${month}/${day}/${year} ${hours}:${minutes}:${seconds} UTC`;
+    return formattedDateTime;
+  }
+
+  const formattedDate = formatReportDate(reportDate);
 
   return (
     <section className="bg-main-black py-10 px-5" id="fuel-prices">
@@ -94,7 +78,7 @@ const FuelPrices = () => {
             </div>
           ))}
         </dl>
-        <p className="text-gray-400 self-end">Updated as of 3/20/2024</p>
+        <p className="text-gray-400 self-end">Updated as of {formattedDate}</p>
       </div>
     </section>
   );
