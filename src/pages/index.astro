@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 import Passenger from "../assets/passenger-in-a-car.jpg";
-import FuelPrices from "../components/FuelPrices.jsx";
+import FuelPrices from "../components/FuelPrices.astro";
 import Hangar from "../assets/hangar.jpg";
 import Airport from "../assets/heritage-field-airport.webp";
 import PitcairnFlightAcademyLogo from "../assets/pitcairn-flight-academy-logo.webp";
@@ -12,17 +12,16 @@ import Header from "../components/Header.astro";
 import Section1 from "../components/Section1.astro";
 import Section2 from "../components/Section2.astro";
 
-const response = await fetch(
-  "https://www.iflightplanner.com/API/FuelPrices/PricesForLocation.aspx?ID=FyERFc2d",
-);
-const data = await response.json();
-const [price1, price2, price3] = data.prices;
-const reportDate = data.reportDate;
+// const response = await fetch(
+//   "https://www.iflightplanner.com/API/FuelPrices/PricesForLocation.aspx?ID=FyERFc2d",
+// );
+// const data = await response.json();
+// const [price1, price2, price3] = data.prices;
+// const reportDate = data.reportDate;
 
-// Setting variables for unitPrice of each object
-const fullServeJetAUnitPrice = price1.unitPrice;
-const selfServe100LLUnitPrice = price2.unitPrice;
-const fullServe100LLUnitPrice = price3.unitPrice;
+// const fullServeJetAUnitPrice = price1.unitPrice;
+// const selfServe100LLUnitPrice = price2.unitPrice;
+// const fullServe100LLUnitPrice = price3.unitPrice;
 ---
 
 <BaseLayout>
@@ -40,7 +39,7 @@ const fullServe100LLUnitPrice = price3.unitPrice;
 
   <Section1
     image={Passenger}
-    title={fullServe100LLUnitPrice}
+    title="The Pitcairn Promise"
     subtitle="Our Experienced Team is Here to Serve"
     content=`From the moment you land, our friendly team of aviation experts is ready
   to make your visit exceptional. In addition to swift fueling and
@@ -123,13 +122,7 @@ const fullServe100LLUnitPrice = price3.unitPrice;
     </div>
   </section>
 
-  <FuelPrices
-    fullServeJetAUnitPrice={fullServeJetAUnitPrice}
-    selfServe100LLUnitPrice={selfServe100LLUnitPrice}
-    fullServe100LLUnitPrice={fullServe100LLUnitPrice}
-    reportDate={reportDate}
-    client:visible
-  />
+  <FuelPrices />
 </BaseLayout>
 
 <script src="../scripts/animate-on-scroll.js"></script>
