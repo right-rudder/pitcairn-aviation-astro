@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import AirplaneWing from "../assets/airplane-wing.jpg";
-import FuelPrices from "../components/FuelPrices";
+import FuelPrices from "../components/FuelPrices.astro";
 import Intro from "../components/Intro.astro";
 import Header2 from "../components/Header2.astro";
 import CrewCar from "../assets/crew-car.png";
@@ -89,7 +89,7 @@ import VisitUs from "../components/VisitUs.astro";
 
   <VisitUs />
 
-  <FuelPrices client:visible />
+  <FuelPrices />
 </BaseLayout>
 
 <script src="../scripts/animate-on-scroll.js"></script>

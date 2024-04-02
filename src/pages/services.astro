@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import FuelPrices from "../components/FuelPrices";
+import FuelPrices from "../components/FuelPrices.astro";
 import ServiceCard from "../components/ServiceCard";
 import Intro from "../components/Intro.astro";
 import Header2 from "../components/Header2.astro";
@@ -143,7 +143,7 @@ const services = [
     content=`We make security a top priority with controlled gate access requiring a secure code. Our ramp and parking areas are monitored 24/7 by surveillance cameras for added peace of mind during your stay.`
   />
 
-  <FuelPrices client:visible />
+  <FuelPrices />
 </BaseLayout>
 
 <script src="../scripts/animate-on-scroll.js"></script>
