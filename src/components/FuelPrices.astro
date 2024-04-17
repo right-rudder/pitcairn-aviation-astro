@@ -24,12 +24,6 @@ const stats = [
     color: "green",
   },
   {
-    type: "Self Service",
-    value: `N/A`,
-    name: "Jet A",
-    color: "blue",
-  },
-  {
     type: "Full Service",
     value: `$${fullServeJetAUnitPrice}`,
     name: "Jet A",
@@ -59,9 +53,7 @@ const formattedDate = formatReportDate(reportDate);
     <h3 class="text-white text-lg">
       We prioritize keeping our fuel prices competitive for your convenience.
     </h3>
-    <dl
-      class="mx-auto grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-4 w-full"
-    >
+    <dl class="mx-auto grid gap-2 md:grid-cols-3 w-full">
       {
         stats.map((stat) => (
           <div
