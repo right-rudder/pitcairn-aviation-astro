@@ -5,14 +5,14 @@ import ServiceCard from "../components/ServiceCard";
 import Intro from "../components/Intro.astro";
 import Header2 from "../components/Header2.astro";
 import AddingFuel from "../assets/adding-fuel.png";
-import PrivateJet from "../assets/private-jet-in-hangar.png";
+import Hangar from "../assets/pitcairn-aviation-hangar-space.jpg";
 import Section2 from "../components/Section2.astro";
 import Section1 from "../components/Section1.astro";
-import RentalCar from "../assets/rental-car.png";
-import AirportLounge from "../assets/airport-lounge.png";
-import JetTowing from "../assets/jet-towing.png";
-import SecurityGuards from "../assets/security-guards.png";
-import HeroImage from "../assets/view-from-airport.jpg";
+import RentalCar from "../assets/car-rental-company-logos.webp";
+import AirportLounge from "../assets/heritage-field-airport-outside-pitcairn-fbo.jpg";
+import JetTowing from "../assets/airplane-on-heritage-field-runway.jpg";
+import Fleet from "../assets/fleet-at-pitcairn-aviation-fbo.jpg";
+import HeroImage from "../assets/aviation-services-at-pitcairn-aviation-heritage-field-airport.jpg";
 
 const services = [
   {
@@ -95,14 +95,10 @@ const services = [
 
   <Section1
     id="safe-storage-solutions"
-    image={PrivateJet}
+    image={Hangar}
     title="Safe Storage Solutions"
     subtitle="Tiedowns and hangar rentals"
-    content=`Protect your aircraft with our secure tiedown spaces and heated hangar
-  facilities. Choose from our newly renovated hangars that can accommodate
-  aircraft up to [dimensions]. Long-term and overnight hangar rental
-  options are available. Our professional line staff will ensure your
-  aircraft is safely tucked away.`
+    content=`Protect your aircraft with our secure tiedown spaces and hangar facilities. Variable-term and overnight hangar rental options are available. Our professional line staff will ensure your aircraft is safely tucked away.`
     cta="Rent Hangar Space"
     ctaLink="/hangar-rental-form"
   />
@@ -137,7 +133,7 @@ const services = [
 
   <Section1
     id="peace-of-mind"
-    image={SecurityGuards}
+    image={Fleet}
     title="Peace of Mind"
     subtitle="Secured airfield access and parking"
     content=`We make security a top priority with controlled gate access requiring a secure code. Our ramp and parking areas are monitored 24/7 by surveillance cameras for added peace of mind during your stay.`

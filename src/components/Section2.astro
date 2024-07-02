@@ -24,10 +24,7 @@ const { image, title, subtitle, content, id, cta, ctaLink } = Astro.props;
       </p>
       {
         cta && (
-          <a
-            href={ctaLink}
-            class="btn-red fade-in duration-500 opacity-0 delay-300"
-          >
+          <a href={ctaLink} class="btn-red fade-in duration-500 opacity-0">
             {cta}
           </a>
         )

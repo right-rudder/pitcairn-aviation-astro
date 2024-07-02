@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
-import AirplaneWing from "../assets/airplane-wing.jpg";
+import FBOServices from "../assets/pitcairn-fbo-aviation-services.jpg";
 import FuelPrices from "../components/FuelPrices.astro";
 import Intro from "../components/Intro.astro";
 import Header2 from "../components/Header2.astro";
@@ -10,7 +10,7 @@ import VisitUs from "../components/VisitUs.astro";
 ---
 
 <BaseLayout>
-  <Header2 slot="header" image={AirplaneWing}>
+  <Header2 slot="header" image={FBOServices}>
     <Fragment slot="title"
       >Get to Know <span class="text-light-red">Pitcairn FBO</span>
     </Fragment>
@@ -90,10 +90,10 @@ import VisitUs from "../components/VisitUs.astro";
       class="flex py-16 flex-col max-w-7xl mx-auto h-full lg:items-center p-5 justify-center gap-10"
     >
       <div class="flex flex-col gap-2 text-center">
-        <h2 class="text-5xl uppercase text-light-red">FAA Information</h2>
+        <h2 class="text-5xl uppercase text-light-red">PILOT INFORMATION</h2>
         <h3 class="text-base lg:text-lg">
-          For all operations and communications data, please visit one of the
-          following chart supplements
+          Please visit one of the following aeronautical information websites
+          and the most recently published Chart Supplement.
         </h3>
       </div>
       <div

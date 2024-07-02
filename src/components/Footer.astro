@@ -40,11 +40,23 @@ import ContactInformation from "./ContactInformation.astro";
       <SocialMedia />
     </div>
     <hr class="border" />
-    <div class="py-2 flex md:gap-2 flex-col md:flex-row text-sm">
-      <p>
-        &copy; {today.getFullYear()} Pitcairn Aviation. All rights reserved.
+    <div class="py-2 flex gap-3 flex-col md:flex-row text-sm justify-between">
+      <div class="flex gap-3 flex-col md:flex-row">
+        <p>
+          &copy; {today.getFullYear()} Pitcairn Aviation. All rights reserved.
+        </p>
+        <a href="#" class="text-white font-medium hover:underline duration-300"
+          >Privacy Policy</a
+        >
+      </div>
+      <p class="">
+        Powered by <a
+          href="https://rightruddermarketing.com/"
+          target="_blank"
+          class="text-white font-medium hover:underline duration-300"
+          >More Right Rudder</a
+        >
       </p>
-      <a href="#" class="underline hover:no-underline">Privacy Policy</a>
     </div>
   </div>
 </footer>

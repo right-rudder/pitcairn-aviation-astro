@@ -1,9 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
-import Passenger from "../assets/passenger-in-a-car.jpg";
+import Fleet from "../assets/fleet-at-pitcairn-aviation-fbo.jpg";
 import FuelPrices from "../components/FuelPrices.astro";
-import Hangar from "../assets/hangar.jpg";
+import Hangar from "../assets/pitcairn-aviation-hangar-space.jpg";
 import Airport from "../assets/heritage-field-airport.webp";
 import PitcairnFlightAcademyLogo from "../assets/pitcairn-flight-academy-logo.webp";
 import PennairLogo from "../assets/pennair-logo.webp";
@@ -27,14 +27,10 @@ import Section2 from "../components/Section2.astro";
   />
 
   <Section1
-    image={Passenger}
+    image={Fleet}
     title="The Pitcairn Promise"
     subtitle="Our Experienced Team is Here to Serve"
-    content=`From the moment you land, our friendly team of aviation experts is ready
-  to make your visit exceptional. In addition to swift fueling and
-  marshaling, we offer a wide range of professional services including
-  aircraft detailing, concierge arrangements, crew cars, and more. We aim
-  to ensure your every need is met with efficiency and a smile.`
+    content=`From the moment you land, our team is ready to make your visit exceptional. In addition to swift fueling and marshaling, we offer a wide range of professional services including aircraft detailing, concierge arrangements, crew cars, and more. We aim to ensure your every need is met with efficiency and a smile.`
     cta="Explore our services"
     ctaLink="/services"
   />
@@ -43,7 +39,7 @@ import Section2 from "../components/Section2.astro";
     image={Hangar}
     title="Hangar Rentals"
     subtitle="Looking for a hangar?"
-    content=`Pitcairn Aviation provides secure hangar facilities to protect your aircraft from the elements. Our hangars can accommodate aircraft up to [maximum dimensions]. Monthly and yearly rental options are available. If interested, please visit our Hangar Rental form below to submit an inquiry.`
+    content=`Pitcairn Aviation provides secure hangar facilities to protect your aircraft from the elements. Contact us today to learn about hangar accommodations and discuss the length of your rental.`
     cta="Rent Hangar Space"
     ctaLink="/hangar-rental-form"
   />
@@ -88,7 +84,7 @@ import Section2 from "../components/Section2.astro";
           />
         </a>
         <a
-          href="http://97.107.141.212:45071/"
+          href="#"
           target="_blank"
           class="h-auto w-1/4 lg:w-1/5 hover:scale-105 duration-300"
         >

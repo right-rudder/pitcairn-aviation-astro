@@ -1,20 +1,20 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import AirplaneWing from "../assets/airplane-wing.jpg";
+import VisitPitcairn from "../assets/visit-pitcairn-aviation-in-pottstown-pa.jpg";
 import FuelPrices from "../components/FuelPrices.astro";
 import Intro from "../components/Intro.astro";
 import Header2 from "../components/Header2.astro";
 import CrewCar from "../assets/crew-car.png";
 import DemoCard from "../components/DemoCard.astro";
-import CarOptions from "../assets/car-options.png";
-import HangarRentals from "../assets/hangar-rentals.png";
-import HotelsNearby from "../assets/hotels-nearby.png";
-import BusinessSpaces from "../assets/business-spaces.png";
+import CarOptions from "../assets/car-rental-company-logos.webp";
+import HangarRentals from "../assets/pitcairn-aviation-hangar-space.jpg";
+import HotelsNearby from "../assets/hotels-logos.webp";
+import BusinessSpaces from "../assets/pitcairn-aviation-office-space.jpg";
 import VisitUs from "../components/VisitUs.astro";
 ---
 
 <BaseLayout>
-  <Header2 slot="header" image={AirplaneWing}>
+  <Header2 slot="header" image={VisitPitcairn}>
     <Fragment slot="title"
       >Plan a Visit to <span class="text-light-red">KPTW</span>
     </Fragment>
@@ -60,7 +60,7 @@ import VisitUs from "../components/VisitUs.astro";
         stepNumber={3}
         image={HangarRentals}
         description={[
-          `Protect your aircraft investment with our newly renovated, heated hangar facilities. We offer daily, weekly, and monthly rental options to meet your storage needs. Our staff will ensure your plane is safely secured in one of our spacious hangars. Tie-down spaces are also available.`,
+          `Protect your aircraft with our hangar facilities. We offer rental options to meet your storage needs. Our staff will ensure your plane is safely secured in one of our spacious hangars. Tie-down spaces are also available.`,
         ]}
         cta="Hangar Rental Request"
         ctaLink="/hangar-rental-form"
@@ -70,7 +70,7 @@ import VisitUs from "../components/VisitUs.astro";
         stepNumber={4}
         image={HotelsNearby}
         description={[
-          `After a long flight, relax at one of the nearby hotels just a short drive from the airfield. We are conveniently located near _____. Our line staff can assist with reserving a room and arranging transportation.`,
+          `After a long flight, relax at one of the nearby hotels just a short drive from the airfield. We are conveniently located near Hampton Inn, Holiday Inn Express, and other hotel brands. Our line staff can assist with reserving a room and arranging transportation.`,
         ]}
       />
       <DemoCard
