@@ -1,37 +1,39 @@
 ---
-import HeaderLink from "./HeaderLink.astro";
-import { SITE_TITLE } from "../consts";
 import { Image } from "astro:assets";
-import HeroImage from "../assets/first-class.jpg";
+import HeroImage from "../assets/pitcairn-aviation-fbo-front-office.jpg";
 import Navbar from "./Navbar";
 ---
 
-<div class="">
+<header>
   <Navbar client:load />
 
   <div
-    class="relative isolate pt-14 overflow-hidden h-[48rem] text-white flex items-center"
+    class="relative isolate pt-14 overflow-hidden h-[101vh] text-white flex items-center"
   >
     <Image
       src={HeroImage}
       alt="A description of my image."
       class="absolute top-0 h-full object-cover -z-50"
+      quality={10}
     />
     <div
       class="absolute inset-0 bg-black/50 bg-gradient-to-t from-black -z-40 to-40%"
     >
     </div>
     <div class="max-w-7xl flex w-full mx-auto">
-      <div class="max-w-2xl py-32 sm:py-48 lg:py-56 px-5">
-        <h1 class="text-4xl font-medium tracking-tight sm:text-6xl uppercase">
-          You've arrived
+      <div class="max-w-2xl py-32 sm:py-48 lg:py-56 px-5 animate-fade-in">
+        <h1 class="text-5xl font-medium tracking-tight sm:text-6xl uppercase">
+          You've <span class="text-light-red">arrived</span>
         </h1>
         <p class="mt-6 text-lg leading-8">
-          Our commitment to the best means we surpass the highest industry
-          standards for every step of your jouney, delivering premium
-          expreiences you'll remember forever.
+          Exceptional aviation services await at Heritage Field Airport (KPTW)
         </p>
+        <a
+          href="/contact-us#contact-us-form"
+          class="block mt-6 uppercase py-3 px-5 border w-fit rounded-md hover:bg-white duration-300 hover:text-black"
+          >Visit Us Today</a
+        >
       </div>
     </div>
   </div>
-</div>
+</header>
