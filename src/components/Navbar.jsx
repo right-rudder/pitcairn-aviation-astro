@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logo from "/src/assets/pitcairn-logo.webp";
+import logo from "../assets/pitcairn-logo.webp";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
