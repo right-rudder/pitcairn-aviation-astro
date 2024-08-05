@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import AirplaneWing from "../assets/airplane-wing.jpg";
 import Header2 from "../components/Header2.astro";
+import { PHONE_NUMBER, EMAIL_ADDRESS } from "../consts";
 ---
 
 <BaseLayout>
@@ -10,33 +11,36 @@ import Header2 from "../components/Header2.astro";
       >Contact <span class="text-light-red">Us</span>
     </Fragment>
   </Header2>
-  <section class="relative overflow-hidden">
-    <div
-      class="lg:flex relative hidden lg:h-screen bg-main-red lg:bg-main-red -z-50"
-    >
-      <div
-        class="bg-main-red w-[calc(50%+65rem)] duration-700 ease-in-out h-full -left-24 absolute -skew-x-6 -z-10 slide pointer-events-auto"
-      >
-      </div>
-      <div
-        class="bg-main-red w-[calc(50%+65rem)] duration-700 ease-in-out h-full -left-24 absolute skew-x-6 -z-10 slide pointer-events-auto"
-      >
-      </div>
-      <div
-        class="bg-main-red lg:bg-white w-[calc(50%+3rem)] translate-x-[calc(100%-5rem)] h-full absolute -z-20 pointer-events-auto"
-      >
+  <section class="">
+    <h2 class="text-4xl lg:text-5xl min-h-72 text-black uppercase duration-700">
+      Thank you for contacting us! We will get back to you as soon as possible.
+    </h2>
+  </section>
+  <div class="text-center lg:w-3/5 md:w-4/5">
+    <h1 class="font-bold text-4xl py-10">Thank you for contacting us.</h1>
+
+    <!--Container for check-->
+    <div class="flex flex-row justify-center">
+      <!--circle of check-->
+      <div class="bg-green-200 rounded-full py-3 px-4 mb-10">
+        <!--check itself-->
+        <div class="text-green-700 text-5xl">✓</div>
       </div>
     </div>
 
-    <div
-      class="flex py-16 flex-col w-full lg:flex-row lg:max-h-screen max-w-7xl mx-auto h-full lg:items-center lg:gap-72 bg-zinc-200 lg:bg-transparent p-5 justify-center gap-10 lg:absolute lg:top-0 lg:left-1/2 lg:-translate-x-1/2"
-      id="contact-us-form"
-    >
-      <h2
-        class="lg:flex-1 text-4xl lg:text-5xl text-black lg:text-white uppercase fade-in opacity-0 duration-700"
-      >
-        Please let us know how to best serve you and your aircraft!
-      </h2>
+    <p class="px-5">
+      Thank you for contacting Red Arrow Flight Academy. We are looking forward
+      to working with you soon. We will review your message and get back with
+      you within 1-5 business days. <br /><br />
+      You can also give us a call at {PHONE_NUMBER} or email us at {
+        EMAIL_ADDRESS
+      }
+    </p>
+
+    <div class="pt-10 flex flex-row justify-center">
+      <a href="/">
+        <div class="btn-red mb-10 w-52">HOME</div>
+      </a>
     </div>
-  </section>
+  </div>
 </BaseLayout>
