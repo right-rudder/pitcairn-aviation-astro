@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import AirplaneWing from "../assets/airplane-wing.jpg";
 import Header2 from "../components/Header2.astro";
+const HANGAR_FORM_WEBHOOK_URL = import.meta.env.HANGAR_FORM_WEBHOOK_URL;
 ---
 
 <BaseLayout>
@@ -12,14 +13,14 @@ import Header2 from "../components/Header2.astro";
   </Header2>
   <section class="relative overflow-hidden">
     <div
-      class="lg:flex relative hidden lg:min-h-screen bg-main-red lg:bg-main-red -z-50"
+      class="lg:flex relative hidden lg:absolute lg:h-full lg:w-full bg-main-red lg:bg-main-red -z-50"
     >
       <div
-        class="bg-main-red w-[calc(50%+65rem)] duration-700 ease-in-out h-full -left-24 absolute -skew-x-6 -z-10 slide pointer-events-auto"
+        class="bg-main-red w-[calc(50%+65rem)] duration-700 ease-in-out h-full -left-24 slide absolute -skew-x-6 -z-10 pointer-events-auto"
       >
       </div>
       <div
-        class="bg-main-red w-[calc(50%+65rem)] duration-700 ease-in-out h-full -left-24 absolute skew-x-6 -z-10 slide pointer-events-auto"
+        class="bg-main-red w-[calc(50%+65rem)] duration-700 ease-in-out h-full -left-24 slide absolute skew-x-6 -z-10 pointer-events-auto"
       >
       </div>
       <div
@@ -29,7 +30,7 @@ import Header2 from "../components/Header2.astro";
     </div>
 
     <div
-      class="flex py-16 flex-col w-full lg:flex-row lg:min-h-screen max-w-7xl mx-auto h-full lg:items-center lg:gap-72 bg-zinc-200 lg:bg-transparent p-5 justify-center gap-10 lg:absolute lg:top-0 lg:left-1/2 lg:-translate-x-1/2"
+      class="flex py-16 flex-col w-full lg:flex-row max-w-7xl mx-auto lg:items-center lg:gap-72 bg-zinc-200 lg:bg-transparent p-5 justify-center gap-10"
       id="contact-us-form"
     >
       <h2
@@ -41,7 +42,7 @@ import Header2 from "../components/Header2.astro";
       <div
         class="lg:flex-1 h-full text-white lg:text-black flex flex-col gap-3 fade-left opacity-0 translate-x-10 duration-700 delay-500"
       >
-        <form class="h-full">
+        <form class="h-full" id="hangar_form">
           <div class="flex flex-col gap-5 justify-between h-full">
             <div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
               <div class="sm:col-span-3">
@@ -57,6 +58,7 @@ import Header2 from "../components/Header2.astro";
                     id="first-name"
                     autocomplete="given-name"
                     class="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-main-red sm:text-sm sm:leading-6"
+                    required
                   />
                 </div>
               </div>
@@ -74,6 +76,7 @@ import Header2 from "../components/Header2.astro";
                     id="last-name"
                     autocomplete="family-name"
                     class="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-main-red sm:text-sm sm:leading-6"
+                    required
                   />
                 </div>
               </div>
@@ -91,9 +94,14 @@ import Header2 from "../components/Header2.astro";
                     type="email"
                     autocomplete="email"
                     class="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-main-red sm:text-sm sm:leading-6"
+                    required
                   />
                 </div>
               </div>
+              <label class="hidden">
+                Don't fill this out if you're human:
+                <input name="confirm-email" />
+              </label>
               <div class="sm:col-span-2">
                 <label
                   for="phone"
@@ -107,6 +115,7 @@ import Header2 from "../components/Header2.astro";
                     type="tel"
                     autocomplete="phone"
                     class="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-main-red sm:text-sm sm:leading-6"
+                    required
                   />
                 </div>
               </div>
@@ -116,16 +125,16 @@ import Header2 from "../components/Header2.astro";
 
             <div>
               <label
-                for="aircarft"
+                for="aircraft-make-model"
                 class="block px-2 text-sm font-medium leading-6 text-gray-900"
                 >Aircraft Make and Model</label
               >
               <div class="mt-2">
                 <input
-                  id="aircarft"
-                  name="aircarft"
+                  id="aircraft-make-model"
+                  name="aircraft-make-model"
                   type="text"
-                  autocomplete="aircarft"
+                  autocomplete="aircraft-make-model"
                   class="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-main-red sm:text-sm sm:leading-6"
                 />
               </div>
@@ -141,7 +150,8 @@ import Header2 from "../components/Header2.astro";
                   <div class="flex h-6 items-center">
                     <input
                       id="tiedowns"
-                      name="tiedowns"
+                      value="Tiedowns"
+                      name="services-requested"
                       type="checkbox"
                       class="h-4 w-4 rounded border-gray-300 text-main-red focus:ring-main-red"
                     />
@@ -154,7 +164,8 @@ import Header2 from "../components/Header2.astro";
                   <div class="flex h-6 items-center">
                     <input
                       id="hangar-space"
-                      name="hangar-space"
+                      value="Hangar Space"
+                      name="services-requested"
                       type="checkbox"
                       class="h-4 w-4 rounded border-gray-300 text-main-red focus:ring-main-red"
                     />
@@ -212,16 +223,16 @@ import Header2 from "../components/Header2.astro";
             <fieldset>
               <div class="col-span-full">
                 <label
-                  for="about"
+                  for="more-details"
                   class="block text-sm font-medium leading-6 text-gray-900"
                   >Please provide more details here:</label
                 >
                 <div class="mt-2">
                   <textarea
-                    id="about"
-                    name="about"
+                    id="more-details"
+                    name="more-details"
                     rows="3"
-                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   ></textarea>
                 </div>
               </div>
@@ -236,3 +247,50 @@ import Header2 from "../components/Header2.astro";
 </BaseLayout>
 
 <script src="../scripts/animate-on-scroll.js"></script>
+
+<script define:vars={{ HANGAR_FORM_WEBHOOK_URL }}>
+  document.addEventListener("DOMContentLoaded", function () {
+    const contactForm = document.getElementById("hangar_form");
+
+    if (contactForm !== null) {
+      contactForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const formData = new FormData(contactForm);
+
+        const confirmEmailValue = formData.get("confirm-email");
+        if (confirmEmailValue === "" || confirmEmailValue === null) {
+          contactForm.action = HANGAR_FORM_WEBHOOK_URL;
+        }
+
+        const servicesRequested = formData.getAll("services-requested");
+        formData.set("services-requested", servicesRequested.join(", "));
+
+        const urlSearchParams = new URLSearchParams();
+        for (const pair of formData.entries()) {
+          urlSearchParams.append(pair[0], pair[1]);
+        }
+
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", contactForm.action);
+        xhr.setRequestHeader(
+          "Content-Type",
+          "application/x-www-form-urlencoded",
+        );
+        xhr.onload = function () {
+          if (xhr.status === 200) {
+            window.location.href = "/contact-confirmation";
+          } else {
+            console.error("Form submission failed:", xhr.statusText);
+          }
+        };
+        xhr.onerror = function () {
+          console.error("Network error occurred while submitting the form.");
+        };
+        xhr.send(urlSearchParams);
+      });
+    } else {
+      console.error("Contact form element not found.");
+    }
+  });
+</script>
