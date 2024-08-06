@@ -18,8 +18,8 @@ const Navbar = () => {
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Pitcairn Aviation</span>
             <h1 className="text-white font-bold uppercase leading-none text-center">
-              <span className="text-3xl block leading-none">Pitcairn</span>{" "}
-              Aviation LLC
+              <span className="text-3xl block leading-none">Pitcairn</span>
+              <span className="text-main-color">Aviation LLC</span>
             </h1>
             {/* <img
               className="h-12 lg:h-20 w-auto"
@@ -82,7 +82,7 @@ const Navbar = () => {
       <div className={`lg:hidden `} role="dialog" aria-modal="true">
         {/* <!-- Background backdrop, show/hide based on slide-over state. --> */}
         <div
-          className={`${isOpen ? "translate-x-0" : "translate-x-full"} duration-300 fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-main-red px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10`}
+          className={`${isOpen ? "translate-x-0" : "translate-x-full"} duration-300 fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-main-color px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10`}
         >
           <div className="flex items-center justify-between">
             <a href="/" className="-m-1.5 p-1.5">
@@ -120,25 +120,25 @@ const Navbar = () => {
               <div className="space-y-2 py-6">
                 <a
                   href="/services"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:bg-gray-50 hover:text-main-red"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:bg-gray-50 hover:text-main-color"
                 >
                   Services
                 </a>
                 <a
                   href="/about-us"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:bg-gray-50 hover:text-main-red"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:bg-gray-50 hover:text-main-color"
                 >
                   About Us
                 </a>
                 <a
                   href="/plan-your-visit"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:bg-gray-50 hover:text-main-red"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:bg-gray-50 hover:text-main-color"
                 >
                   Plan Your Visit
                 </a>
                 <a
                   href="/contact-us"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:bg-gray-50 hover:text-main-red"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:bg-gray-50 hover:text-main-color"
                 >
                   Contact Us
                 </a>

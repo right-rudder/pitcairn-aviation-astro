@@ -7,8 +7,7 @@ export default {
         inter: ["Inter", "sans-serif"],
       },
       colors: {
-        "main-red": "#18999b", // #500000
-        "light-red": "#18999b", // #A43737
+        "main-color": "#18999b",
         "main-black": "#101820",
         "main-green": "#004F16",
         "light-green": "#37A456",
@@ -34,8 +33,7 @@ export default {
   },
   plugins: [],
   safelist: [
-    "bg-main-red",
-    "bg-light-red",
+    "bg-main-color",
     "bg-main-black",
     "bg-main-green",
     "bg-light-green",
@@ -43,10 +41,8 @@ export default {
     "bg-light-blue",
     "bg-main-yellow",
     "bg-light-yellow",
-    "from-main-red",
-    "to-main-red",
-    "from-light-red",
-    "to-light-red",
+    "from-main-color",
+    "to-main-color",
     "from-main-black",
     "to-main-black",
     "from-main-green",

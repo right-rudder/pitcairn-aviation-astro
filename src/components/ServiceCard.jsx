@@ -22,16 +22,16 @@ const ServiceCard = ({ service }) => {
   return (
     <a
       href={`#${id}`}
-      className="relative overflow-hidden cursor-pointer p-5 bg-white border-l-8 border-main-red rounded-xl group"
+      className="relative overflow-hidden cursor-pointer p-5 bg-white border-l-8 border-main-color rounded-xl group"
     >
-      <div className="bg-main-red absolute h-full w-full top-0 duration-300 right-full group-hover:right-0 z-10"></div>
+      <div className="bg-main-color absolute h-full w-full top-0 duration-300 right-full group-hover:right-0 z-10"></div>
       <h2 className="relative font-medium text-2xl z-20 group-hover:text-white duration-100">
         {title}
       </h2>
       <p className="relative text-gray-500 text-lg z-20 group-hover:text-gray-200 duration-100">
         {subtitle}
       </p>
-      <Icon className="absolute right-2 text-main-red/20 size-24 -bottom-1 group-hover:text-white/20 z-20 duration-100" />
+      <Icon className="absolute right-2 text-main-color/20 size-24 -bottom-1 group-hover:text-white/20 z-20 duration-100" />
     </a>
   );
 };

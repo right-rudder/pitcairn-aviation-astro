@@ -12,23 +12,23 @@ const HANGAR_FORM_WEBHOOK_URL = import.meta.env.HANGAR_FORM_WEBHOOK_URL;
 >
   <Header2 slot="header" image={AirplaneWing}>
     <Fragment slot="title"
-      >Hangar Rental <span class="text-light-red">Requests</span>
+      >Hangar Rental <span class="text-main-color">Requests</span>
     </Fragment>
   </Header2>
   <section class="relative overflow-hidden">
     <div
-      class="lg:flex relative hidden lg:absolute lg:h-full lg:w-full bg-main-red lg:bg-main-red -z-50"
+      class="lg:flex relative hidden lg:absolute lg:h-full lg:w-full bg-main-color lg:bg-main-color -z-50"
     >
       <div
-        class="bg-main-red w-[calc(50%+65rem)] duration-700 ease-in-out h-full -left-24 slide absolute -skew-x-6 -z-10 pointer-events-auto"
+        class="bg-main-color w-[calc(50%+65rem)] duration-700 ease-in-out h-full -left-24 slide absolute -skew-x-6 -z-10 pointer-events-auto"
       >
       </div>
       <div
-        class="bg-main-red w-[calc(50%+65rem)] duration-700 ease-in-out h-full -left-24 slide absolute skew-x-6 -z-10 pointer-events-auto"
+        class="bg-main-color w-[calc(50%+65rem)] duration-700 ease-in-out h-full -left-24 slide absolute skew-x-6 -z-10 pointer-events-auto"
       >
       </div>
       <div
-        class="bg-main-red lg:bg-white w-[calc(50%+3rem)] translate-x-[calc(100%-5rem)] h-full absolute -z-20 pointer-events-auto"
+        class="bg-main-color lg:bg-white w-[calc(50%+3rem)] translate-x-[calc(100%-5rem)] h-full absolute -z-20 pointer-events-auto"
       >
       </div>
     </div>
@@ -61,7 +61,7 @@ const HANGAR_FORM_WEBHOOK_URL = import.meta.env.HANGAR_FORM_WEBHOOK_URL;
                     name="first-name"
                     id="first-name"
                     autocomplete="given-name"
-                    class="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-main-red sm:text-sm sm:leading-6"
+                    class="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-main-color sm:text-sm sm:leading-6"
                     required
                   />
                 </div>
@@ -79,7 +79,7 @@ const HANGAR_FORM_WEBHOOK_URL = import.meta.env.HANGAR_FORM_WEBHOOK_URL;
                     name="last-name"
                     id="last-name"
                     autocomplete="family-name"
-                    class="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-main-red sm:text-sm sm:leading-6"
+                    class="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-main-color sm:text-sm sm:leading-6"
                     required
                   />
                 </div>
@@ -97,7 +97,7 @@ const HANGAR_FORM_WEBHOOK_URL = import.meta.env.HANGAR_FORM_WEBHOOK_URL;
                     name="email"
                     type="email"
                     autocomplete="email"
-                    class="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-main-red sm:text-sm sm:leading-6"
+                    class="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-main-color sm:text-sm sm:leading-6"
                     required
                   />
                 </div>
@@ -118,7 +118,7 @@ const HANGAR_FORM_WEBHOOK_URL = import.meta.env.HANGAR_FORM_WEBHOOK_URL;
                     name="phone"
                     type="tel"
                     autocomplete="phone"
-                    class="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-main-red sm:text-sm sm:leading-6"
+                    class="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-main-color sm:text-sm sm:leading-6"
                     required
                   />
                 </div>
@@ -139,7 +139,7 @@ const HANGAR_FORM_WEBHOOK_URL = import.meta.env.HANGAR_FORM_WEBHOOK_URL;
                   name="aircraft-make-model"
                   type="text"
                   autocomplete="aircraft-make-model"
-                  class="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-main-red sm:text-sm sm:leading-6"
+                  class="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-main-color sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -157,7 +157,7 @@ const HANGAR_FORM_WEBHOOK_URL = import.meta.env.HANGAR_FORM_WEBHOOK_URL;
                       value="Tiedowns"
                       name="services-requested"
                       type="checkbox"
-                      class="h-4 w-4 rounded border-gray-300 text-main-red focus:ring-main-red"
+                      class="h-4 w-4 rounded border-gray-300 text-main-color focus:ring-main-color"
                     />
                   </div>
                   <div class="text-sm leading-6">
@@ -171,7 +171,7 @@ const HANGAR_FORM_WEBHOOK_URL = import.meta.env.HANGAR_FORM_WEBHOOK_URL;
                       value="Hangar Space"
                       name="services-requested"
                       type="checkbox"
-                      class="h-4 w-4 rounded border-gray-300 text-main-red focus:ring-main-red"
+                      class="h-4 w-4 rounded border-gray-300 text-main-color focus:ring-main-color"
                     />
                   </div>
                   <div class="text-sm leading-6">
@@ -200,7 +200,7 @@ const HANGAR_FORM_WEBHOOK_URL = import.meta.env.HANGAR_FORM_WEBHOOK_URL;
                     type="date"
                     name="start-date"
                     id="start-date"
-                    class="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-main-red sm:text-sm sm:leading-6"
+                    class="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-main-color sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -216,7 +216,7 @@ const HANGAR_FORM_WEBHOOK_URL = import.meta.env.HANGAR_FORM_WEBHOOK_URL;
                     type="date"
                     name="end-date"
                     id="end-date"
-                    class="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-main-red sm:text-sm sm:leading-6"
+                    class="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-main-color sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
