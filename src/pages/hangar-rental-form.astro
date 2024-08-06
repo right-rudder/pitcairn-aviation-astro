@@ -5,7 +5,11 @@ import Header2 from "../components/Header2.astro";
 const HANGAR_FORM_WEBHOOK_URL = import.meta.env.HANGAR_FORM_WEBHOOK_URL;
 ---
 
-<BaseLayout>
+<BaseLayout
+  title="Hangar Rental Form | Pitcairn Aviation LLC"
+  description="Complete the hangar rental form to secure your space at Pitcairn Aviation in Heritage Field Airport, Pottstown, PA. Our modern hangars provide secure storage for your aircraft with top-notch facilities. Reserve your hangar space today."
+  keywords="hangar rental form, Pitcairn Aviation, Heritage Field Airport, hangar rentals Pottstown, aircraft storage, secure hangars, modern hangar facilities, reserve hangar space, aviation services"
+>
   <Header2 slot="header" image={AirplaneWing}>
     <Fragment slot="title"
       >Hangar Rental <span class="text-light-red">Requests</span>

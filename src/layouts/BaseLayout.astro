@@ -1,13 +1,18 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_KEYWORDS } from "../consts";
+const { title, description, keywords } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <BaseHead
+      title={title || SITE_TITLE}
+      description={description || SITE_DESCRIPTION}
+      keywords={keywords || SITE_KEYWORDS}
+    />
   </head>
   <body class="Inter">
     <slot name="header" />

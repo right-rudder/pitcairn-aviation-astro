@@ -5,7 +5,11 @@ import Header2 from "../components/Header2.astro";
 const CONTACT_US_FORM_WEBHOOK_URL = import.meta.env.CONTACT_US_FORM_WEBHOOK_URL;
 ---
 
-<BaseLayout>
+<BaseLayout
+  title="Contact Us | Pitcairn Aviation LLC"
+  description="Get in touch with Pitcairn Aviation at Heritage Field Airport. Contact us for information on our FBO services, hangar rentals, and aviation support in Pottstown, PA. Our team is ready to assist you with all your aviation needs."
+  keywords="contact Pitcairn Aviation, Heritage Field Airport, FBO services, hangar rentals, aviation support, Pottstown PA, fixed-base operator, aviation inquiries, get in touch"
+>
   <Header2 slot="header" image={AirplaneWing}>
     <Fragment slot="title"
       >Contact <span class="text-light-red">Us</span>
