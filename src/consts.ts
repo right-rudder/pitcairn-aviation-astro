@@ -3,5 +3,5 @@
 
 export const SITE_TITLE = "Pitcairn Aviation";
 export const SITE_DESCRIPTION = "Welcome to my website!";
-export const PHONE_NUMBER = "(610)500-3023";
+export const PHONE_NUMBER = "(610) 500-3023";
 export const EMAIL_ADDRESS = "info@pitcairnaviation.com";

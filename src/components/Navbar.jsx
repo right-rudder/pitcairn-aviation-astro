@@ -87,8 +87,8 @@ const Navbar = () => {
               <span className="sr-only">Pitcairn Aviation</span>
               <img
                 className="h-12 w-auto"
-                src="/src/assets/pitcairn-logo.webp"
-                alt=""
+                src={logo.src}
+                alt="Pitcairn Aviation Logo"
               />
             </a>
             <button
