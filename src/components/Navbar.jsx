@@ -17,11 +17,15 @@ const Navbar = () => {
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Pitcairn Aviation</span>
-            <img
+            <h1 className="text-white font-bold uppercase leading-none text-center">
+              <span className="text-3xl block leading-none">Pitcairn</span>{" "}
+              Aviation LLC
+            </h1>
+            {/* <img
               className="h-12 lg:h-20 w-auto"
               src={logo.src}
               alt="Pitcairn Logo"
-            />
+            /> */}
           </a>
         </div>
         <div className="flex lg:hidden">
