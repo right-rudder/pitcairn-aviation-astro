@@ -1,5 +1,6 @@
 ---
-const { title, stepNumber, description, image, cta, ctaLink } = Astro.props;
+const { title, stepNumber, description, image, alt, cta, ctaLink } =
+  Astro.props;
 import { Image } from "astro:assets";
 ---
 
@@ -25,11 +26,7 @@ import { Image } from "astro:assets";
       )
     }
 
-    <Image
-      src={image}
-      alt="The Crew Car"
-      class="w-[1000px] h-[250px] object-cover"
-    />
+    <Image src={image} alt={alt} class="w-[1000px] h-[250px] object-cover" />
   </div>
 </div>
 

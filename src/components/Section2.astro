@@ -1,12 +1,12 @@
 ---
 import { Image } from "astro:assets";
-const { image, title, subtitle, content, id, cta, ctaLink } = Astro.props;
+const { image, alt, title, subtitle, content, id, cta, ctaLink } = Astro.props;
 ---
 
 <section class="py-16" id={id}>
   <div class="max-w-7xl mx-auto p-5 flex flex-col lg:flex-row gap-10">
     <div class="flex-1">
-      <Image src={image} alt="A description of my image." />
+      <Image src={image} alt={alt} />
     </div>
     <div class="flex-1 flex flex-col gap-3 pt-3 items-start">
       <h2
