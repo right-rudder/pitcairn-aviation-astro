@@ -64,3 +64,96 @@ const {
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Pitcairn Aviation LLC",
+    "description": "Pitcairn Aviation offers premier fixed-base operator (FBO) services at Heritage Field Airport in Pottstown, PA. From fueling and maintenance to hangar rentals and concierge services, we provide top-tier aviation support. Discover why pilots choose Pitcairn Aviation for all their aviation needs.",
+    "keywords": "Pitcairn Aviation, Heritage Field Airport, FBO services, fixed-base operator Pottstown, aviation services Pottstown, PA, fueling services, aircraft maintenance, hangar rentals, concierge services, aviation support",
+    "image": "https://pitcairnaviation.com/_astro/pitcairn-aviation-fbo-front-office.CbDvmrjw_ZEVJNe.webp",
+    "logo": "https://pitcairnaviation.com/_astro/pitcairn-aviation-fbo-front-office.CbDvmrjw_ZEVJNe.webp",
+    "telephone": "(610) 500-3023",
+    "email": "info@pitcairnaviation.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3310 W Ridge Pike",
+      "addressLocality": "Pottstown",
+      "addressRegion": "PA",
+      "addressCountry": "US",
+      "postalCode": "19464"
+    },
+    "currenciesAccepted": "USD",
+    "paymentAccepted": "Cash, Credit Card, Visa, Mastercard, American Express, Discover, Checks",
+    "areaServed": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.2390420143688,
+        "longitude": -75.55689644232788
+      },
+      "geoRadius": 9000
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "14"
+    },
+    "url": "https://pitcairnaviation.com/",
+    "priceRange": "$",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 40.2390420143688,
+      "longitude": -75.55689644232788
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+        "opens": "10:00",
+        "closes": "17:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Friday", "Saturday"],
+        "opens": "10:00",
+        "closes": "18:00"
+      }
+    ],
+    "hasMap": "https://maps.app.goo.gl/o8kEUH6ZQqRiNu3G8",
+    "photo": [
+      {
+        "@type": "ImageObject",
+        "url": "https://pitcairnaviation.com/_astro/pitcairn-aviation-fbo-front-office.CbDvmrjw_ZEVJNe.webp",
+        "description": "Pitcairn Aviation FBO Front Office"
+      }
+    ],
+    "makesOffer": {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "serviceType": "Aviation Services"
+      },
+      "priceCurrency": "USD",
+      "price": "Varies"
+    },
+    "identifier": [
+      {
+        "@type": "PropertyValue",
+        "name": "IATA Code",
+        "value": "SUT"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "ICAO Code",
+        "value": "KSUT"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Airport Code",
+        "value": "SUT"
+      }
+    ]
+  }
+</script>
