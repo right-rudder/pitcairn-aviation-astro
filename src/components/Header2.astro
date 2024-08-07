@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Navbar from "./Navbar";
-const { image } = Astro.props;
+const { image, alt } = Astro.props;
 ---
 
 <header>
@@ -12,7 +12,7 @@ const { image } = Astro.props;
   >
     <Image
       src={image}
-      alt="A description of my image."
+      alt={alt}
       class="absolute top-0 h-full object-cover -z-50"
     />
     <div

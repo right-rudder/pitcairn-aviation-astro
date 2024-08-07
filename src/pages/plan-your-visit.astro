@@ -13,10 +13,18 @@ import BusinessSpaces from "../assets/pitcairn-aviation-office-space.jpg";
 import VisitUs from "../components/VisitUs.astro";
 ---
 
-<BaseLayout>
-  <Header2 slot="header" image={VisitPitcairn}>
+<BaseLayout
+  title="Plan Your Visit | Pitcairn Aviation LLC"
+  description="Plan your visit to Pitcairn Aviation at Heritage Field Airport. Find essential information on airport facilities, ground transportation, nearby accommodations, and local attractions in Pottstown, PA. Experience seamless travel planning with us."
+  keywords="plan your visit, Pitcairn Aviation, Heritage Field Airport, airport facilities, ground transportation, accommodations Pottstown, local attractions, Pottstown PA, travel planning, aviation services"
+>
+  <Header2
+    slot="header"
+    image={VisitPitcairn}
+    alt="Visit Pitcairn Aviation in Pottstown PA"
+  >
     <Fragment slot="title"
-      >Plan a Visit to <span class="text-light-red">KPTW</span>
+      >Plan a Visit to <span class="text-main-color">KPTW</span>
     </Fragment>
   </Header2>
 
@@ -28,7 +36,7 @@ import VisitUs from "../components/VisitUs.astro";
   />
 
   <section id="timeline" class="bg-zinc-200 font-normal">
-    <h1 class="text-5xl uppercase text-light-red text-center mb-5 px-5">
+    <h1 class="text-5xl uppercase text-main-color text-center mb-5 px-5">
       The Pitcairn Experience
     </h1>
     <p class="text-center text-lg mb-5 px-5">
@@ -39,6 +47,7 @@ import VisitUs from "../components/VisitUs.astro";
         title="The Crew Car"
         stepNumber={1}
         image={CrewCar}
+        alt="Pitcairn aviation staff with crew car"
         description={[
           `After landing, our friendly line staff will greet you and offer the use of
       one of our courtesy crew cars–perfect for running into town for a bite to
@@ -50,6 +59,7 @@ import VisitUs from "../components/VisitUs.astro";
         title="Rental Car Options"
         stepNumber={2}
         image={CarOptions}
+        alt="Car rental company logos"
         description={[
           `For longer visits, rental cars offer great flexibility. Enterprise Rent-A-Car has a conveniently located rental counter right on the field. We can also arrange delivery of rental vehicles from Avis and Hertz.`,
           `After hours? No problem–simply submit a request through our "Contact Us" form for car rental drop-off and pick-up.`,
@@ -59,6 +69,7 @@ import VisitUs from "../components/VisitUs.astro";
         title="Hangar Rentals"
         stepNumber={3}
         image={HangarRentals}
+        alt="Pitcairn Aviation hangar space"
         description={[
           `Protect your aircraft with our hangar facilities. We offer rental options to meet your storage needs. Our staff will ensure your plane is safely secured in one of our spacious hangars. Tie-down spaces are also available.`,
         ]}
@@ -69,6 +80,7 @@ import VisitUs from "../components/VisitUs.astro";
         title="Hotels Nearby"
         stepNumber={4}
         image={HotelsNearby}
+        alt="Hotels nearby logos"
         description={[
           `After a long flight, relax at one of the nearby hotels just a short drive from the airfield. We are conveniently located near Hampton Inn, Holiday Inn Express, and other hotel brands. Our line staff can assist with reserving a room and arranging transportation.`,
         ]}
@@ -77,6 +89,7 @@ import VisitUs from "../components/VisitUs.astro";
         title="Business Spaces"
         stepNumber={5}
         image={BusinessSpaces}
+        alt="Pitcairn Aviation office space"
         description={[
           `If you need to work on-site, take advantage of our business amenities including conference rooms, workstations, and comfortable lounges. High-speed WiFi and refreshments are complimentary to make your stay more productive and even more comfortable.`,
         ]}

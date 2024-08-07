@@ -1,13 +1,13 @@
 ---
 import { Image } from "astro:assets";
-const { image, title, subtitle, content, id, cta, ctaLink } = Astro.props;
+const { image, alt, title, subtitle, content, id, cta, ctaLink } = Astro.props;
 ---
 
 <section id={id} class="h-[35rem] relative overflow-hidden">
   <Image
     src={image}
     class="absolute -top-[50%] -z-50 object-cover min-h-[55rem] w-full"
-    alt="A description of my image."
+    alt={alt}
   />
   <div
     class="absolute inset-0 bg-black/50 bg-gradient-to-t from-black -z-40 to-40%"
@@ -17,7 +17,7 @@ const { image, title, subtitle, content, id, cta, ctaLink } = Astro.props;
     class="max-w-7xl mx-auto flex flex-col justify-center h-full text-white gap-5 p-5 items-start"
   >
     <h2
-      class="text-light-red text-sm font-bold uppercase fade-in duration-500 opacity-0 delay-100"
+      class="text-main-color text-sm font-bold uppercase fade-in duration-500 opacity-0 delay-100"
     >
       {title}
     </h2>

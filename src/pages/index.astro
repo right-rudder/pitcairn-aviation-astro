@@ -13,7 +13,11 @@ import Section1 from "../components/Section1.astro";
 import Section2 from "../components/Section2.astro";
 ---
 
-<BaseLayout>
+<BaseLayout
+  title="Aviation services at Heritage Field Airport (KPTW) | Pitcairn Aviation LLC"
+  description="Pitcairn Aviation offers premier fixed-base operator (FBO) services at Heritage Field Airport in Pottstown, PA. From fueling and maintenance to hangar rentals and concierge services, we provide top-tier aviation support. Discover why pilots choose Pitcairn Aviation for all their aviation needs."
+  keywords="Pitcairn Aviation, Heritage Field Airport, FBO services, fixed-base operator Pottstown, aviation services Pottstown, PA, fueling services, aircraft maintenance, hangar rentals, concierge services, aviation support"
+>
   <Header slot="header" />
 
   <Intro
@@ -28,6 +32,7 @@ import Section2 from "../components/Section2.astro";
 
   <Section1
     image={Fleet}
+    alt="Pitcairn Aviation fleet"
     title="The Pitcairn Promise"
     subtitle="Our Experienced Team is Here to Serve"
     content=`From the moment you land, our team is ready to make your visit exceptional. In addition to swift fueling and marshaling, we offer a wide range of professional services including aircraft detailing, concierge arrangements, crew cars, and more. We aim to ensure your every need is met with efficiency and a smile.`
@@ -37,6 +42,7 @@ import Section2 from "../components/Section2.astro";
 
   <Section2
     image={Hangar}
+    alt="Pitcairn Aviation hangar space"
     title="Hangar Rentals"
     subtitle="Looking for a hangar?"
     content=`Pitcairn Aviation provides secure hangar facilities to protect your aircraft from the elements. Contact us today to learn about hangar accommodations and discuss the length of your rental.`
@@ -46,6 +52,7 @@ import Section2 from "../components/Section2.astro";
 
   <Section1
     image={Airport}
+    alt="Heritage Field Airport"
     title="Stop by and say hi"
     subtitle="Visit Heritage Field Airport"
     content=`Experience the award-winning service that's made Pitcairn Aviation a
@@ -62,7 +69,7 @@ import Section2 from "../components/Section2.astro";
       class="flex py-16 flex-col max-w-7xl mx-auto h-full lg:items-center p-5 justify-center gap-10"
     >
       <div class="flex flex-col gap-2 text-center">
-        <h2 class="text-5xl uppercase text-light-red">
+        <h2 class="text-5xl uppercase text-main-color">
           Other Companies at Heritage Field
         </h2>
         <h3 class="text-base lg:text-lg">
@@ -83,13 +90,9 @@ import Section2 from "../components/Section2.astro";
             alt="Pitcairn Flight Academy logo"
           />
         </a>
-        <a
-          href="#"
-          target="_blank"
-          class="h-auto w-1/4 lg:w-1/5 hover:scale-105 duration-300"
-        >
+        <span class="h-auto w-1/4 lg:w-1/5 hover:scale-105 duration-300">
           <Image src={PennairLogo} alt="Pennair logo" />
-        </a>
+        </span>
       </div>
       <ul class="text-center">
         <li>

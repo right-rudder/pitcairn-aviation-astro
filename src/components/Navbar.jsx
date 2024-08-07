@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logo from "/src/assets/pitcairn-logo.webp";
+import logo from "../assets/pitcairn-logo.webp";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,11 +17,15 @@ const Navbar = () => {
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Pitcairn Aviation</span>
-            <img
+            <h1 className="text-white font-bold uppercase leading-none text-center">
+              <span className="text-3xl block leading-none">Pitcairn</span>
+              <span className="text-main-color">Aviation LLC</span>
+            </h1>
+            {/* <img
               className="h-12 lg:h-20 w-auto"
               src={logo.src}
               alt="Pitcairn Logo"
-            />
+            /> */}
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -75,21 +79,23 @@ const Navbar = () => {
         </div>
       </nav>
       {/* <!-- Mobile menu, show/hide based on menu open state. --> */}
-      <div
-        className={`${isOpen ? "" : "hidden"} lg:hidden `}
-        role="dialog"
-        aria-modal="true"
-      >
+      <div className={`lg:hidden `} role="dialog" aria-modal="true">
         {/* <!-- Background backdrop, show/hide based on slide-over state. --> */}
-        <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-main-red px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <div
+          className={`${isOpen ? "translate-x-0" : "translate-x-full"} duration-300 fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-main-color px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10`}
+        >
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
+            <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Pitcairn Aviation</span>
-              <img
+              <h1 className="text-white font-bold uppercase leading-none text-center">
+                <span className="text-3xl block leading-none">Pitcairn</span>
+                <span>Aviation LLC</span>
+              </h1>
+              {/* <img
                 className="h-12 w-auto"
-                src="/src/assets/pitcairn-logo.webp"
-                alt=""
-              />
+                src={logo.src}
+                alt="Pitcairn Aviation Logo"
+              /> */}
             </a>
             <button
               type="button"
@@ -118,25 +124,25 @@ const Navbar = () => {
               <div className="space-y-2 py-6">
                 <a
                   href="/services"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:bg-gray-50 hover:text-main-red"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:bg-gray-50 hover:text-main-color"
                 >
                   Services
                 </a>
                 <a
                   href="/about-us"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:bg-gray-50 hover:text-main-red"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:bg-gray-50 hover:text-main-color"
                 >
                   About Us
                 </a>
                 <a
                   href="/plan-your-visit"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:bg-gray-50 hover:text-main-red"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:bg-gray-50 hover:text-main-color"
                 >
                   Plan Your Visit
                 </a>
                 <a
                   href="/contact-us"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:bg-gray-50 hover:text-main-red"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:bg-gray-50 hover:text-main-color"
                 >
                   Contact Us
                 </a>
