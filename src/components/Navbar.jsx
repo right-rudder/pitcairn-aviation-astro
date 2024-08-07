@@ -87,11 +87,15 @@ const Navbar = () => {
           <div className="flex items-center justify-between">
             <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Pitcairn Aviation</span>
-              <img
+              <h1 className="text-white font-bold uppercase leading-none text-center">
+                <span className="text-3xl block leading-none">Pitcairn</span>
+                <span>Aviation LLC</span>
+              </h1>
+              {/* <img
                 className="h-12 w-auto"
                 src={logo.src}
                 alt="Pitcairn Aviation Logo"
-              />
+              /> */}
             </a>
             <button
               type="button"
