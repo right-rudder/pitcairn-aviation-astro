@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import AirplaneWing from "../assets/airplane-wing.jpg";
+import Header2 from "../components/Header2.astro";
+---
+
+<BaseLayout title="404 Page Not Found | Pitcairn Aviation LLC">
+  <Header2
+    slot="header"
+    image={AirplaneWing}
+    alt="Airplane flying above Heritage Field Airport"
+  >
+    <Fragment slot="title"
+      >404 <span class="text-main-color">Page Not Found</span>
+    </Fragment>
+  </Header2>
+  <section class="flex justify-center px-5 py-32">
+    <div class="text-center flex flex-col gap-8">
+      <svg class="size-20 text-red-600 mx-auto" viewBox="0 0 32 32"
+        ><path
+          fill="currentColor"
+          d="M16 2C8.2 2 2 8.2 2 16s6.2 14 14 14s14-6.2 14-14S23.8 2 16 2m5.4 21L16 17.6L10.6 23L9 21.4l5.4-5.4L9 10.6L10.6 9l5.4 5.4L21.4 9l1.6 1.6l-5.4 5.4l5.4 5.4z"
+        ></path></svg
+      >
+
+      <h1 class="font-bold text-4xl">Sorry, we couldn't find this page.</h1>
+
+      <p>
+        But dont worry, you can find plenty of other things on our homepage.
+      </p>
+
+      <div class="flex flex-row justify-center">
+        <a href="/">
+          <div class="btn-red">Back to homepage</div>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
