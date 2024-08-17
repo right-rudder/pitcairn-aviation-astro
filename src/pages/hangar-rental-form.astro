@@ -2,7 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import AirplaneWing from "../assets/airplane-wing.jpg";
 import Header2 from "../components/Header2.astro";
-const HANGAR_FORM_WEBHOOK_URL = import.meta.env.HANGAR_FORM_WEBHOOK_URL;
+const GHL_WEBHOOK_URL = import.meta.env.HANGAR_FORM_WEBHOOK_URL;
+const RECAPTCHA_SITE_KEY = import.meta.env.RECAPTCHA_SITE_KEY;
 ---
 
 <BaseLayout
@@ -39,7 +40,6 @@ const HANGAR_FORM_WEBHOOK_URL = import.meta.env.HANGAR_FORM_WEBHOOK_URL;
 
     <div
       class="flex py-16 flex-col w-full lg:flex-row max-w-7xl mx-auto lg:items-center lg:gap-72 bg-zinc-200 lg:bg-transparent p-5 justify-center gap-10"
-      id="contact-us-form"
     >
       <h2
         class="lg:flex-1 text-4xl lg:text-5xl text-black lg:text-white uppercase fade-in opacity-0 duration-700"
@@ -50,7 +50,7 @@ const HANGAR_FORM_WEBHOOK_URL = import.meta.env.HANGAR_FORM_WEBHOOK_URL;
       <div
         class="lg:flex-1 h-full text-white lg:text-black flex flex-col gap-3 fade-left opacity-0 translate-x-10 duration-700 delay-500"
       >
-        <form class="h-full" id="hangar_form">
+        <form class="h-full" id="form">
           <div class="flex flex-col gap-5 justify-between h-full">
             <div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
               <div class="sm:col-span-3">
@@ -246,7 +246,7 @@ const HANGAR_FORM_WEBHOOK_URL = import.meta.env.HANGAR_FORM_WEBHOOK_URL;
               </div>
             </fieldset>
 
-            <button type="submit" class="btn-primary self-end">Submit</button>
+            <button type="submit" class="btn-primary self-end"> Submit </button>
           </div>
         </form>
       </div>
@@ -256,49 +256,68 @@ const HANGAR_FORM_WEBHOOK_URL = import.meta.env.HANGAR_FORM_WEBHOOK_URL;
 
 <script src="../scripts/animate-on-scroll.js"></script>
 
-<script define:vars={{ HANGAR_FORM_WEBHOOK_URL }}>
-  document.addEventListener("DOMContentLoaded", function () {
-    const contactForm = document.getElementById("hangar_form");
+<script define:vars={{ GHL_WEBHOOK_URL, RECAPTCHA_SITE_KEY }}>
+  const REDIRECT_URL = "/contact-confirmation";
 
-    if (contactForm !== null) {
-      contactForm.addEventListener("submit", function (event) {
-        event.preventDefault();
+  async function submitForm(e) {
+    e.preventDefault();
 
-        const formData = new FormData(contactForm);
-
-        const confirmEmailValue = formData.get("confirm-email");
-        if (confirmEmailValue === "" || confirmEmailValue === null) {
-          contactForm.action = HANGAR_FORM_WEBHOOK_URL;
-        }
-
-        const servicesRequested = formData.getAll("services-requested");
-        formData.set("services-requested", servicesRequested.join(", "));
-
-        const urlSearchParams = new URLSearchParams();
-        for (const pair of formData.entries()) {
-          urlSearchParams.append(pair[0], pair[1]);
-        }
-
-        const xhr = new XMLHttpRequest();
-        xhr.open("POST", contactForm.action);
-        xhr.setRequestHeader(
-          "Content-Type",
-          "application/x-www-form-urlencoded",
-        );
-        xhr.onload = function () {
-          if (xhr.status === 200) {
-            window.location.href = "/contact-confirmation";
-          } else {
-            console.error("Form submission failed:", xhr.statusText);
-          }
-        };
-        xhr.onerror = function () {
-          console.error("Network error occurred while submitting the form.");
-        };
-        xhr.send(urlSearchParams);
+    try {
+      const recaptchaToken = await grecaptcha.execute(RECAPTCHA_SITE_KEY, {
+        action: "submit",
       });
-    } else {
-      console.error("Contact form element not found.");
+
+      const recaptchaResponse = await fetch("/recaptcha", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ recaptcha: recaptchaToken }),
+      });
+
+      const gResponse = await recaptchaResponse.json();
+
+      if (gResponse.success) {
+        await submitToGHL();
+      } else {
+        alert("Captcha verification failed. Please try again.");
+      }
+    } catch (error) {
+      console.error("An error occurred during form submission:", error);
     }
-  });
+  }
+
+  async function submitToGHL() {
+    const formData = new FormData(form);
+
+    const confirmEmailValue = formData.get("confirm-email");
+    if (!confirmEmailValue) {
+      form.action = GHL_WEBHOOK_URL;
+    }
+
+    const servicesInterested = formData.getAll("services-interested");
+    formData.set("services-interested", servicesInterested.join(", "));
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams([...formData]),
+      });
+
+      if (response.ok) {
+        window.location.href = REDIRECT_URL;
+      } else {
+        console.error("Form submission failed:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Network error occurred while submitting the form:", error);
+    }
+  }
+
+  const form = document.getElementById("form");
+  form.addEventListener("submit", submitForm);
 </script>
+
+<script
+  src="https://www.google.com/recaptcha/api.js?render=6LdDcygqAAAAAFH3W2sfgyq32K6vGnxlnU6WYXMl"
+  async
+  defer></script>

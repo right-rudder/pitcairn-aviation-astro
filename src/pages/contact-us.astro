@@ -237,6 +237,13 @@ const CONTACT_US_FORM_WEBHOOK_URL = import.meta.env.CONTACT_US_FORM_WEBHOOK_URL;
               </div>
             </fieldset>
 
+            <div
+              class="g-recaptcha"
+              data-sitekey="6LcHXygqAAAAADNalhMp7NoYei7UC9Ppy7QHwcVq"
+              data-callback="onRecaptchaSuccess"
+            >
+            </div>
+
             <button type="submit" class="btn-primary self-end">Submit</button>
           </div>
         </form>
@@ -248,12 +255,18 @@ const CONTACT_US_FORM_WEBHOOK_URL = import.meta.env.CONTACT_US_FORM_WEBHOOK_URL;
 <script src="../scripts/animate-on-scroll.js"></script>
 
 <script define:vars={{ CONTACT_US_FORM_WEBHOOK_URL }}>
+  let isRecaptchaVerified = false;
   document.addEventListener("DOMContentLoaded", function () {
     const contactForm = document.getElementById("contact_form");
 
     if (contactForm !== null) {
       contactForm.addEventListener("submit", function (event) {
         event.preventDefault();
+
+        if (!isRecaptchaVerified) {
+          alert("Please complete the reCAPTCHA verification.");
+          return;
+        }
 
         const formData = new FormData(contactForm);
 
@@ -292,4 +305,24 @@ const CONTACT_US_FORM_WEBHOOK_URL = import.meta.env.CONTACT_US_FORM_WEBHOOK_URL;
       console.error("Contact form element not found.");
     }
   });
+
+  function onRecaptchaSuccess(token) {
+    fetch("/recaptcha", {
+      method: "POST",
+      body: JSON.stringify({ recaptcha: token }),
+    })
+      .then((response) => response.json())
+      .then((gResponse) => {
+        if (gResponse.success) {
+          isRecaptchaVerified = true;
+        } else {
+          isRecaptchaVerified = false;
+          alert("reCAPTCHA verification failed. Please try again.");
+        }
+      });
+  }
+
+  window.onRecaptchaSuccess = onRecaptchaSuccess;
 </script>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
