@@ -1,13 +1,13 @@
 export default function initializeForm(
-  GHL_WEBHOOK_URL,
-  RECAPTCHA_SITE_KEY,
-  REDIRECT_URL,
+  ghlWebhookUrl,
+  recaptchaSiteKey,
+  redirectUrl,
 ) {
   async function submitForm(e) {
     e.preventDefault();
 
     try {
-      const recaptchaToken = await grecaptcha.execute(RECAPTCHA_SITE_KEY, {
+      const recaptchaToken = await grecaptcha.execute(recaptchaSiteKey, {
         action: "submit",
       });
 
@@ -34,30 +34,18 @@ export default function initializeForm(
 
     const confirmEmailValue = formData.get("confirm-email");
     if (!confirmEmailValue) {
-      form.action = GHL_WEBHOOK_URL;
+      form.action = ghlWebhookUrl;
     }
-
-    const combinedData = new Map();
-
-    for (const [key, value] of formData.entries()) {
-      if (combinedData.has(key)) {
-        combinedData.set(key, `${combinedData.get(key)}, ${value}`);
-      } else {
-        combinedData.set(key, value);
-      }
-    }
-
-    const finalFormData = new URLSearchParams(combinedData);
 
     try {
       const response = await fetch(form.action, {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: finalFormData,
+        body: new URLSearchParams(formData),
       });
 
       if (response.ok) {
-        window.location.href = REDIRECT_URL;
+        window.location.href = redirectUrl;
       } else {
         console.error("Form submission failed:", response.statusText);
       }
