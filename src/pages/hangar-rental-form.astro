@@ -256,68 +256,16 @@ const RECAPTCHA_SITE_KEY = import.meta.env.RECAPTCHA_SITE_KEY;
 
 <script src="../scripts/animate-on-scroll.js"></script>
 
-<script define:vars={{ GHL_WEBHOOK_URL, RECAPTCHA_SITE_KEY }}>
-  const REDIRECT_URL = "/contact-confirmation";
-
-  async function submitForm(e) {
-    e.preventDefault();
-
-    try {
-      const recaptchaToken = await grecaptcha.execute(RECAPTCHA_SITE_KEY, {
-        action: "submit",
-      });
-
-      const recaptchaResponse = await fetch("/recaptcha", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ recaptcha: recaptchaToken }),
-      });
-
-      const gResponse = await recaptchaResponse.json();
-
-      if (gResponse.success) {
-        await submitToGHL();
-      } else {
-        alert("Captcha verification failed. Please try again.");
-      }
-    } catch (error) {
-      console.error("An error occurred during form submission:", error);
-    }
-  }
-
-  async function submitToGHL() {
-    const formData = new FormData(form);
-
-    const confirmEmailValue = formData.get("confirm-email");
-    if (!confirmEmailValue) {
-      form.action = GHL_WEBHOOK_URL;
-    }
-
-    const servicesInterested = formData.getAll("services-interested");
-    formData.set("services-interested", servicesInterested.join(", "));
-
-    try {
-      const response = await fetch(form.action, {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams([...formData]),
-      });
-
-      if (response.ok) {
-        window.location.href = REDIRECT_URL;
-      } else {
-        console.error("Form submission failed:", response.statusText);
-      }
-    } catch (error) {
-      console.error("Network error occurred while submitting the form:", error);
-    }
-  }
-
-  const form = document.getElementById("form");
-  form.addEventListener("submit", submitForm);
+<script
+  define:vars={{ GHL_WEBHOOK_URL, RECAPTCHA_SITE_KEY }}
+  type="module"
+  is:inline
+>
+  import initializeForm from "/src/scripts/submitForm.js";
+  initializeForm(GHL_WEBHOOK_URL, RECAPTCHA_SITE_KEY, "/contact-confirmation");
 </script>
 
 <script
   src="https://www.google.com/recaptcha/api.js?render=6LdDcygqAAAAAFH3W2sfgyq32K6vGnxlnU6WYXMl"
   async
-  defer></script>
+  is:inline></script>
