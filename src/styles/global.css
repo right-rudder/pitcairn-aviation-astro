@@ -3,13 +3,10 @@
 @tailwind utilities;
 
 @layer components {
-  .btn-red-responsive {
+  .btn-primary-responsive {
     @apply text-black cursor-pointer hover:border-white font-medium lg:text-white bg-white lg:bg-main-color py-3 px-5 text-center uppercase rounded-md shadow-md duration-300 ease-in-out lg:hover:bg-white hover:text-white lg:hover:text-main-color border hover:bg-main-color lg:hover:border-main-color;
   }
-  .btn-red {
+  .btn-primary {
     @apply cursor-pointer border-main-color text-white font-medium bg-main-color py-3 px-5 text-center uppercase rounded-md shadow-md duration-300 ease-in-out hover:bg-white hover:text-main-color border hover:border-main-color;
-  }
-  .btn-hover-red {
-    @apply rounded-md bg-main-color py-3 px-5 duration-300 ease-in-out uppercase cursor-pointer font-medium text-white shadow-sm hover:bg-main-color focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-main-color;
   }
 }

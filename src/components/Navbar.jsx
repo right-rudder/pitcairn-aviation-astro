@@ -79,7 +79,13 @@ const Navbar = () => {
         </div>
       </nav>
       {/* <!-- Mobile menu, show/hide based on menu open state. --> */}
-      <div className={`lg:hidden `} role="dialog" aria-modal="true">
+      <div
+        className={`lg:hidden`}
+        role="dialog"
+        aria-modal="true"
+        id="mobile-menu"
+        aria-labelledby="mobile-menu"
+      >
         {/* <!-- Background backdrop, show/hide based on slide-over state. --> */}
         <div
           className={`${isOpen ? "translate-x-0" : "translate-x-full"} duration-300 fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-main-color px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10`}
