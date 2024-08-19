@@ -1,10 +1,12 @@
-export default function initializeForm(
-  ghlWebhookUrl,
-  recaptchaSiteKey,
-  redirectUrl,
-) {
+---
+const { redirect } = Astro.props;
+const GHL_WEBHOOK_URL = import.meta.env.CONTACT_US_FORM_WEBHOOK_URL;
+const RECAPTCHA_SITE_KEY = import.meta.env.RECAPTCHA_SITE_KEY;
+---
+
+<script define:vars={{ GHL_WEBHOOK_URL, RECAPTCHA_SITE_KEY, redirect }}>
   const script = document.createElement("script");
-  script.src = `https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`;
+  script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`;
   script.async = true;
   document.head.appendChild(script);
 
@@ -12,7 +14,7 @@ export default function initializeForm(
     e.preventDefault();
 
     try {
-      const recaptchaToken = await grecaptcha.execute(recaptchaSiteKey, {
+      const recaptchaToken = await grecaptcha.execute(RECAPTCHA_SITE_KEY, {
         action: "submit",
       });
 
@@ -39,7 +41,7 @@ export default function initializeForm(
 
     const confirmEmailValue = formData.get("confirm-email");
     if (!confirmEmailValue) {
-      form.action = ghlWebhookUrl;
+      form.action = GHL_WEBHOOK_URL;
     }
 
     try {
@@ -50,7 +52,7 @@ export default function initializeForm(
       });
 
       if (response.ok) {
-        window.location.href = redirectUrl;
+        window.location.href = redirect;
       } else {
         console.error("Form submission failed:", response.statusText);
       }
@@ -61,4 +63,4 @@ export default function initializeForm(
 
   const form = document.getElementById("form");
   form.addEventListener("submit", submitForm);
-}
+</script>
