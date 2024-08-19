@@ -3,6 +3,11 @@ export default function initializeForm(
   recaptchaSiteKey,
   redirectUrl,
 ) {
+  const script = document.createElement("script");
+  script.src = `https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`;
+  script.async = true;
+  document.head.appendChild(script);
+
   async function submitForm(e) {
     e.preventDefault();
 
