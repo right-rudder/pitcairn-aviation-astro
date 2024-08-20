@@ -2,8 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import AirplaneWing from "../assets/airplane-wing.jpg";
 import Header2 from "../components/Header2.astro";
-const GHL_WEBHOOK_URL = import.meta.env.CONTACT_US_FORM_WEBHOOK_URL;
-const RECAPTCHA_SITE_KEY = import.meta.env.RECAPTCHA_SITE_KEY;
+import FormScript from "../components/FormScript.astro";
 ---
 
 <BaseLayout
@@ -246,13 +245,6 @@ const RECAPTCHA_SITE_KEY = import.meta.env.RECAPTCHA_SITE_KEY;
   </section>
 </BaseLayout>
 
-<script src="../scripts/animate-on-scroll.js"></script>
+<FormScript redirect="/contact-confirmation" />
 
-<script
-  define:vars={{ GHL_WEBHOOK_URL, RECAPTCHA_SITE_KEY }}
-  type="module"
-  is:inline
->
-  import initializeForm from "/src/scripts/submitForm.js";
-  initializeForm(GHL_WEBHOOK_URL, RECAPTCHA_SITE_KEY, "/contact-confirmation");
-</script>
+<script src="../scripts/animate-on-scroll.js"></script>
