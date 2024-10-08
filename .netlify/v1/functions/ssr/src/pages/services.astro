@@ -1,0 +1,159 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import FuelPrices from "../components/FuelPrices.astro";
+import ServiceCard from "../components/ServiceCard";
+import Intro from "../components/Intro.astro";
+import Header2 from "../components/Header2.astro";
+import AddingFuel from "../assets/adding-fuel.png";
+import Hangar from "../assets/pitcairn-aviation-hangar-space.jpg";
+import Section2 from "../components/Section2.astro";
+import Section1 from "../components/Section1.astro";
+import RentalCar from "../assets/car-rental-company-logos.webp";
+import AirportLounge from "../assets/heritage-field-airport-outside-pitcairn-fbo.jpg";
+import JetTowing from "../assets/airplane-on-heritage-field-runway.jpg";
+import Fleet from "../assets/fleet-at-pitcairn-aviation-fbo.jpg";
+import HeroImage from "../assets/aviation-services-at-pitcairn-aviation-heritage-field-airport.jpg";
+
+const services = [
+  {
+    title: "Hassle-Free Refueling",
+    subtitle: "Reliable Phillips 66 AvGas pumps",
+    id: "hassle-free-refueling",
+  },
+  {
+    title: "Safe Storage Solutions",
+    subtitle: "Tiedowns and heated hangar rentals",
+    id: "safe-storage-solutions",
+  },
+  {
+    title: "Convenient Transportation",
+    subtitle: "Crew car and rental car access",
+    id: "convenient-transportation",
+  },
+  {
+    title: "Modern Amenities",
+    subtitle: "Conference rooms, lounges, and businesses",
+    id: "modern-amenities",
+  },
+  {
+    title: "Attentive Ground Support",
+    subtitle: "GPU services and jump-starts",
+    id: "attentive-ground-support",
+  },
+  {
+    title: "Peace of Mind",
+    subtitle: "Secured airfield access and parking",
+    id: "peace-of-mind",
+  },
+];
+---
+
+<BaseLayout
+  title="FBO Services | Pitcairn Aviation LLC"
+  description="Explore the comprehensive FBO services offered by Pitcairn Aviation at Heritage Field Airport. Our services include aircraft fueling, maintenance, hangar rentals, ground support, and more. Experience exceptional aviation support in Pottstown, PA."
+  keywords="FBO services, Pitcairn Aviation, Heritage Field Airport, aircraft fueling, aircraft maintenance, hangar rentals, ground support, aviation services Pottstown, PA, fixed-base operator"
+>
+  <Header2
+    slot="header"
+    image={HeroImage}
+    alt="Aviation services at Pitcairn Aviation Heritage Field Airport"
+  >
+    <Fragment slot="title"
+      >Our Aviation <span class="text-main-color">Services</span>
+    </Fragment>
+  </Header2>
+
+  <Intro
+    title="Your one-stop solution at pitcairn aviation"
+    description={[
+      `At Pitcairn Aviation LLC, we go above and beyond to provide a full
+          suite of services that cater to the diverse needs of pilots and
+          aircraft owners.`,
+      `From self-serve fueling options to secure hangars and ground support,
+          our commitment to exceptional service ensures a seamless and enjoyable
+          experience every time you visit.`,
+    ]}
+  />
+
+  <section class="bg-zinc-200 py-10">
+    <div
+      class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-5 px-5"
+    >
+      {
+        services.map((service) => (
+          <ServiceCard service={service} client:visible />
+        ))
+      }
+    </div>
+  </section>
+
+  <Section2
+    id="hassle-free-refueling"
+    image={AddingFuel}
+    alt="Pitcairn aviation staff adding fuel to an aircraft"
+    title="Hassle-Free Refueling"
+    subtitle="Reliable Phillips 66 AvGas pumps"
+    content=`Our self-serve AvGas pumps make refueling simple and hassle-free.
+  Enjoy the convenience of topping up your tanks 24/7 with our reliable
+  Phillips 66 fuel. We offer both 100LL AvGas and Jet A options to meet
+  your aircraft's needs. Our pumps accept all major credit cards for
+  your convenience.`
+    cta="View Fuel Prices"
+    ctaLink="#fuel-prices"
+  />
+
+  <Section1
+    id="safe-storage-solutions"
+    image={Hangar}
+    alt="Pitcairn Aviation hangar space"
+    title="Safe Storage Solutions"
+    subtitle="Tiedowns and hangar rentals"
+    content=`Protect your aircraft with our secure tiedown spaces and hangar facilities. Variable-term and overnight hangar rental options are available. Our professional line staff will ensure your aircraft is safely tucked away.`
+    cta="Rent Hangar Space"
+    ctaLink="/hangar-rental-form"
+  />
+
+  <Section2
+    id="convenient-transportation"
+    image={RentalCar}
+    alt="Car rental company logos"
+    title="Convenient Transportation"
+    subtitle="Crew car and rental car access"
+    content=`Enhance your visit with access to our courtesy crew cars or rental car services to explore the area. Our crew cars are complimentary for pilots refueling with us. For longer stays, take advantage of our partnership with Enterprise, Hertz, and Avis for rental cars delivered right to our FBO.`
+    cta="Request Transport"
+    ctaLink="/contact-us#contact-us-form"
+  />
+
+  <Section1
+    id="modern-amenities"
+    image={AirportLounge}
+    alt="Heritage Field Airport outside Pitcairn FBO"
+    title="Modern Amenities"
+    subtitle="Conference rooms, lounges, and businesses"
+    content=`While at our FBO, take advantage of our comfortable lounges with TV, workspaces, and conference rooms. Stay productive with access to Wi-Fi, printing, and refreshments. Other aviation businesses on the field include Pitcairn Flight Academy, PennAir Repair, and PennJet Charter Services for additional services.`
+    cta="Use Our Conference Rooms"
+    ctaLink="/contact-us#contact-us-form"
+  />
+
+  <Section2
+    id="attentive-ground-support"
+    image={JetTowing}
+    alt="Airplane on Heritage Field runway"
+    title="Attentive Ground Support"
+    subtitle="GPU services and jump-starts"
+    content=`You can count on our line staff for prompt ground power unit hookups to get you powered on. We also offer battery jump-start services and aircraft towing/repositioning handled by our experienced team members.`
+  />
+
+  <Section1
+    id="peace-of-mind"
+    image={Fleet}
+    alt="Pitcairn Aviation fleet"
+    title="Peace of Mind"
+    subtitle="Secured airfield access and parking"
+    content=`We make security a top priority with controlled gate access requiring a secure code. Our ramp and parking areas are monitored 24/7 by surveillance cameras for added peace of mind during your stay.`
+  />
+
+  <FuelPrices />
+</BaseLayout>
+
+<script src="../scripts/animate-on-scroll.js"></script>
