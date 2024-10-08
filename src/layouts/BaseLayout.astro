@@ -1,6 +1,8 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
+import "@fontsource-variable/inter";
+import "@fontsource-variable/public-sans";
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_KEYWORDS } from "../consts";
 const { title, description, keywords } = Astro.props;
 ---
@@ -14,7 +16,7 @@ const { title, description, keywords } = Astro.props;
       keywords={keywords || SITE_KEYWORDS}
     />
   </head>
-  <body class="Inter">
+  <body class="font-inter">
     <slot name="header" />
     <main>
       <slot />
