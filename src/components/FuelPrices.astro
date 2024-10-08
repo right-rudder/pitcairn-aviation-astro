@@ -1,6 +1,6 @@
 ---
 const response = await fetch(
-  "https://www.iflightplanner.com/API/FuelPrices/PricesForLocation.aspx?ID=FyERFc2d",
+  "https://www.iflightplanner.com/API/FuelPrices/PricesForLocation.aspx?ID=FyERFc2d"
 );
 const data = await response.json();
 const [price1, price2, price3] = data.prices;
@@ -75,6 +75,6 @@ const formattedDate = formatReportDate(reportDate);
         ))
       }
     </div>
-    <p class="text-gray-400 self-end">Updated as of {formattedDate}</p>
+    <p class="text-gray-500 self-end text-sm">Updated as of {formattedDate}</p>
   </div>
 </section>

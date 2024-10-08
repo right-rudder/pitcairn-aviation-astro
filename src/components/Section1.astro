@@ -3,30 +3,33 @@ import { Image } from "astro:assets";
 const { image, alt, title, subtitle, content, id, cta, ctaLink } = Astro.props;
 ---
 
-<section id={id} class="h-[35rem] relative overflow-hidden">
+<section
+  id={id}
+  class="h-[35rem] relative overflow-hidden font-inter flex justify-start items-center align-middle"
+>
   <Image
     src={image}
     class="absolute -top-[50%] -z-50 object-cover min-h-[55rem] w-full"
     alt={alt}
   />
   <div
-    class="absolute inset-0 bg-black/50 bg-gradient-to-t from-black -z-40 to-40%"
+    class="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30 -z-10"
   >
   </div>
-  <div
-    class="max-w-7xl mx-auto flex flex-col justify-center h-full text-white gap-5 p-5 items-start"
-  >
+  <div class="text-white px-6 lg:pl-24">
     <h2
-      class="text-main-color text-sm font-bold uppercase fade-in duration-500 opacity-0 delay-100"
+      class="text-main-color brightness-125 text-base font-bold leading-none uppercase fade-in duration-500 opacity-0 delay-100"
     >
       {title}
     </h2>
     <p
-      class="text-2xl font-semibold max-w-md fade-in duration-500 opacity-0 delay-200"
+      class="text-4xl font-bold font-paragraph max-w-md fade-in duration-500 opacity-0 delay-200"
     >
       {subtitle}
     </p>
-    <p class="max-w-md text-lg fade-in duration-500 opacity-0 delay-300">
+    <p
+      class="max-w-md mt-4 mb-12 text-lg fade-in duration-500 opacity-0 delay-300"
+    >
       {content}
     </p>
     {
