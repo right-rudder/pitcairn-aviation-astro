@@ -4,7 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        inter: ["Inter", "sans-serif"],
+        inter: ["Inter Variable", "sans-serif"],
+        paragraph: ["Public Sans Variable", "sans-serif"],
       },
       colors: {
         "main-color": "#18999b",

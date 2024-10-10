@@ -17,7 +17,7 @@ const Navbar = () => {
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Pitcairn Aviation</span>
-            <h1 className="text-white font-bold uppercase leading-none text-center">
+            <h1 className="text-white font-bold uppercase leading-none text-center drop-shadow-sm">
               <span className="text-3xl block leading-none">Pitcairn</span>
               <span className="text-main-color">Aviation LLC</span>
             </h1>
@@ -51,28 +51,28 @@ const Navbar = () => {
             </svg>
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-12">
+        <div className="hidden font-bold uppercase lg:flex lg:gap-x-12">
           <a
             href="/services"
-            className="text-base font-medium leading-6 text-white hover:text-gray-300 duration-100"
+            className="text-base tracking-tight hover:text-main-color text-white duration-100"
           >
             Services
           </a>
           <a
-            href="/about-us"
-            className="text-base font-medium leading-6 text-white hover:text-gray-300 duration-100"
-          >
-            About Us
-          </a>
-          <a
             href="/plan-your-visit"
-            className="text-base font-medium leading-6 text-white hover:text-gray-300 duration-100"
+            className="text-base tracking-tight hover:text-main-color text-white duration-100"
           >
             Plan Your Visit
           </a>
           <a
+            href="/about-us"
+            className="text-base tracking-tight hover:text-main-color text-white duration-100"
+          >
+            About Us
+          </a>
+          <a
             href="/contact-us"
-            className="text-base font-medium leading-6 text-white hover:text-gray-300 duration-100"
+            className="text-base tracking-tight hover:text-main-color text-white duration-100"
           >
             Contact Us
           </a>
@@ -127,7 +127,7 @@ const Navbar = () => {
           </div>
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="space-y-2 py-6">
+              <div className="space-y-2 py-6 font-bold uppercase">
                 <a
                   href="/services"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:bg-gray-50 hover:text-main-color"

@@ -4,7 +4,7 @@ import HeroImage from "../assets/pitcairn-aviation-fbo-front-office.jpg";
 import Navbar from "./Navbar";
 ---
 
-<header>
+<header class="font-inter">
   <Navbar client:load />
 
   <div
@@ -17,20 +17,22 @@ import Navbar from "./Navbar";
       quality={10}
     />
     <div
-      class="absolute inset-0 bg-black/50 bg-gradient-to-t from-black -z-40 to-40%"
+      class="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-black/60 to-black/30 -z-40"
     >
     </div>
     <div class="max-w-7xl flex w-full mx-auto">
       <div class="max-w-2xl py-32 sm:py-48 lg:py-56 px-5 animate-fade-in">
-        <h1 class="text-5xl font-medium tracking-tight sm:text-6xl uppercase">
+        <h1
+          class="text-3xl lg:text-6xl font-black tracking-tight leading-none sm:text-6xl uppercase"
+        >
           You've <span class="text-main-color">arrived</span>
         </h1>
-        <p class="mt-6 text-lg leading-8">
+        <p class="mt-1 text-xl leading-8">
           Exceptional aviation services await at Heritage Field Airport (KPTW)
         </p>
         <a
           href="/contact-us#contact-us-form"
-          class="block mt-6 uppercase py-3 px-5 border w-fit rounded-md hover:bg-white duration-300 hover:text-black"
+          class="inline-block mt-9 uppercase py-3 px-6 border text-center bg-white/30 font-bold rounded-md hover:bg-white/80 duration-300 hover:text-black"
           >Visit Us Today</a
         >
       </div>

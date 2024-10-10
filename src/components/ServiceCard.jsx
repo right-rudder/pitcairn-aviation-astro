@@ -24,11 +24,11 @@ const ServiceCard = ({ service }) => {
       href={`#${id}`}
       className="relative overflow-hidden cursor-pointer p-5 bg-white border-l-8 border-main-color rounded-xl group"
     >
-      <div className="bg-main-color absolute h-full w-full top-0 duration-300 right-full group-hover:right-0 z-10"></div>
+      <div className="bg-main-color opacity-30 group-hover:opacity-90 absolute h-full w-full top-0 duration-300 right-full group-hover:right-0 z-10"></div>
       <h2 className="relative font-medium text-2xl z-20 group-hover:text-white duration-100">
         {title}
       </h2>
-      <p className="relative text-gray-500 text-lg z-20 group-hover:text-gray-200 duration-100">
+      <p className="relative text-gray-500 text-base z-20 group-hover:text-gray-100 duration-200">
         {subtitle}
       </p>
       <Icon className="absolute right-2 text-main-color/20 size-24 -bottom-1 group-hover:text-white/20 z-20 duration-100" />
