@@ -7,6 +7,7 @@ import Hangar from "../assets/pitcairn-aviation-hangar-space.jpg";
 import Airport from "../assets/heritage-field-airport.webp";
 import PitcairnFlightAcademyLogo from "../assets/pitcairn-flight-academy-logo.webp";
 import PennairLogo from "../assets/pennair-logo.webp";
+import PennJetLogo from "../assets/pennjet-logo.webp";
 import Intro from "../components/Intro.astro";
 import Header from "../components/Header.astro";
 import Section1 from "../components/Section1.astro";
@@ -83,16 +84,27 @@ import Section2 from "../components/Section2.astro";
         <a
           href="https://pitcairnflightacademy.com/"
           target="_blank"
-          class="h-auto w-1/2 lg:w-1/2 hover:scale-105 duration-300"
+          class="h-auto hover:scale-105 duration-300"
         >
           <Image
             src={PitcairnFlightAcademyLogo}
             alt="Pitcairn Flight Academy logo"
           />
         </a>
-        <span class="h-auto w-1/4 lg:w-1/5 hover:scale-105 duration-300">
-          <Image src={PennairLogo} alt="Pennair logo" />
-        </span>
+        <a
+          href="https://pennairrepair.com/"
+          target="_blank"
+          class="h-auto hover:scale-105 duration-300"
+        >
+          <Image src={PennairLogo} alt="Penn Air Repair logo" />
+        </a>
+        <a
+          href="https://pennjet.net/"
+          target="_blank"
+          class="h-auto hover:scale-105 duration-300"
+        >
+          <Image src={PennJetLogo} alt="PennJet logo" />
+        </a>
       </div>
       <ul class="text-center">
         <li>
