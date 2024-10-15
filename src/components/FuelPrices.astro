@@ -6,9 +6,9 @@ const data = await response.json();
 const [price1, price2, price3] = data.prices;
 const reportDate = data.reportDate;
 
-const fullServeJetAUnitPrice = price1.unitPrice;
-const selfServe100LLUnitPrice = price2.unitPrice;
-const fullServe100LLUnitPrice = price3.unitPrice;
+const fullServeJetAUnitPrice = price1.unitPrice.toFixed(2);
+const selfServe100LLUnitPrice = price2.unitPrice.toFixed(2);
+const fullServe100LLUnitPrice = price3.unitPrice.toFixed(2);
 
 const stats = [
   {
