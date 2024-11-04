@@ -6,15 +6,7 @@ import Header from "../../components/Header.astro";
 import Header2 from "../../components/Header2.astro";
 import headerImage from "../../assets/aviation-services-at-pitcairn-aviation-heritage-field-airport.jpg";
 
-const data = {
-  header: {
-    imagePath: "/src/assets/avel-chuklanov-QbTBCUJLqKY-unsplash(1).jpg",
-    imageAlt: "Elite Flight Training fliying over the city of Kankaee",
-    headerH1: "Our Blog",
-    paragraph:
-      "Get the latest insights and tips from Elite Flight Training & Aircraft Management. Stay up-to-date with the latest happenings in the world of flight training.",
-  },
-};
+const imageAlt = "Elite Flight Training fliying over the city of Kankaee";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -22,12 +14,12 @@ const posts = (await getCollection("blog")).sort(
 ---
 
 <BaseLayout
-  pageTitle="Blog | Elite Flight Training & Aircraft Management"
+  pageTitle="Blog | Pitcairn Aviation LLC"
   pageDescription="Get the latest insights and tips from Elite Flight Training & Aircraft Management. Stay up-to-date with the latest happenings in the world of flight training."
   pageKeywords="blog, flight training blog, aviation blog, pilot training blog, flight school blog, latest tips for pilots, latest insights for pilots"
 >
   <!-- Header -->
-  <Header2 image={headerImage} alt={data.header.imageAlt} slot="header" />
+  <Header2 image={headerImage} alt={imageAlt} slot="header" />
 
   <section class="relative isolate overflow-hidden bg-white py-24 sm:py-32">
     <div class="absolute inset-0 -z-10 overflow-hidden">
@@ -62,12 +54,11 @@ const posts = (await getCollection("blog")).sort(
     <div class="mx-auto px-6 lg:px-8">
       <div class="mx-auto max-w-2xl text-center">
         <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          Elite Flight Training & Aircraft Management Articles
+          Pitcairn Aviation LLC - Articles
         </h2>
         <p class="mt-2 text-lg leading-6 text-gray-600">
-          News, insights, and tips from Elite Flight Training & Aircraft
-          Management. Valuable information for aspiring pilots and aviation
-          enthusiasts.
+          News, insights, and tips from Pitcairn Aviation. Valuable information
+          for aspiring pilots and aviation enthusiasts.
         </p>
         <p class="text-xs text-muted-400">
           {posts.length}{posts.length > 1 ? " Articles" : " Article"}. Since{
@@ -87,8 +78,8 @@ const posts = (await getCollection("blog")).sort(
                 alt={post.data.title}
                 class="absolute inset-0 -z-10 h-full w-full object-cover group-hover:scale-110 group-hover:brightness-125 duration-200"
               />
-              <div class="absolute inset-0 -z-10 bg-gradient-to-t from-slate-950/90 via-primary-900/40 group-hover:bg-primary-900/50 duration-200" />
-              <div class="absolute inset-0 -z-10 ring-1 ring-inset ring-accent-400/10" />
+              <div class="absolute inset-0 -z-10 bg-gradient-to-t from-teal-950/90 via-teal-900/40 group-hover:bg-teal-900/50 duration-200" />
+              <div class="absolute inset-0 -z-10 ring-1 ring-inset ring-teal-400/10" />
 
               <div class="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-100">
                 <time datetime="2020-03-16" class="mr-8 text-accent-100">
@@ -101,7 +92,7 @@ const posts = (await getCollection("blog")).sort(
                   >
                     <circle cx="1" cy="1" r="1" />
                   </svg>
-                  <div class="flex font-bold text-base text-accent-50">
+                  <div class="flex font-bold text-base text-teal-200">
                     {post.data.author}
                   </div>
                 </div>
