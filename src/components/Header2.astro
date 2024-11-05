@@ -16,14 +16,24 @@ const { image, alt } = Astro.props;
       class="absolute top-0 h-full object-cover -z-50"
     />
     <div
-      class="absolute inset-0 bg-black/50 bg-gradient-to-t from-black -z-40 to-40%"
+      class="absolute inset-0 bg-gradient-to-b from-teal-950/90 to-teal-950/20 -z-40"
     >
     </div>
-    <div class="max-w-7xl flex w-full mx-auto h-full items-end py-14">
-      <div class="max-w-5xl px-5">
-        <h1 class="text-5xl font-black sm:text-6xl uppercase animate-fade-in">
-          <slot name="title" />
+    <div class="max-w-7xl flex w-full mx-auto">
+      <div class="max-w-2xl py-32 sm:py-48 lg:py-56 px-5 animate-fade-in">
+        <h1
+          class="text-3xl lg:text-6xl font-black tracking-tight leading-none sm:text-6xl uppercase"
+        >
+          Our <span class="text-main-color">Blog</span>
         </h1>
+        <p class="mt-1 text-xl leading-8">
+          News, updates, and insights from the aviation industry.
+        </p>
+        <a
+          href="/contact-us#contact-us-form"
+          class="inline-block mt-9 uppercase py-3 px-6 border text-center bg-white/30 font-bold rounded-md hover:bg-white/80 duration-300 hover:text-black"
+          >Visit Us Today</a
+        >
       </div>
     </div>
   </div>

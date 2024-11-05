@@ -71,6 +71,12 @@ const Navbar = () => {
             About Us
           </a>
           <a
+            href="/blog"
+            className="text-base tracking-tight hover:text-main-color text-white duration-100"
+          >
+            Blog
+          </a>
+          <a
             href="/contact-us"
             className="text-base tracking-tight hover:text-main-color text-white duration-100"
           >
@@ -145,6 +151,12 @@ const Navbar = () => {
                   className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:bg-gray-50 hover:text-main-color"
                 >
                   Plan Your Visit
+                </a>
+                <a
+                  href="/blog"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:bg-gray-50 hover:text-main-color"
+                >
+                  Blog
                 </a>
                 <a
                   href="/contact-us"

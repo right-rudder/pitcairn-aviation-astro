@@ -32,7 +32,7 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
   safelist: [
     "bg-main-color",
     "bg-main-black",
