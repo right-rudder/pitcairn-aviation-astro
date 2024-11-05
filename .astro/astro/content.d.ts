@@ -158,6 +158,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"what-is-an-fbo.md": {
+	id: "what-is-an-fbo.md";
+  slug: "what-is-an-fbo";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 };
 
 	};
