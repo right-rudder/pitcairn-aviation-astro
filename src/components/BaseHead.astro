@@ -7,17 +7,12 @@ interface Props {
   title: string;
   description: string;
   keywords: string;
-  image?: string;
+  image: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const {
-  title,
-  description,
-  keywords,
-  image = "/src/assets/heritage-field-airport.webp",
-} = Astro.props;
+const { title, description, keywords, image } = Astro.props;
 ---
 
 <!-- Global Metadata -->
