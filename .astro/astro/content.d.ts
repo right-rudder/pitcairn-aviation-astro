@@ -151,6 +151,13 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
+"exploring-southeastern-pennsylvania-by-air.md": {
+	id: "exploring-southeastern-pennsylvania-by-air.md";
+  slug: "exploring-southeastern-pennsylvania-by-air";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "how-cae-apple-vision-pro-app-is-revolutionazing-pilot-training.md": {
 	id: "how-cae-apple-vision-pro-app-is-revolutionazing-pilot-training.md";
   slug: "how-cae-apple-vision-pro-app-is-revolutionazing-pilot-training";
