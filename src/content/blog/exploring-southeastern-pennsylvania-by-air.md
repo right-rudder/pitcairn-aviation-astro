@@ -47,4 +47,4 @@ Pitcairn Aviation LLC provides essential services to support your visit. From fu
 
 Whether you’re a seasoned pilot or a recreational flyer, southeastern Pennsylvania offers a unique blend of natural beauty and cultural attractions. The region’s welcoming airports, like Heritage Field (KPTW), make it easy to explore everything it has to offer.
 
-Plan your next flight to Heritage Field Airport and let Pitcairn Aviation LLC help you experience the best of southeastern Pennsylvania. Contact us today for more information or to schedule your arrival.
+Plan your next flight to Heritage Field Airport and let [Pitcairn Aviation LLC](/) help you experience the best of southeastern Pennsylvania. [Contact us](/contact-us) today for more information or to schedule your arrival.
