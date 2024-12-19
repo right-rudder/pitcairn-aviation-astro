@@ -8,3 +8,4 @@ export const SITE_KEYWORDS =
   "Pitcairn Aviation, Heritage Field Airport, FBO services, fixed-base operator Pottstown, aviation services Pottstown, PA, fueling services, aircraft maintenance, hangar rentals, concierge services, aviation support";
 export const PHONE_NUMBER = "(610) 500-3023";
 export const EMAIL_ADDRESS = "info@pitcairnaviation.com";
+export const IMAGE = "/OG_image-PitcairAviation.png";
