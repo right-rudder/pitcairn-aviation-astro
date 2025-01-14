@@ -151,6 +151,13 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
+"choosing-the-right-hangar-space-for-your-aircraft.md": {
+	id: "choosing-the-right-hangar-space-for-your-aircraft.md";
+  slug: "choosing-the-right-hangar-space-for-your-aircraft";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "exploring-southeastern-pennsylvania-by-air.md": {
 	id: "exploring-southeastern-pennsylvania-by-air.md";
   slug: "exploring-southeastern-pennsylvania-by-air";
