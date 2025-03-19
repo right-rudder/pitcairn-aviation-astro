@@ -45,6 +45,14 @@ const { title, description, keywords, image } = Astro.props;
 <meta name="title" content={title} />
 <meta name="description" content={description} />
 <meta name="keywords" content={keywords} />
+<meta name="author" content="Pitcairn Aviation LLC" />
+
+<!-- Additional SEO meta tags -->
+<meta name="robots" content="index, follow" />
+<meta name="language" content="English" />
+<meta name="revisit-after" content="7 days" />
+<meta name="geo.region" content="US-PA" />
+<meta name="geo.placename" content="Pottstown" />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
@@ -52,6 +60,8 @@ const { title, description, keywords, image } = Astro.props;
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="Pitcairn Aviation" />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
@@ -59,18 +69,25 @@ const { title, description, keywords, image } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta property="twitter:site" content="@pitcairnaviation" />
 
+<!-- Schema.org structured data -->
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "LocalBusiness",
+    "@id": "https://pitcairnaviation.com/#LocalBusiness",
     "name": "Pitcairn Aviation LLC",
     "description": "Pitcairn Aviation offers premier fixed-base operator (FBO) services at Heritage Field Airport in Pottstown, PA. From fueling and maintenance to hangar rentals and concierge services, we provide top-tier aviation support. Discover why pilots choose Pitcairn Aviation for all their aviation needs.",
     "keywords": "Pitcairn Aviation, Heritage Field Airport, FBO services, fixed-base operator Pottstown, aviation services Pottstown, PA, fueling services, aircraft maintenance, hangar rentals, concierge services, aviation support",
     "image": "https://pitcairnaviation.com/_astro/pitcairn-aviation-fbo-front-office.CbDvmrjw_ZEVJNe.webp",
-    "logo": "https://pitcairnaviation.com/_astro/pitcairn-aviation-fbo-front-office.CbDvmrjw_ZEVJNe.webp",
+    "logo": "https://pitcairnaviation.com/_astro/pitcairn-logo.webp",
     "telephone": "(610) 500-3023",
     "email": "info@pitcairnaviation.com",
+    "sameAs": [
+      "https://www.facebook.com/pitcairnaviation/",
+      "https://www.instagram.com/pitcairnaviation/"
+    ],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "3310 W Ridge Pike",
@@ -124,15 +141,44 @@ const { title, description, keywords, image } = Astro.props;
         "description": "Pitcairn Aviation FBO Front Office"
       }
     ],
-    "makesOffer": {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "serviceType": "Aviation Services"
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Aviation Fueling Services",
+          "serviceType": "Aviation Services"
+        },
+        "priceCurrency": "USD"
       },
-      "priceCurrency": "USD",
-      "price": "Varies"
-    },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Aircraft Maintenance",
+          "serviceType": "Aviation Services"
+        },
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Hangar Rental",
+          "serviceType": "Aviation Services"
+        },
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Concierge Services",
+          "serviceType": "Aviation Services"
+        },
+        "priceCurrency": "USD"
+      }
+    ],
     "identifier": [
       {
         "@type": "PropertyValue",

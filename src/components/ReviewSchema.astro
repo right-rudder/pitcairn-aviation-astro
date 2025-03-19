@@ -1,0 +1,111 @@
+---
+// ReviewSchema.astro - Display business reviews with structured data
+interface Review {
+  reviewBody: string;
+  reviewRating: number; // 1-5
+  author: string;
+  datePublished: string; // ISO date format
+  aircraft?: string; // Optional aircraft type
+}
+
+interface Props {
+  reviews: Review[];
+  businessName?: string;
+  showComponent?: boolean;
+}
+
+const { 
+  reviews, 
+  businessName = "Pitcairn Aviation LLC",
+  showComponent = true
+} = Astro.props;
+
+// Calculate aggregate rating
+const totalRatings = reviews.reduce((total, review) => total + review.reviewRating, 0);
+const averageRating = (totalRatings / reviews.length).toFixed(1);
+
+// Create the review schema
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": businessName,
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": averageRating,
+    "reviewCount": reviews.length,
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": reviews.map(review => ({
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": review.reviewRating,
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "author": {
+      "@type": "Person",
+      "name": review.author
+    },
+    "datePublished": review.datePublished,
+    "reviewBody": review.reviewBody
+  }))
+};
+---
+
+{showComponent && (
+  <section class="reviews-section py-12 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-2">Customer Reviews</h2>
+      <div class="flex justify-center items-center mb-8">
+        <div class="flex">
+          {[1, 2, 3, 4, 5].map(star => (
+            <svg 
+              class={`w-6 h-6 ${parseFloat(averageRating) >= star ? 'text-yellow-400' : 'text-gray-300'}`} 
+              fill="currentColor" 
+              viewBox="0 0 20 20" 
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.799-2.034c-.784-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+            </svg>
+          ))}
+        </div>
+        <span class="ml-2 text-lg font-semibold">{averageRating} out of 5</span>
+        <span class="ml-2 text-gray-600">({reviews.length} reviews)</span>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        {reviews.map((review, index) => (
+          <div class="review-card bg-white p-6 rounded-lg shadow-md">
+            <div class="flex justify-between items-start mb-4">
+              <div>
+                <h3 class="font-semibold text-lg">{review.author}</h3>
+                <div class="flex mt-1">
+                  {[1, 2, 3, 4, 5].map(star => (
+                    <svg 
+                      class={`w-5 h-5 ${review.reviewRating >= star ? 'text-yellow-400' : 'text-gray-200'}`} 
+                      fill="currentColor" 
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.799-2.034c-.784-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                  ))}
+                </div>
+              </div>
+              <span class="text-sm text-gray-500">{new Date(review.datePublished).toLocaleDateString()}</span>
+            </div>
+            {review.aircraft && (
+              <p class="text-sm text-gray-600 mb-2">Aircraft: {review.aircraft}</p>
+            )}
+            <p class="text-gray-700">{review.reviewBody}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<!-- Inject Review Schema -->
+<script type="application/ld+json" set:html={JSON.stringify(reviewSchema)}>
+</script>

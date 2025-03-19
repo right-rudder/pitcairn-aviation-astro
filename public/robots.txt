@@ -1,4 +1,21 @@
 User-agent: *
 Allow: /
+Disallow: /404.html
+Disallow: /500.html
 
+# Allow all bots full access to site assets
+User-agent: Googlebot
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$
+Allow: /*.ico$
+
+# Optimize crawl budget
+Crawl-delay: 1
+
+# Sitemap location
 Sitemap: https://pitcairnaviation.com/sitemap-index.xml

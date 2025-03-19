@@ -158,6 +158,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"crew-car-and-rental-car-access-at-kptw.md": {
+	id: "crew-car-and-rental-car-access-at-kptw.md";
+  slug: "crew-car-and-rental-car-access-at-kptw";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "exploring-southeastern-pennsylvania-by-air.md": {
 	id: "exploring-southeastern-pennsylvania-by-air.md";
   slug: "exploring-southeastern-pennsylvania-by-air";
