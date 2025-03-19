@@ -2,10 +2,15 @@
 import type { CollectionEntry } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
 import BaseLayout from "./BaseLayout.astro";
-import { SITE_KEYWORDS } from "../consts";
+import { SITE_KEYWORDS, SITE_TITLE } from "../consts";
 import Navbar from "../components/Navbar";
+import BlogSchema from "../components/BlogSchema.astro";
+import { calculateReadingTime } from "../utils/blog-utils";
+import BreadcrumbNav from "../components/BreadcrumbNav.astro";
 
-type Props = CollectionEntry<"blog">["data"];
+type Props = CollectionEntry<"blog">["data"] & {
+  rawContent?: () => string; // Add rawContent function to get the content for reading time
+};
 
 const {
   title,
@@ -17,25 +22,74 @@ const {
   category,
   tags,
   keywords,
+  rawContent,
 } = Astro.props;
+
+// Create a properly formatted title with focus keyword at the beginning
+const pageTitle = `${title} | Aviation Blog | ${SITE_TITLE}`;
+
+// Enhance description with relevant keywords and call-to-action
+const enhancedDescription = `${description} Learn more about ${category} in aviation at Pitcairn Aviation's blog, your resource for aviation insights at Heritage Field Airport (KPTW).`;
+
+// Combine all keywords for better SEO
+const combinedKeywords = `${category}, ${tags.join(", ")}, ${keywords || ""}, aviation blog, pilot resources, ${SITE_KEYWORDS}`;
+
+// Create canonical URL
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+
+// Calculate reading time from actual content if available, otherwise estimate
+const content = rawContent ? rawContent() : "";
+const readingTime = content ? calculateReadingTime(content) : 6; // Default to 6 minutes if content not available
 ---
 
 <BaseLayout
-  siteTitle={title + " | Blog | Pitcairn Aviation LLC"}
-  siteDescription={description + " Pitcairn Aviation LLC Blog."}
-  keywords={category + ", " + tags.join(", ") + keywords
-    ? keywords
-    : SITE_KEYWORDS}
+  title={pageTitle}
+  description={enhancedDescription}
+  keywords={combinedKeywords}
   ogImage={heroImage}
 >
+  <!-- Implement BlogSchema for enhanced structured data -->
+  <BlogSchema
+    title={title}
+    description={description}
+    publishDate={pubDate}
+    updateDate={updatedDate}
+    author={author}
+    heroImage={heroImage}
+    category={category}
+    tags={tags}
+    readingTime={readingTime}
+    url={canonicalURL}
+  />
+
   <Navbar client:load />
 
   <div class="h-24 w-full bg-teal-800"></div>
+  <BreadcrumbNav
+    items={[{ name: "Blog", url: "/blog" }]}
+    currentPageTitle={title}
+  />
 
   <section
     class="flex justify-center pt-2 bg-gradient-to-b from-teal-500/10 to-teal-800/20"
   >
-    <article class="mx-auto max-w-4xl">
+    <article
+      class="mx-auto max-w-4xl"
+      itemscope
+      itemtype="http://schema.org/BlogPosting"
+    >
+      <!-- Add meta information for structured data -->
+      <meta itemprop="headline" content={title} />
+      <meta itemprop="description" content={description} />
+      <meta itemprop="datePublished" content={pubDate.toISOString()} />
+      {
+        updatedDate && (
+          <meta itemprop="dateModified" content={updatedDate.toISOString()} />
+        )
+      }
+      <meta itemprop="author" content={author} />
+      <link itemprop="mainEntityOfPage" href={canonicalURL} />
+
       <div
         class="mb-12 lg:mb-0 aspect-square lg:aspect-video lg:rounded-t-md shadow-md overflow-hidden"
       >
@@ -45,25 +99,33 @@ const {
               class="object-cover h-full w-full bg-white"
               src={heroImage}
               alt={title}
+              itemprop="image"
             />
           )
         }
       </div>
       <div class="mx-auto max-w-4xl bg-white prose font-sans pt-12 pb-32 px-5">
         <div class="title">
-          <div class="date">
+          <div class="date" itemprop="datePublished">
             <FormattedDate date={pubDate} />
             {
               updatedDate && (
-                <div class="last-updated-on">
+                <div class="last-updated-on" itemprop="dateModified">
                   Last updated on <FormattedDate date={updatedDate} />
                 </div>
               )
             }
           </div>
-          <h1 class="text-5xl m-0 font-sans">{title}</h1>
+          <h1 class="text-5xl m-0 font-sans" itemprop="headline">{title}</h1>
           <p class="text-sm font-light">Published by:</p>
-          <p class="-mt-5 text-base font-medium">{author}</p>
+          <p
+            class="-mt-5 text-base font-medium"
+            itemprop="author"
+            itemscope
+            itemtype="http://schema.org/Person"
+          >
+            <span itemprop="name">{author}</span>
+          </p>
           <div class="md:flex gap-2 hidden">
             <span
               class="bg-gray-600 text-white inline-block px-3 py-1 rounded-md"
@@ -71,19 +133,69 @@ const {
               {category}
             </span>
             {
-              tags.map((tag, index) => (
+              tags.slice(0, 3).map((tag: string) => (
                 <span
                   class={`bg-teal-500 text-white inline-block px-3 py-1 rounded-md`}
+                  itemprop="keywords"
                 >
                   {tag}
                 </span>
               ))
             }
           </div>
+
+          <!-- Add reading time indicator -->
+          <div class="text-sm text-gray-500 mt-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 inline-block mr-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            {readingTime} min read
+          </div>
+
           <hr />
         </div>
-        <div class="flex relative justify-center">
+        <div class="flex relative justify-center" itemprop="articleBody">
           <slot />
+        </div>
+
+        <!-- Related content links -->
+        <div class="mt-10 pt-6 border-t border-gray-200">
+          <h2>Explore More Aviation Resources</h2>
+          <p>
+            Interested in learning more about aviation services at Heritage
+            Field Airport? Visit these pages:
+          </p>
+          <ul class="list-disc pl-5 mt-3">
+            <li>
+              <a href="/services" class="text-teal-600 hover:text-teal-800"
+                >Aviation Services at KPTW</a
+              >
+            </li>
+            <li>
+              <a
+                href="/hangar-rental-form"
+                class="text-teal-600 hover:text-teal-800"
+                >Aircraft Hangar Rentals</a
+              >
+            </li>
+            <li>
+              <a
+                href="/plan-your-visit"
+                class="text-teal-600 hover:text-teal-800"
+                >Plan Your Visit to Heritage Field</a
+              >
+            </li>
+          </ul>
         </div>
       </div>
     </article>
