@@ -151,9 +151,23 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
+"5-reasons-private-pilots-love-flying-into-kptw-heritage-field-airport.md": {
+	id: "5-reasons-private-pilots-love-flying-into-kptw-heritage-field-airport.md";
+  slug: "5-reasons-private-pilots-love-flying-into-kptw-heritage-field-airport";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "choosing-the-right-hangar-space-for-your-aircraft.md": {
 	id: "choosing-the-right-hangar-space-for-your-aircraft.md";
   slug: "choosing-the-right-hangar-space-for-your-aircraft";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"crew-car-and-rental-car-access-at-kptw.md": {
+	id: "crew-car-and-rental-car-access-at-kptw.md";
+  slug: "crew-car-and-rental-car-access-at-kptw";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
