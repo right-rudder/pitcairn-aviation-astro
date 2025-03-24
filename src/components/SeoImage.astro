@@ -1,0 +1,75 @@
+---
+// SeoImage.astro - SEO-optimized image component with structured data
+import { Image } from 'astro:assets';
+
+interface Props {
+  src: any;
+  alt: string;
+  width?: number;
+  height?: number;
+  class?: string;
+  loading?: 'eager' | 'lazy';
+  caption?: string;
+  credit?: string;
+}
+
+const { 
+  src, 
+  alt, 
+  width, 
+  height, 
+  class: className = '', 
+  loading = 'lazy',
+  caption,
+  credit
+} = Astro.props;
+
+// Generate unique ID for this image
+const imageId = `img-${Math.random().toString(36).substring(2, 10)}`;
+---
+
+<figure class={`seo-image-container ${className}`}>
+  <Image 
+    src={src} 
+    alt={alt} 
+    width={width} 
+    height={height}
+    loading={loading}
+    class="seo-image"
+    id={imageId}
+  />
+  {caption && 
+    <figcaption class="text-sm text-gray-600 mt-2">
+      {caption}
+      {credit && <span class="ml-1">- Credit: {credit}</span>}
+    </figcaption>
+  }
+</figure>
+
+{
+  /* Add structured data for the image */
+  caption && (
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": typeof src === 'string' ? src : '',
+      "description": alt,
+      "caption": caption,
+      "creator": credit || "Pitcairn Aviation LLC"
+    })}>
+    </script>
+  )
+}
+
+<style>
+  .seo-image-container {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  .seo-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+</style>

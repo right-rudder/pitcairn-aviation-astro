@@ -1,0 +1,67 @@
+---
+// BlogSchema.astro - Enhanced structured data for blog posts
+interface Props {
+  title: string;
+  description: string;
+  publishDate: Date;
+  updateDate?: Date;
+  author: string;
+  heroImage?: string;
+  category: string;
+  tags: string[];
+  readingTime: number;
+  url: string;
+}
+
+const { 
+  title, 
+  description, 
+  publishDate, 
+  updateDate, 
+  author, 
+  heroImage, 
+  category,
+  tags,
+  readingTime,
+  url
+} = Astro.props;
+
+// Format the dates properly
+const pubDateISO = publishDate.toISOString();
+const modDateISO = updateDate ? updateDate.toISOString() : pubDateISO;
+
+// Create the schema object
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": url
+  },
+  "headline": title,
+  "description": description,
+  "image": heroImage,
+  "author": {
+    "@type": "Person",
+    "name": author
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Pitcairn Aviation LLC",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://pitcairnaviation.com/_astro/pitcairn-logo.webp"
+    }
+  },
+  "datePublished": pubDateISO,
+  "dateModified": modDateISO,
+  "keywords": tags.join(", "),
+  "articleSection": category,
+  "wordCount": Math.round(readingTime * 150), // Approximate word count based on reading time
+  "timeRequired": `PT${Math.round(readingTime)}M` // ISO 8601 duration format
+};
+---
+
+<!-- Render the schema as JSON-LD -->
+<script type="application/ld+json" set:html={JSON.stringify(schema)}>
+</script>

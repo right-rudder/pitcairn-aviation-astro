@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import AirplaneWing from "../assets/airplane-wing.jpg";
 import Header2 from "../components/Header2.astro";
 import FormScript from "../components/FormScript.astro";
+import BreadcrumbNav from "../components/BreadcrumbNav.astro";
 ---
 
 <BaseLayout
@@ -10,6 +11,8 @@ import FormScript from "../components/FormScript.astro";
   description="Get in touch with Pitcairn Aviation at Heritage Field Airport. Contact us for information on our FBO services, hangar rentals, and aviation support in Pottstown, PA. Our team is ready to assist you with all your aviation needs."
   keywords="contact Pitcairn Aviation, Heritage Field Airport, FBO services, hangar rentals, aviation support, Pottstown PA, fixed-base operator, aviation inquiries, get in touch"
 >
+  <BreadcrumbNav items={[]} currentPageTitle="Contact Us" />
+
   <Header2
     slot="header"
     image={AirplaneWing}
