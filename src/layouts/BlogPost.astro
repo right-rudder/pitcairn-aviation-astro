@@ -128,19 +128,20 @@ const readingTime = content ? calculateReadingTime(content) : 6; // Default to 6
           </p>
           <div class="md:flex gap-2 hidden">
             <span
-              class="bg-gray-600 text-white inline-block px-3 py-1 rounded-md"
+              class="bg-gray-600 text-white text-sm capitalize inline-block px-3 py-1 rounded-md"
             >
               {category}
             </span>
             {
-              tags.slice(0, 3).map((tag: string) => (
-                <span
-                  class={`bg-teal-500 text-white inline-block px-3 py-1 rounded-md`}
-                  itemprop="keywords"
-                >
-                  {tag}
-                </span>
-              ))
+              tags
+                .slice(0, 3)
+                .map((tag) => (
+                  <span
+                    class={`bg-teal-500 text-white text-sm capitalize inline-block px-3 py-1 rounded-md`}
+                  >
+                    {tag}
+                  </span>
+                ))
             }
           </div>
 
