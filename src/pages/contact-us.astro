@@ -4,6 +4,7 @@ import AirplaneWing from "../assets/airplane-wing.jpg";
 import Header2 from "../components/Header2.astro";
 import FormScript from "../components/FormScript.astro";
 import BreadcrumbNav from "../components/BreadcrumbNav.astro";
+const GHL_WEBHOOK_URL = import.meta.env.CONTACT_US_FORM_WEBHOOK_URL;
 ---
 
 <BaseLayout
@@ -248,6 +249,6 @@ import BreadcrumbNav from "../components/BreadcrumbNav.astro";
   </section>
 </BaseLayout>
 
-<FormScript redirect="/contact-confirmation" />
+<FormScript redirect="/contact-confirmation" webhook={GHL_WEBHOOK_URL} />
 
 <script src="../scripts/animate-on-scroll.js"></script>
