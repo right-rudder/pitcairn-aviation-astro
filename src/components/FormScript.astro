@@ -1,10 +1,9 @@
 ---
-const { redirect } = Astro.props;
-const GHL_WEBHOOK_URL = import.meta.env.CONTACT_US_FORM_WEBHOOK_URL;
+const { webhook, redirect } = Astro.props;
 const RECAPTCHA_SITE_KEY = import.meta.env.RECAPTCHA_SITE_KEY;
 ---
 
-<script define:vars={{ GHL_WEBHOOK_URL, RECAPTCHA_SITE_KEY, redirect }}>
+<script define:vars={{ RECAPTCHA_SITE_KEY, webhook, redirect }}>
   const script = document.createElement("script");
   script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`;
   script.async = true;
@@ -41,7 +40,7 @@ const RECAPTCHA_SITE_KEY = import.meta.env.RECAPTCHA_SITE_KEY;
 
     const confirmEmailValue = formData.get("confirm-email");
     if (!confirmEmailValue) {
-      form.action = GHL_WEBHOOK_URL;
+      form.action = webhook;
     }
 
     try {

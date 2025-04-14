@@ -2,14 +2,13 @@
 import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Header from "../../components/Header.astro";
 import Header2 from "../../components/Header2.astro";
 import headerImage from "../../assets/aviation-services-at-pitcairn-aviation-heritage-field-airport.jpg";
 
 const imageAlt = "Elite Flight Training fliying over the city of Kankaee";
 
 const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---
 
@@ -19,7 +18,11 @@ const posts = (await getCollection("blog")).sort(
   pageKeywords="blog, flight training blog, aviation blog, pilot training blog, flight school blog, latest tips for pilots, latest insights for pilots"
 >
   <!-- Header -->
-  <Header2 image={headerImage} alt={imageAlt} slot="header" />
+  <Header2 image={headerImage} alt={imageAlt} slot="header">
+    <Fragment slot="title"
+      >Our <span class="text-main-color">Blog</span>
+    </Fragment>
+  </Header2>
 
   <section class="relative isolate overflow-hidden bg-white py-24 sm:py-32">
     <div class="absolute inset-0 -z-10 overflow-hidden">

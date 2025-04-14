@@ -65,10 +65,6 @@ const readingTime = content ? calculateReadingTime(content) : 6; // Default to 6
   <Navbar client:load />
 
   <div class="h-24 w-full bg-teal-800"></div>
-  <BreadcrumbNav
-    items={[{ name: "Blog", url: "/blog" }]}
-    currentPageTitle={title}
-  />
 
   <section
     class="flex justify-center pt-2 bg-gradient-to-b from-teal-500/10 to-teal-800/20"
