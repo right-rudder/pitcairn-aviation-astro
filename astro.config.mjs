@@ -59,6 +59,6 @@ export default defineConfig({
     react(),
     partytown(),
   ],
-  output: "server",
+  output: "static",
   adapter: netlify(),
 });
