@@ -12,8 +12,8 @@ import Intro from "../components/Intro.astro";
 import Header from "../components/Header.astro";
 import Section1 from "../components/Section1.astro";
 import Section2 from "../components/Section2.astro";
-import { SITE_TITLE, SITE_DESCRIPTION, SITE_KEYWORDS } from "../consts";
 ---
+
 <BaseLayout
   title="Pitcairn Aviation FBO at Heritage Field Airport (KPTW) | Premier Aviation Services in PA"
   description="Pitcairn Aviation provides premium FBO services at Heritage Field Airport (KPTW) including Jet-A & Avgas fueling, hangar rentals, and concierge services. Located 30 minutes from Philadelphia, we offer exceptional aviation support in southeastern Pennsylvania."
@@ -69,8 +69,8 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_KEYWORDS } from "../consts";
           Aviation Partners at Heritage Field
         </h2>
         <h3 class="text-base lg:text-lg">
-          Heritage Field Airport (KPTW) is also home to several specialized aviation
-          businesses to meet all your needs:
+          Heritage Field Airport (KPTW) is also home to several specialized
+          aviation businesses to meet all your needs:
         </h3>
       </div>
       <div
@@ -95,7 +95,10 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_KEYWORDS } from "../consts";
           rel="noopener"
           aria-label="Visit Penn Air Repair website"
         >
-          <Image src={PennairLogo} alt="Penn Air Repair logo - aircraft maintenance services" />
+          <Image
+            src={PennairLogo}
+            alt="Penn Air Repair logo - aircraft maintenance services"
+          />
         </a>
         <a
           href="https://pennjet.net/"
@@ -104,7 +107,10 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_KEYWORDS } from "../consts";
           rel="noopener"
           aria-label="Visit PennJet website"
         >
-          <Image src={PennJetLogo} alt="PennJet logo - private charter services at KPTW" />
+          <Image
+            src={PennJetLogo}
+            alt="PennJet logo - private charter services at KPTW"
+          />
         </a>
       </div>
       <ul class="text-center">
@@ -113,8 +119,8 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_KEYWORDS } from "../consts";
           and certifications at Heritage Field Airport
         </li>
         <li>
-          <strong>PennAir Repair:</strong> Experts in aircraft maintenance, repairs and inspections
-          at KPTW
+          <strong>PennAir Repair:</strong> Experts in aircraft maintenance, repairs
+          and inspections at KPTW
         </li>
         <li>
           <strong>PennJet Charter Services:</strong> Luxury private charter and aircraft
@@ -126,34 +132,33 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_KEYWORDS } from "../consts";
   <FuelPrices />
   <script src="../scripts/animate-on-scroll.js"></script>
 
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": "https://pitcairnaviation.com/#webpage",
-    "url": "https://pitcairnaviation.com/",
-    "name": "Pitcairn Aviation FBO at Heritage Field Airport (KPTW) | Premier Aviation Services in PA",
-    "description": "Pitcairn Aviation provides premium FBO services at Heritage Field Airport (KPTW) including Jet-A & Avgas fueling, hangar rentals, and concierge services. Located 30 minutes from Philadelphia, we offer exceptional aviation support in southeastern Pennsylvania.",
-    "speakable": {
-      "@type": "SpeakableSpecification",
-      "cssSelector": ["h1", "h2"]
-    },
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "Pitcairn Aviation LLC",
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://pitcairnaviation.com/#webpage",
       "url": "https://pitcairnaviation.com/",
-      "logo": "https://pitcairnaviation.com/_astro/pitcairn-logo.webp",
-      "description": "Premier fixed-base operator (FBO) at Heritage Field Airport (KPTW) in Pottstown, PA offering comprehensive aviation services.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "3310 W Ridge Pike",
-        "addressLocality": "Pottstown",
-        "addressRegion": "PA",
-        "postalCode": "19464",
-        "addressCountry": "US"
+      "name": "Pitcairn Aviation FBO at Heritage Field Airport (KPTW) | Premier Aviation Services in PA",
+      "description": "Pitcairn Aviation provides premium FBO services at Heritage Field Airport (KPTW) including Jet-A & Avgas fueling, hangar rentals, and concierge services. Located 30 minutes from Philadelphia, we offer exceptional aviation support in southeastern Pennsylvania.",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", "h2"]
+      },
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Pitcairn Aviation LLC",
+        "url": "https://pitcairnaviation.com/",
+        "logo": "https://pitcairnaviation.com/_astro/pitcairn-logo.webp",
+        "description": "Premier fixed-base operator (FBO) at Heritage Field Airport (KPTW) in Pottstown, PA offering comprehensive aviation services.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "3310 W Ridge Pike",
+          "addressLocality": "Pottstown",
+          "addressRegion": "PA",
+          "postalCode": "19464",
+          "addressCountry": "US"
+        }
       }
     }
-  }
-</script>
-
+  </script>
 </BaseLayout>
