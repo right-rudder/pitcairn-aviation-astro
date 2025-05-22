@@ -1,9 +1,18 @@
 ---
-const { webhook, redirect } = Astro.props;
+const { webhook, redirect, campaignName } = Astro.props;
 const RECAPTCHA_SITE_KEY = import.meta.env.RECAPTCHA_SITE_KEY;
+const PORTAL_API_KEY = import.meta.env.PORTAL_API_KEY;
 ---
 
-<script define:vars={{ RECAPTCHA_SITE_KEY, webhook, redirect }}>
+<script
+  define:vars={{
+    RECAPTCHA_SITE_KEY,
+    webhook,
+    redirect,
+    PORTAL_API_KEY,
+    campaignName,
+  }}
+>
   const script = document.createElement("script");
   script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`;
   script.async = true;
@@ -26,7 +35,7 @@ const RECAPTCHA_SITE_KEY = import.meta.env.RECAPTCHA_SITE_KEY;
       const gResponse = await recaptchaResponse.json();
 
       if (gResponse.success) {
-        await submitToGHL();
+        await submitToGHLAndPortal();
       } else {
         alert("Form submission failed. Please try again.");
       }
@@ -35,31 +44,63 @@ const RECAPTCHA_SITE_KEY = import.meta.env.RECAPTCHA_SITE_KEY;
     }
   }
 
-  async function submitToGHL() {
-    const formData = new FormData(form);
+  const form = document.getElementById("form");
+  if (!form) {
+    console.error("Form element not found.");
+    return;
+  }
+  form.addEventListener("submit", submitForm);
 
-    const confirmEmailValue = formData.get("confirm-email");
-    if (!confirmEmailValue) {
-      form.action = webhook;
-    }
+  async function submitToGHLAndPortal() {
+    const formData = new FormData(form);
+    const confirmEmail = formData.get("confirm-email")?.trim();
+
+    if (confirmEmail) return;
+
+    const webhookURL = webhook;
+    const apiKey = PORTAL_API_KEY;
+
+    const urlEncodedBody = new URLSearchParams(formData).toString();
+
+    const jsonBody = {
+      first_name: formData.get("first-name")?.trim() || "",
+      last_name: formData.get("last-name")?.trim() || "",
+      email: formData.get("email")?.trim() || "",
+      phone: formData.get("phone")?.trim() || "",
+      campaign: campaignName,
+      account_random_id: "ac_h1zhallf",
+    };
 
     try {
-      const response = await fetch(form.action, {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData),
-      });
+      const [ghlRes, portalRes] = await Promise.all([
+        fetch(webhookURL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: urlEncodedBody,
+        }),
+        fetch("https://portal.rightruddermarketing.com/api/leads", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            "x-api-key": apiKey,
+          },
+          body: JSON.stringify(jsonBody),
+        }),
+      ]);
 
-      if (response.ok) {
+      if (ghlRes.ok && portalRes.ok) {
         window.location.href = redirect;
       } else {
-        console.error("Form submission failed:", response.statusText);
+        console.error("Submission failed", {
+          ghlStatus: ghlRes.status,
+          portalStatus: portalRes.status,
+        });
       }
-    } catch (error) {
-      console.error("Network error occurred while submitting the form:", error);
+    } catch (err) {
+      console.error("Submission error:", err);
     }
   }
-
-  const form = document.getElementById("form");
-  form.addEventListener("submit", submitForm);
 </script>
