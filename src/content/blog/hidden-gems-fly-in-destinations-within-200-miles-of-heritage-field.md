@@ -117,7 +117,7 @@ Located in Pennsylvania's Brandywine Valley, you're minutes from Longwood Garden
 
 **Distance from KPTW:** 185 NM | **Flight Time:** ~1.6 hours
 
-Okay, this one's technically just outside our 200-mile range, but Lakeview offers something special: direct access to Lake Erie wine country. The 3,200-foot paved runway serves a region that many pilots overlook, but shouldn't.
+Okay, this one's near the edge of our 200-mile range, but Lakeview offers something special: direct access to Lake Erie wine country. The 3,200-foot paved runway serves a region that many pilots overlook, but shouldn't.
 
 Northeast Ohio's wine region rivals anything you'll find on the East Coast, and the flying is interesting without being intimidating. Multiple vineyards offer pick-up service from the airport, and the fall colors over Lake Erie are spectacular from the air.
 
