@@ -131,7 +131,7 @@ When you train at Pitcairn, you're not just enrolling in a school; you're joinin
 
 ---
 
-## ![Pitcairn Flight Academy](/blog/heritage-field-fly-in-event.webp)
+![Pitcairn Flight Academy](/blog/heritage-field-fly-in-event.webp)
 
 ## Safety First, Always
 
