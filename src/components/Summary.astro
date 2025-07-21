@@ -1,0 +1,211 @@
+---
+import HeroImage from "../assets/pitcairn-aviation-hangar-space.jpg";
+import { Image } from "astro:assets";
+---
+
+<div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-40">
+  <div
+    class="mx-auto flex max-w-2xl flex-col items-end justify-between gap-16 lg:mx-0 lg:max-w-none lg:flex-row"
+  >
+    <div class="w-full lg:max-w-lg lg:flex-auto">
+      <h2
+        class="text-main-color brightness-125 text-base font-bold leading-none uppercase fade-in duration-500 opacity-0 delay-100"
+      >
+        AIRCRAFT HANGAR SOLUTIONS
+      </h2>
+      <p
+        class="py-2 text-4xl font-bold font-paragraph max-w-md fade-in duration-500 opacity-0 delay-200"
+      >
+        Premium Aircraft Protection at Heritage Field Airport
+      </p>
+      <p class="mt-6 text-xl/8 text-gray-600">
+        Your aircraft deserves the best. Pitcairn Aviation offers <strong
+          >climate-controlled, secure hangars</strong
+        > with 24/7 monitored access, gated security, and direct taxiway convenience.
+        Whether you need an overnight stop or long-term storage, our facilities provide
+        <strong>military-grade protection</strong> with premium FBO amenities.
+      </p>
+      <Image
+        src={HeroImage}
+        class="mt-16 aspect-6/5 w-full bg-gray-50 object-cover lg:aspect-auto lg:h-138"
+        alt="Private aircraft in Pitcairn Aviation's heated hangar"
+      />
+    </div>
+    <div class="w-full lg:max-w-xl lg:flex-auto">
+      <h3 class="sr-only">Why Choose Our Hangars?</h3>
+      <ul class="-my-8 divide-y divide-gray-100">
+        <li class="py-8">
+          <dl class="relative flex flex-wrap gap-x-3">
+            <dt class="sr-only">Feature</dt>
+            <dd
+              class="w-full flex-none text-lg font-semibold tracking-tight py-2 text-gray-900"
+            >
+              <a href="#">
+                Year-Round Climate Control
+                <span aria-hidden="true" class="absolute inset-0"></span>
+              </a>
+            </dd>
+            <dt class="sr-only">Description</dt>
+            <dd class="mt-2 w-full flex-none text-base/7 text-gray-600">
+              <strong>Heated hangar bays</strong> prevent cold-weather damage and
+              protect sensitive avionics. Our temperature-regulated environment eliminates
+              moisture buildup and extreme temperature swings.
+            </dd>
+          </dl>
+        </li>
+        <li class="py-8">
+          <dl class="relative flex flex-wrap gap-x-3">
+            <dt class="sr-only">Feature</dt>
+            <dd
+              class="w-full flex-none text-lg font-semibold tracking-tight py-2 text-gray-900"
+            >
+              <a href="#">
+                Flexible Rental Terms
+                <span aria-hidden="true" class="absolute inset-0"></span>
+              </a>
+            </dd>
+            <dt class="sr-only">Description</dt>
+            <dd class="mt-2 w-full flex-none text-base/7 text-gray-600">
+              <strong>No long-term contracts</strong> – choose from hourly, overnight,
+              weekly, or monthly options. Perfect for transient pilots and local
+              owners alike.
+            </dd>
+          </dl>
+        </li>
+        <li class="py-8">
+          <dl class="relative flex flex-wrap gap-x-3">
+            <dt class="sr-only">Feature</dt>
+            <dd
+              class="w-full flex-none text-lg font-semibold tracking-tight py-2 text-gray-900"
+            >
+              <a href="#">
+                Military-Grade Security
+                <span aria-hidden="true" class="absolute inset-0"></span>
+              </a>
+            </dd>
+            <dt class="sr-only">Description</dt>
+            <dd class="mt-2 w-full flex-none text-base/7 text-gray-600">
+              <strong>24/7 surveillance</strong>, biometric gate access, and
+              on-site staff. Your aircraft is protected by the same systems used
+              at corporate FBOs – at general aviation prices.
+            </dd>
+          </dl>
+        </li>
+      </ul>
+      <div class="mt-8 flex border-t border-gray-100 pt-8">
+        <a
+          href="/hangar-rental-form"
+          class="btn-primary fade-in duration-500 opacity-0"
+          >Reserve Your Hangar Today <span aria-hidden="true">&rarr;</span></a
+        >
+      </div>
+    </div>
+  </div>
+  <div class="bg-white py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <h3 class="text-2xl font-semibold text-gray-900 mb-12">
+        More Than Just Storage
+      </h3>
+      <div
+        class="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:mx-0 lg:max-w-none lg:grid-cols-4"
+      >
+        <div>
+          <div
+            class="flex items-center text-sm/6 font-semibold text-main-color"
+          >
+            <svg
+              viewBox="0 0 4 4"
+              aria-hidden="true"
+              class="mr-4 size-1 flex-none"
+            >
+              <circle r="2" cx="2" cy="2" fill="currentColor"></circle>
+            </svg>
+            Jet-Ready Facilities
+          </div>
+          <p
+            class="mt-6 text-lg/8 font-semibold tracking-tight py-2 text-gray-900"
+          >
+            Upgraded for Larger Aircraft
+          </p>
+          <p class="mt-1 text-base/7 text-gray-600">
+            Reinforced doors and expanded bays accommodate <strong
+              >light jets and turboprops</strong
+            > up to 30,000 lbs. Improved drainage prevents water intrusion.
+          </p>
+        </div>
+
+        <div>
+          <div
+            class="flex items-center text-sm/6 font-semibold text-main-color"
+          >
+            <svg
+              viewBox="0 0 4 4"
+              aria-hidden="true"
+              class="mr-4 size-1 flex-none"
+            >
+              <circle r="2" cx="2" cy="2" fill="currentColor"></circle>
+            </svg>
+            White-Glove Ground Support
+          </div>
+          <p
+            class="mt-6 text-lg/8 font-semibold tracking-tight py-2 text-gray-900"
+          >
+            Expert Aircraft Handling
+          </p>
+          <p class="mt-1 text-base/7 text-gray-600">
+            Our <strong>FAA-certified line crew</strong> provides GPU hookups, tow
+            services, and battery jumps. Vintage aircraft specialists available.
+          </p>
+        </div>
+
+        <div>
+          <div
+            class="flex items-center text-sm/6 font-semibold text-main-color"
+          >
+            <svg
+              viewBox="0 0 4 4"
+              aria-hidden="true"
+              class="mr-4 size-1 flex-none"
+            >
+              <circle r="2" cx="2" cy="2" fill="currentColor"></circle>
+            </svg>
+            Pilot-Centric Amenities
+          </div>
+          <p
+            class="mt-6 text-lg/8 font-semibold tracking-tight py-2 text-gray-900"
+          >
+            Business-Class Comfort
+          </p>
+          <p class="mt-1 text-base/7 text-gray-600">
+            <strong>Private conference rooms</strong>, high-speed Wi-Fi, and
+            crew lounges. Complimentary refreshments while you wait.
+          </p>
+        </div>
+
+        <div>
+          <div
+            class="flex items-center text-sm/6 font-semibold text-main-color"
+          >
+            <svg
+              viewBox="0 0 4 4"
+              aria-hidden="true"
+              class="mr-4 size-1 flex-none"
+            >
+              <circle r="2" cx="2" cy="2" fill="currentColor"></circle>
+            </svg>
+            Instant Fuel Access
+          </div>
+          <p
+            class="mt-6 text-lg/8 font-semibold tracking-tight py-2 text-gray-900"
+          >
+            Phillips 66 Fuel Station
+          </p>
+          <p class="mt-1 text-base/7 text-gray-600">
+            <strong>24/7 self-serve AvGas/Jet-A</strong> just steps from your hangar.
+            Major credit cards accepted.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
