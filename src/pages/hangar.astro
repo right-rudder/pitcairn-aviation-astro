@@ -1,0 +1,151 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ServiceCard from "../components/ServiceCard";
+import Intro from "../components/Intro.astro";
+import Header2 from "../components/Header2.astro";
+import AddingFuel from "../assets/adding-fuel.png";
+import HangarImg from "../assets/pitcairn-aviation-fbo-front-office.jpg";
+import Section2 from "../components/Section2.astro";
+import Section1 from "../components/Section1.astro";
+import RentalCar from "../assets/car-rental-company-logos.webp";
+import AirportLounge from "../assets/heritage-field-airport-outside-pitcairn-fbo.jpg";
+import JetTowing from "../assets/airplane-on-heritage-field-runway.jpg";
+import Fleet from "../assets/fleet-at-pitcairn-aviation-fbo.jpg";
+import VisitUs from "../components/VisitUs.astro";
+import HeroImage from "../assets/pitcairn-aviation-hangar-space.jpg";
+import Airport from "../assets/heritage-field-airport.webp";
+
+const services = [
+  {
+    title: "Hassle-Free Refueling",
+    subtitle: "Reliable Phillips 66 AvGas pumps",
+    id: "hassle-free-refueling",
+  },
+  {
+    title: "Safe Storage Solutions",
+    subtitle: "Tiedowns and heated hangar rentals",
+    id: "safe-storage-solutions",
+  },
+  {
+    title: "Convenient Transportation",
+    subtitle: "Crew car and rental car access",
+    id: "convenient-transportation",
+  },
+  {
+    title: "Modern Amenities",
+    subtitle: "Conference rooms, lounges, and businesses",
+    id: "modern-amenities",
+  },
+  {
+    title: "Attentive Ground Support",
+    subtitle: "GPU services and jump-starts",
+    id: "attentive-ground-support",
+  },
+  {
+    title: "Peace of Mind",
+    subtitle: "Secured airfield access and parking",
+    id: "peace-of-mind",
+  },
+];
+---
+
+<BaseLayout
+  title="Secure Hangar Rental Services | Pitcairn Aviation LLC"
+  description="Discover premium hangar rental services at Heritage Field Airport with flexible terms, 24/7 access, and full ground support. Protect your aircraft with Pitcairn Aviation's secure and climate-controlled hangars in Pottstown, PA."
+  keywords="hangar rental, aircraft storage, heated hangars, secure hangar rental, Pitcairn Aviation, Heritage Field Airport, aircraft protection, Pottstown PA"
+>
+  <Header2
+    slot="header"
+    image={HeroImage}
+    alt="Pitcairn Aviation hangar space at Heritage Field Airport"
+  >
+    <Fragment slot="title">
+      Experience <span class="text-main-color">Premium Hangar</span> Rental Services
+    </Fragment>
+  </Header2>
+
+  <Intro
+    title="Comprehensive Hangar Solutions for Your Aircraft"
+    description={[
+      `At Pitcairn Aviation LLC, we understand that your aircraft deserves the best protection. Our heated, secure hangars provide peace of mind with 24/7 access and expert care tailored to your needs.`,
+      `Whether you need short-term or long-term rental, our flexible leasing options and dedicated line staff make your experience effortless and reliable.`,
+    ]}
+  />
+
+  <Section1
+    id="safe-storage-solutions"
+    image={HangarImg}
+    alt="Pitcairn Aviation hangar space"
+    title="Safe, Climate-Controlled Hangar Storage"
+    subtitle="Protect your investment year-round"
+    content={`Our hangars offer climate-controlled environments to safeguard your aircraft from weather damage, with secure gated access and professional line services ensuring your plane is always cared for. We provide flexible rental terms to fit your schedule.`}
+    cta="Reserve Your Hangar Space"
+    ctaLink="/hangar-rental-form"
+  />
+
+  <section class="bg-zinc-200 py-10">
+    <div
+      class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-5 px-5"
+    >
+      {
+        services.map((service) => (
+          <ServiceCard service={service} client:visible />
+        ))
+      }
+    </div>
+  </section>
+
+  <Section2
+    id="hassle-free-refueling"
+    image={AddingFuel}
+    alt="Pitcairn aviation staff adding fuel to an aircraft"
+    title="Hassle-Free Refueling"
+    subtitle="Fast, reliable Phillips 66 AvGas pumps"
+    content={`Fuel up quickly and securely with our 24/7 self-serve AvGas pumps, offering both 100LL AvGas and Jet A fuels. Our convenient payment options ensure a smooth refueling experience every time.`}
+    cta="View Fuel Pricing"
+    ctaLink="#fuel-prices"
+  />
+
+  <Section1
+    id="modern-amenities"
+    image={Airport}
+    alt="Heritage Field Airport outside Pitcairn FBO"
+    title="Comfort & Convenience On-Site"
+    subtitle="Lounge spaces, conference rooms, and more"
+    content={`Relax or work in our comfortable pilot lounges, conference rooms, and workspaces with high-speed Wi-Fi and printing services. Additional aviation businesses onsite expand your access to comprehensive services.`}
+    cta="Book a Conference Room"
+    ctaLink="/contact-us#contact-us-form"
+  />
+
+  <Section2
+    id="convenient-transportation"
+    image={RentalCar}
+    alt="Car rental company logos"
+    title="Seamless Transportation Options"
+    subtitle="Courtesy crew cars and rental partnerships"
+    content={`Take advantage of our complimentary crew cars or reserve rental vehicles from trusted partners like Enterprise, Hertz, and Avis delivered directly to our FBO for your convenience.`}
+    cta="Request Transportation"
+    ctaLink="/contact-us#contact-us-form"
+  />
+
+  <Section1
+    id="peace-of-mind"
+    image={AirportLounge}
+    alt="Pitcairn Aviation fleet"
+    title="Unmatched Security & Access Control"
+    subtitle="24/7 monitored ramp and gated access"
+    content={`Our ramp and parking areas are protected with controlled gate access and monitored continuously by surveillance cameras, providing you with peace of mind while your aircraft is stored with us.`}
+  />
+
+  <Section2
+    id="attentive-ground-support"
+    image={JetTowing}
+    alt="Airplane on Heritage Field runway"
+    title="Professional Ground Support"
+    subtitle="Line services, GPU hookups, and more"
+    content={`Our experienced line staff is available to assist with aircraft towing, ground power unit hookups, jump-starts, and other ground support services to keep your operations smooth and efficient.`}
+  />
+
+  <VisitUs />
+  <script src="../scripts/animate-on-scroll.js"></script>
+</BaseLayout>
