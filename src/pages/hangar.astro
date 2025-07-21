@@ -14,6 +14,7 @@ import Fleet from "../assets/fleet-at-pitcairn-aviation-fbo.jpg";
 import VisitUs from "../components/VisitUs.astro";
 import HeroImage from "../assets/pitcairn-aviation-hangar-space.jpg";
 import Airport from "../assets/heritage-field-airport.webp";
+import Summary from "../components/Summary.astro";
 
 const services = [
   {
@@ -83,67 +84,28 @@ const services = [
     ctaLink="/hangar-rental-form"
   />
 
-  <section class="bg-zinc-200 py-10">
-    <div
-      class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-5 px-5"
-    >
-      {
-        services.map((service) => (
-          <ServiceCard service={service} client:visible />
-        ))
-      }
-    </div>
-  </section>
+  <Summary />
 
   <Section2
     id="hassle-free-refueling"
     image={AddingFuel}
     alt="Pitcairn aviation staff adding fuel to an aircraft"
-    title="Hassle-Free Refueling"
-    subtitle="Fast, reliable Phillips 66 AvGas pumps"
-    content={`Fuel up quickly and securely with our 24/7 self-serve AvGas pumps, offering both 100LL AvGas and Jet A fuels. Our convenient payment options ensure a smooth refueling experience every time.`}
-    cta="View Fuel Pricing"
-    ctaLink="#fuel-prices"
+    title="Fueling Convenience with Your Rental"
+    subtitle="24/7 AvGas & Jet A access for hangar clients"
+    content={`Enjoy around-the-clock access to our Phillips 66 100LL AvGas and Jet A self-serve pumps—right from your hangar. As a tenant, you benefit from on-site refueling just steps from where you store your aircraft, making every flight prep faster and easier.`}
+    cta="Inquire About Hangar Availability"
+    ctaLink="/contact-us#contact-us-form"
   />
 
   <Section1
     id="modern-amenities"
     image={Airport}
     alt="Heritage Field Airport outside Pitcairn FBO"
-    title="Comfort & Convenience On-Site"
-    subtitle="Lounge spaces, conference rooms, and more"
-    content={`Relax or work in our comfortable pilot lounges, conference rooms, and workspaces with high-speed Wi-Fi and printing services. Additional aviation businesses onsite expand your access to comprehensive services.`}
-    cta="Book a Conference Room"
+    title="Hangar Rentals with Premium Amenities"
+    subtitle="More than storage—comfort, productivity, and peace of mind"
+    content={`Hangar clients enjoy access to our modern lounges, fully equipped conference rooms, and workspaces with high-speed Wi-Fi and printing. Whether you're stopping briefly or managing your aircraft long-term, our facilities support both convenience and productivity.`}
+    cta="Reserve Your Hangar Spot"
     ctaLink="/contact-us#contact-us-form"
-  />
-
-  <Section2
-    id="convenient-transportation"
-    image={RentalCar}
-    alt="Car rental company logos"
-    title="Seamless Transportation Options"
-    subtitle="Courtesy crew cars and rental partnerships"
-    content={`Take advantage of our complimentary crew cars or reserve rental vehicles from trusted partners like Enterprise, Hertz, and Avis delivered directly to our FBO for your convenience.`}
-    cta="Request Transportation"
-    ctaLink="/contact-us#contact-us-form"
-  />
-
-  <Section1
-    id="peace-of-mind"
-    image={AirportLounge}
-    alt="Pitcairn Aviation fleet"
-    title="Unmatched Security & Access Control"
-    subtitle="24/7 monitored ramp and gated access"
-    content={`Our ramp and parking areas are protected with controlled gate access and monitored continuously by surveillance cameras, providing you with peace of mind while your aircraft is stored with us.`}
-  />
-
-  <Section2
-    id="attentive-ground-support"
-    image={JetTowing}
-    alt="Airplane on Heritage Field runway"
-    title="Professional Ground Support"
-    subtitle="Line services, GPU hookups, and more"
-    content={`Our experienced line staff is available to assist with aircraft towing, ground power unit hookups, jump-starts, and other ground support services to keep your operations smooth and efficient.`}
   />
 
   <VisitUs />
