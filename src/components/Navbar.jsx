@@ -59,6 +59,12 @@ const Navbar = () => {
             Services
           </a>
           <a
+            href="/hangars"
+            className="text-base tracking-tight hover:text-main-color text-white duration-100"
+          >
+            Hangars
+          </a>
+          <a
             href="/plan-your-visit"
             className="text-base tracking-tight hover:text-main-color text-white duration-100"
           >
@@ -139,6 +145,12 @@ const Navbar = () => {
                   className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:bg-gray-50 hover:text-main-color"
                 >
                   Services
+                </a>
+                <a
+                  href="/hangar"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white hover:bg-gray-50 hover:text-main-color"
+                >
+                  Hangar
                 </a>
                 <a
                   href="/about-us"

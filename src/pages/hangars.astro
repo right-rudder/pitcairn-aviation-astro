@@ -1,0 +1,114 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ServiceCard from "../components/ServiceCard";
+import Intro from "../components/Intro.astro";
+import Header2 from "../components/Header2.astro";
+import AddingFuel from "../assets/adding-fuel.png";
+import HangarImg from "../assets/pitcairn-aviation-fbo-front-office.jpg";
+import Section2 from "../components/Section2.astro";
+import Section1 from "../components/Section1.astro";
+import RentalCar from "../assets/car-rental-company-logos.webp";
+import AirportLounge from "../assets/heritage-field-airport-outside-pitcairn-fbo.jpg";
+import SecondImage from "../assets/guilherme-stecanella-mobile-shots-j0dVhpWcZmE-unsplash.webp";
+import JetTowing from "../assets/airplane-on-heritage-field-runway.jpg";
+import Fleet from "../assets/fleet-at-pitcairn-aviation-fbo.jpg";
+import VisitUs from "../components/VisitUs.astro";
+import HeroImage from "../assets/pitcairn-aviation-hangar-space.jpg";
+import Airport from "../assets/heritage-field-airport.webp";
+import Summary from "../components/Summary.astro";
+
+const services = [
+  {
+    title: "Hassle-Free Refueling",
+    subtitle: "Reliable Phillips 66 AvGas pumps",
+    id: "hassle-free-refueling",
+  },
+  {
+    title: "Safe Storage Solutions",
+    subtitle: "Tiedowns and heated hangar rentals",
+    id: "safe-storage-solutions",
+  },
+  {
+    title: "Convenient Transportation",
+    subtitle: "Crew car and rental car access",
+    id: "convenient-transportation",
+  },
+  {
+    title: "Modern Amenities",
+    subtitle: "Conference rooms, lounges, and businesses",
+    id: "modern-amenities",
+  },
+  {
+    title: "Attentive Ground Support",
+    subtitle: "GPU services and jump-starts",
+    id: "attentive-ground-support",
+  },
+  {
+    title: "Peace of Mind",
+    subtitle: "Secured airfield access and parking",
+    id: "peace-of-mind",
+  },
+];
+---
+
+<BaseLayout
+  title="Secure Hangar Rental Services | Pitcairn Aviation LLC"
+  description="Discover premium hangar rental services at Heritage Field Airport with flexible terms, 24/7 access, and full ground support. Protect your aircraft with Pitcairn Aviation's secure and climate-controlled hangars in Pottstown, PA."
+  keywords="hangar rental, aircraft storage, heated hangars, secure hangar rental, Pitcairn Aviation, Heritage Field Airport, aircraft protection, Pottstown PA"
+>
+  <Header2
+    slot="header"
+    image={HeroImage}
+    alt="Pitcairn Aviation hangar space at Heritage Field Airport"
+  >
+    <Fragment slot="title">
+      Experience <span class="text-main-color">Premium Hangar</span> Rental Services
+    </Fragment>
+  </Header2>
+
+  <Intro
+    title="Comprehensive Hangar Solutions for Your Aircraft"
+    description={[
+      `At Pitcairn Aviation LLC, we understand that your aircraft deserves the best protection. Our heated, secure hangars provide peace of mind with 24/7 access and expert care tailored to your needs.`,
+      `Whether you need short-term or long-term rental, our flexible leasing options and dedicated line staff make your experience effortless and reliable.`,
+    ]}
+  />
+
+  <Section1
+    id="safe-storage-solutions"
+    image={HangarImg}
+    alt="Pitcairn Aviation hangar space"
+    title="Safe, Climate-Controlled Hangar Storage"
+    subtitle="Protect your investment year-round"
+    content={`Our hangars offer climate-controlled environments to safeguard your aircraft from weather damage, with secure gated access and professional line services ensuring your plane is always cared for. We provide flexible rental terms to fit your schedule.`}
+    cta="Reserve Your Hangar Space"
+    ctaLink="/hangar-rental-form"
+  />
+
+  <Summary />
+
+  <Section2
+    id="hassle-free-refueling"
+    image={AddingFuel}
+    alt="Pitcairn aviation staff adding fuel to an aircraft"
+    title="Fueling Convenience with Your Rental"
+    subtitle="24/7 AvGas & Jet A access for hangar clients"
+    content={`Enjoy around-the-clock access to our Phillips 66 100LL AvGas and Jet A self-serve pumps—right from your hangar. As a tenant, you benefit from on-site refueling just steps from where you store your aircraft, making every flight prep faster and easier.`}
+    cta="Inquire About Hangar Availability"
+    ctaLink="/contact-us#contact-us-form"
+  />
+
+  <Section1
+    id="modern-amenities"
+    image={SecondImage}
+    alt="Heritage Field Airport outside Pitcairn FBO"
+    title="Hangar Rentals with Premium Amenities"
+    subtitle="More than storage—comfort, productivity, and peace of mind"
+    content={`Hangar clients enjoy access to our modern lounges, fully equipped conference rooms, and workspaces with high-speed Wi-Fi and printing. Whether you're stopping briefly or managing your aircraft long-term, our facilities support both convenience and productivity.`}
+    cta="Reserve Your Hangar Spot"
+    ctaLink="/hangar-rental-form"
+  />
+
+  <VisitUs />
+  <script src="../scripts/animate-on-scroll.js"></script>
+</BaseLayout>

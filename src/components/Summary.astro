@@ -1,0 +1,230 @@
+---
+import FirstImage from "../assets/samantha-beaty-tkn7-_Pc7hk-unsplash.webp";
+import SecondImage from "../assets/guilherme-stecanella-mobile-shots-j0dVhpWcZmE-unsplash.webp";
+import { Image } from "astro:assets";
+---
+
+<div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-40">
+  <div
+    class="mx-auto flex max-w-2xl flex-col items-end justify-between gap-16 lg:mx-0 lg:max-w-none lg:flex-row"
+  >
+    <div class="w-full lg:max-w-lg lg:flex-auto">
+      <h2
+        class="text-main-color brightness-125 text-base font-bold leading-none uppercase fade-in duration-500 opacity-0 delay-100"
+      >
+        AIRCRAFT HANGAR SOLUTIONS
+      </h2>
+      <p
+        class="py-2 text-4xl font-bold font-paragraph max-w-md fade-in duration-500 opacity-0 delay-200"
+      >
+        Premium Aircraft Protection at Heritage Field Airport
+      </p>
+      <p class="mt-6 text-xl/8 text-gray-600">
+        Your aircraft deserves the best. Pitcairn Aviation offers <strong
+          >climate-controlled, secure hangars</strong
+        > with 24/7 monitored access, gated security, and direct taxiway convenience.
+        Whether you need an overnight stop or long-term storage, our facilities provide
+        <strong>elite protection</strong> with premium FBO amenities.
+      </p>
+      <Image
+        src={FirstImage}
+        class="mt-16 aspect-6/5 w-full bg-gray-50 object-cover lg:aspect-auto lg:h-138"
+        alt="Private aircraft in Pitcairn Aviation's heated hangar"
+      />
+    </div>
+    <div class="w-full lg:max-w-xl lg:flex-auto">
+      <h3 class="sr-only">Why Choose Our Hangars?</h3>
+      <ul class="-my-8 divide-y divide-gray-100">
+        <li class="py-8">
+          <dl class="relative flex flex-wrap gap-x-3">
+            <dt class="sr-only">Feature</dt>
+            <dd
+              class="w-full flex-none text-lg font-semibold tracking-tight py-2 text-gray-900"
+            >
+              <a href="#">
+                Year-Round Climate Control
+                <span aria-hidden="true" class="absolute inset-0"></span>
+              </a>
+            </dd>
+            <dt class="sr-only">Description</dt>
+            <dd class="mt-2 w-full flex-none text-base/7 text-gray-600">
+              <strong>Heated hangar bays</strong> prevent cold-weather damage and
+              protect sensitive avionics. Our temperature-regulated environment eliminates
+              moisture buildup and extreme temperature swings.
+            </dd>
+          </dl>
+        </li>
+        <li class="py-8">
+          <dl class="relative flex flex-wrap gap-x-3">
+            <dt class="sr-only">Feature</dt>
+            <dd
+              class="w-full flex-none text-lg font-semibold tracking-tight py-2 text-gray-900"
+            >
+              <a href="#">
+                Flexible Rental Terms
+                <span aria-hidden="true" class="absolute inset-0"></span>
+              </a>
+            </dd>
+            <dt class="sr-only">Description</dt>
+            <dd class="mt-2 w-full flex-none text-base/7 text-gray-600">
+              <strong>No long-term contracts</strong> – choose from hourly, overnight,
+              weekly, or monthly options. Perfect for transient pilots and local
+              owners alike.
+            </dd>
+          </dl>
+        </li>
+        <li class="py-8">
+          <dl class="relative flex flex-wrap gap-x-3">
+            <dt class="sr-only">Feature</dt>
+            <dd
+              class="w-full flex-none text-lg font-semibold tracking-tight py-2 text-gray-900"
+            >
+              <a href="#">
+                Elite Security
+                <span aria-hidden="true" class="absolute inset-0"></span>
+              </a>
+            </dd>
+            <dt class="sr-only">Description</dt>
+            <dd class="mt-2 w-full flex-none text-base/7 text-gray-600">
+              <strong>24/7 surveillance</strong>, biometric gate access, and
+              on-site staff. Your aircraft is protected by the same systems used
+              at corporate FBOs – at general aviation prices.
+            </dd>
+          </dl>
+        </li>
+      </ul>
+      <div class="mt-8 flex border-t border-gray-100 pt-8">
+        <a
+          href="/hangar-rental-form"
+          class="btn-primary fade-in duration-500 opacity-0"
+          >Reserve Your Hangar Today <span aria-hidden="true">&rarr;</span></a
+        >
+      </div>
+    </div>
+  </div>
+  <div class="bg-white py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <h3 class="text-2xl font-semibold text-gray-900 mb-12">
+        More Than Just Storage
+      </h3>
+      <div
+        class="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:mx-0 lg:max-w-none lg:grid-cols-4 text-center"
+      >
+        <div>
+          <div class="flex w-full items-center justify-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="64"
+              height="64"
+              viewBox="0 0 20 20"
+              class="text-main-color"
+              fill="currentColor"
+            >
+              <path
+                fill="currentColor"
+                d="m12.363 7l-1.51-3.147C10.16 2.414 8 2.906 8 4.503v1.779l-2-.546V4.204c0-1.222-1.615-1.662-2.234-.608L2.24 6.19a1.75 1.75 0 0 0 .965 2.55l3.411 1.117l-1.672 1.527c-1.178 1.076-.085 3.003 1.442 2.545l6.612-1.984l3.03.992a1.5 1.5 0 0 0 1.967-1.426V11a4 4 0 0 0-4-4zm-1.11 0h-.485a1 1 0 0 1-.263-.035L9 6.555V4.501c0-.532.72-.696.95-.216zM2 17.5a.5.5 0 0 1 .5-.5h15a.5.5 0 0 1 0 1h-15a.5.5 0 0 1-.5-.5m11.587-6.412a2 2 0 0 0-1.182-.01L6.1 12.97c-.51.153-.873-.49-.48-.848l1.672-1.528a1 1 0 0 0-.364-1.688L3.516 7.789a.75.75 0 0 1-.414-1.093l1.526-2.593c.103-.176.372-.102.372.101v1.914a.5.5 0 0 0 .368.482l4.874 1.33a2 2 0 0 0 .526.07h3.227a3 3 0 0 1 3 3v.51a.5.5 0 0 1-.655.476l-2.388-.782z"
+                stroke-width="0.5"
+                stroke="currentColor"></path>
+            </svg>
+          </div>
+          <p
+            class="mt-6 text-lg/8 font-semibold tracking-tight py-2 text-gray-900"
+          >
+            Upgraded for Larger Aircraft
+          </p>
+          <p class="mt-1 text-base/7 text-gray-600">
+            Reinforced doors and expanded bays accommodate <strong
+              >light jets and turboprops</strong
+            > up to 30,000 lbs. Improved drainage prevents water intrusion.
+          </p>
+        </div>
+
+        <div>
+          <div class="flex w-full items-center justify-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="64"
+              height="64"
+              viewBox="0 0 20 20"
+              class="text-main-color"
+              fill="currentColor"
+            >
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M15.1 3.12a1 1 0 0 1 .706.71c.452 1.71.032 3.62-1.32 4.97a5.14 5.14 0 0 1-4.87 1.36a.34.34 0 0 0-.148-.006l-.025.008l-5.08 5.08a2.563 2.563 0 0 1-3.62 0a2.563 2.563 0 0 1 0-3.62l5.08-5.08l.008-.025a.34.34 0 0 0-.006-.148a5.16 5.16 0 0 1 1.366-4.88a5.11 5.11 0 0 1 4.97-1.32a1 1 0 0 1 .452 1.674l-2.1 2.1l.383 1.15l1.15.383l2.1-2.1a1 1 0 0 1 .968-.258zM5.81 6.55l.001-.002zm3.62 3.62l.002-.001zm4.34-2.07a4.16 4.16 0 0 1-3.93 1.1c-.396-.096-.827-.023-1.12.265l-5.08 5.08c-.607.608-1.6.608-2.21 0a1.57 1.57 0 0 1 0-2.21l5.08-5.08c.288-.288.361-.721.265-1.12a4.2 4.2 0 0 1-.043-1.78a4.2 4.2 0 0 1 1.14-2.15c.76-.76 1.74-1.16 2.73-1.2a4.3 4.3 0 0 1 1.28.137l-2.1 2.1a1 1 0 0 0-.242 1.02l.383 1.15c.1.299.334.533.632.632l1.15.383a.99.99 0 0 0 1.02-.242l2.1-2.1c.11.418.156.849.137 1.28a4.1 4.1 0 0 1-1.2 2.73z"
+                clip-rule="evenodd"
+                stroke-width="0.5"
+                stroke="currentColor"></path>
+            </svg>
+          </div>
+          <p
+            class="mt-6 text-lg/8 font-semibold tracking-tight py-2 text-gray-900"
+          >
+            Expert Aircraft Handling
+          </p>
+          <p class="mt-1 text-base/7 text-gray-600">
+            Our <strong>FAA-certified line crew</strong> provides GPU hookups, tow
+            services, and battery jumps. Vintage aircraft specialists available.
+          </p>
+        </div>
+
+        <div>
+          <div class="flex w-full items-center justify-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="64"
+              height="64"
+              viewBox="0 0 24 24"
+              class="text-main-color"
+              fill="currentColor"
+            >
+              <path
+                fill="currentColor"
+                d="M4.616 20q-.691 0-1.153-.462T3 18.384V8.616q0-.691.463-1.153T4.615 7H9V5.615q0-.69.463-1.153T10.616 4h2.769q.69 0 1.153.462T15 5.615V7h4.385q.69 0 1.152.463T21 8.616v9.769q0 .69-.463 1.153T19.385 20zM10 7h4V5.615q0-.23-.192-.423T13.385 5h-2.77q-.23 0-.423.192T10 5.615zm10 7.5h-6v.692q0 .348-.23.578t-.578.23h-2.384q-.348 0-.578-.23t-.23-.578V14.5H4v3.885q0 .23.192.423t.423.192h14.77q.23 0 .423-.192t.192-.424zm-9 .5h2v-2h-2zm-7-1.5h6v-.692q0-.348.23-.578t.578-.23h2.384q.348 0 .578.23t.23.578v.692h6V8.616q0-.231-.192-.424T19.385 8H4.615q-.23 0-.423.192T4 8.616zm8 .5"
+                stroke-width="0.5"
+                stroke="currentColor"></path>
+            </svg>
+          </div>
+          <p
+            class="mt-6 text-lg/8 font-semibold tracking-tight py-2 text-gray-900"
+          >
+            Business-Class Comfort
+          </p>
+          <p class="mt-1 text-base/7 text-gray-600">
+            <strong>Private conference rooms</strong>, high-speed Wi-Fi, and
+            crew lounges. Complimentary refreshments while you wait.
+          </p>
+        </div>
+
+        <div>
+          <div class="flex w-full items-center justify-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="64"
+              height="64"
+              viewBox="0 0 24 24"
+              class="text-main-color"
+              fill="currentColor"
+            >
+              <path
+                fill="currentColor"
+                d="M3 2h3c.28 0 .53.11.71.29l2.08 2.09l.8-.79C10 3.2 10.5 3 11 3h6c.5 0 1 .2 1.41.59l1 1C19.8 5 20 5.5 20 6v13a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8c0-.5.2-1 .59-1.41l.79-.8L5.59 4H3zm8 3v2h6V5zm.41 6l-2-2H8v1.41l2 2v3.18l-2 2V19h1.41l2-2h3.18l2 2H18v-1.41l-2-2v-3.18l2-2V9h-1.41l-2 2zm.59 2h2v2h-2z"
+                stroke-width="0.5"
+                stroke="currentColor"></path>
+            </svg>
+          </div>
+          <p
+            class="mt-6 text-lg/8 font-semibold tracking-tight py-2 text-gray-900"
+          >
+            Phillips 66 Fuel Station
+          </p>
+          <p class="mt-1 text-base/7 text-gray-600">
+            <strong>24/7 self-serve AvGas/Jet-A</strong> just steps from your hangar.
+            Major credit cards accepted.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
