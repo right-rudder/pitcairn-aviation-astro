@@ -59,10 +59,10 @@ const Navbar = () => {
             Services
           </a>
           <a
-            href="/hangar"
+            href="/hangars"
             className="text-base tracking-tight hover:text-main-color text-white duration-100"
           >
-            Hangar
+            Hangars
           </a>
           <a
             href="/plan-your-visit"
