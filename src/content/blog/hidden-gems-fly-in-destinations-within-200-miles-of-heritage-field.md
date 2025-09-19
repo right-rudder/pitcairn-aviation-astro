@@ -3,7 +3,7 @@ pubDate: "June 20, 2025"
 author: David Pitcairn
 title: "Hidden Gems: Fly-In Destinations Within 200 Miles of Heritage Field"
 description: "There's nothing quite like the freedom of general aviation – the ability to skip the airline hassles, set your own schedule, and discover places that most travelers never see. As pilots based at Heritage Field Airport (KPTW), we're perfectly positioned in one of the most aviation-friendly regions in the country, with dozens of incredible fly-in destinations just a short hop away."
-heroImage: "/blog/Pitcairn-aviation-virginia-gems.jpg"
+heroImage: "/src/assets/Pitcairn-aviation-virginia-gems.jpg"
 readingTime: 4
 category: "Attractions"
 tags:

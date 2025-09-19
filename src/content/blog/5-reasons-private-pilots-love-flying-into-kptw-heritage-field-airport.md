@@ -3,7 +3,7 @@ pubDate: "March 20, 2025"
 author: David Pitcairn
 title: "5 Reasons Private Pilots Love Flying into KPTW (Heritage Field Airport)"
 description: "Discover why private pilots prefer flying into Heritage Field Airport (KPTW) in Pottstown, PA. Explore its ideal location, exceptional FBO services from Pitcairn Aviation, convenient amenities, easy airspace, and local attractions."
-heroImage: "/blog/Pitcairn-aviation-blog-kptw.jpg"
+heroImage: "/src/assets/Pitcairn-aviation-blog-kptw.jpg"
 readingTime: 4
 category: "Pilot Resources"
 tags:

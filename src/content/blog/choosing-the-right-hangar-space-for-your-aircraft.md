@@ -3,7 +3,7 @@ pubDate: "January 14, 2025"
 author: David Pitcairn
 title: "Choosing the Right Hangar Space for Your Aircraft"
 description: "Selecting the right hangar space is a critical decision for any pilot or aircraft owner. Whether you’re planning a short-term stay or need long-term storage, finding a facility that meets your needs can make all the difference. Here are some key factors to consider when choosing a hangar space"
-heroImage: "/blog/cessna-in-hangar.jpg"
+heroImage: "/src/assets/cessna-in-hangar.jpg"
 readingTime: 4
 category: "Pilot Resources"
 tags: ["Explore", "Hangar"]

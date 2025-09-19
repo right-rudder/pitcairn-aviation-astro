@@ -3,7 +3,7 @@ pubDate: "December 18, 2024"
 author: David Pitcairn
 title: "Exploring Southeastern Pennsylvania by Air: A Guide for Pilots"
 description: "Southeastern Pennsylvania offers stunning views, a rich history, and vibrant culture, making it a prime destination for pilots. Whether you’re flying in for business or leisure, Heritage Field Airport (KPTW) in Pottstown, PA, serves as the perfect entry point to the region. As the trusted fixed-base operator (FBO) at KPTW, Pitcairn Aviation LLC is here to help make your visit smooth and enjoyable."
-heroImage: "/blog/schuylkill-river.jpg"
+heroImage: "/src/assets/schuylkill-river.jpg"
 readingTime: 4
 category: "Views"
 tags: ["Explore"]

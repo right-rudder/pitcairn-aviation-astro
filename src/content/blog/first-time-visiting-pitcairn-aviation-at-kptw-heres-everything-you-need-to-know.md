@@ -3,7 +3,7 @@ pubDate: "July 25, 2025"
 author: David Pitcairn
 title: "First Time Visiting Pitcairn Aviation at KPTW? Here’s Everything You Need to Know"
 description: "If you're planning your first arrival into Heritage Field Airport (KPTW) and considering Pitcairn Aviation as your FBO of choice—you’re in for a smooth, welcoming experience."
-heroImage: "/blog/pitcairn-aviation-hangar-space.jpg"
+heroImage: "/src/assets/pitcairn-aviation-hangar-space.jpg"
 readingTime: 3
 category: "Pilot Resources"
 tags: ["Explore", "Hangar"]
