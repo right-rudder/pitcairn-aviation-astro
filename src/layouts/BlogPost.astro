@@ -7,6 +7,7 @@ import Navbar from "../components/Navbar";
 import BlogSchema from "../components/BlogSchema.astro";
 import { calculateReadingTime } from "../utils/blog-utils";
 import BreadcrumbNav from "../components/BreadcrumbNav.astro";
+import ImageComp from "../components/ImageComp.astro";
 
 type Props = CollectionEntry<"blog">["data"] & {
   rawContent?: () => string; // Add rawContent function to get the content for reading time
@@ -91,11 +92,11 @@ const readingTime = content ? calculateReadingTime(content) : 6; // Default to 6
       >
         {
           heroImage && (
-            <img
-              class="object-cover h-full w-full bg-white"
-              src={heroImage}
-              alt={title}
-              itemprop="image"
+            <ImageComp
+              imagePath={heroImage}
+              imageAlt={title}
+              styles="object-cover h-full w-full bg-white"
+              quality={80}
             />
           )
         }
