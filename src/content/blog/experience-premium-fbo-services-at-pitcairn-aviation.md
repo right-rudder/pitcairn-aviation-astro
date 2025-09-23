@@ -3,7 +3,7 @@ pubDate: "May 14, 2025"
 author: David Pitcairn
 title: "Experience Premium FBO Services at Pitcairn Aviation: Fueling, Hangars, and More"
 description: "Discover world-class FBO services at Pitcairn Aviation LLC in Heritage Field Airport (KPTW), just 30 minutes from Philadelphia. Experience premium fueling, hangar rentals, concierge services, and more for business and leisure travelers. Fly closer, fly better with Pitcairn Aviation."
-heroImage: "/blog/airport-lounge.png"
+heroImage: "/src/assets/airport-lounge.png"
 readingTime: 4
 category: "Services"
 tags:

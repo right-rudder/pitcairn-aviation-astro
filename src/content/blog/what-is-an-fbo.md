@@ -3,7 +3,7 @@ pubDate: "November 7, 2024"
 author: David Pitcairn
 title: "What is an FBO?"
 description: "FBOs are organizations that have the right to operate at an airport and offer various aeronautical services. Some of these services include flight instruction, aircraft rental, maintenance, fueling, tie-down, and parking. Basically, FBOs are like your one-stop shop for all things aviation."
-heroImage: "/blog/chris-leipelt-6w_dYdazo20-unsplash.jpg"
+heroImage: "/src/assets/chris-leipelt-6w_dYdazo20-unsplash.jpg"
 readingTime: 4
 category: "Resources"
 tags: ["FAQs"]

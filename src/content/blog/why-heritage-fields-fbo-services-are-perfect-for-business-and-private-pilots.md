@@ -3,7 +3,7 @@ pubDate: "August 18, 2025"
 author: David Pitcairn
 title: "Why Heritage Field’s FBO Services Are Perfect for Business and Private Pilots"
 description: "Discover why business and private pilots choose Pitcairn Aviation at Heritage Field Airport (KPTW). From premium fueling to secure hangars, expert ground handling, and concierge support, we provide everything you need for a seamless flight experience."
-heroImage: "/blog/samantha-beaty-tkn7-_Pc7hk-unsplash.webp"
+heroImage: "/src/assets/samantha-beaty-tkn7-_Pc7hk-unsplash.webp"
 readingTime: 4
 category: "FBO Services"
 tags: ["FBO", "Fueling", "Hangars", "Concierge"]

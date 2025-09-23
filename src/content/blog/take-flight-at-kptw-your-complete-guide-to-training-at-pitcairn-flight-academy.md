@@ -3,7 +3,7 @@ pubDate: "July 10, 2025"
 author: David Pitcairn
 title: "Take Flight at KPTW: Your Complete Guide to Training at Pitcairn Flight Academy"
 description: "Flight training at KPTW with Pitcairn Flight Academy offers personalized instruction, advanced aircraft, and expert mentorship to help aspiring pilots succeed in their aviation careers."
-heroImage: "/blog/pitcairn-heritage-field-fly-in.webp"
+heroImage: "/src/assets/pitcairn-heritage-field-fly-in.webp"
 readingTime: 4
 category: "Pilot Resources"
 tags:

@@ -3,7 +3,7 @@ pubDate: "February 24, 2025"
 author: David Pitcairn
 title: "Crew Car and Rental Car Access at Heritage Field Airport (KPTW)"
 description: "When you land at Heritage Field Airport (KPTW) in Pottstown, PA, getting around the area is easy with our crew car and rental car services. Located at 3310 W Ridge Pike, Pottstown, PA 19464, we make sure your ground transportation needs are covered. Whether you're a pilot, crew member, or passenger, we’ve got you sorted."
-heroImage: "/blog/car-rental-at-pitcairn-fbo.webp"
+heroImage: "/src/assets/car-rental-at-pitcairn-fbo.webp"
 readingTime: 3
 category: "Pilot Resources"
 tags: ["Rental Cars", "Crew Car"]
