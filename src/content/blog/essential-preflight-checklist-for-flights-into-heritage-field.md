@@ -1,5 +1,5 @@
 ---
-pubDate: "November 15, 2025"
+pubDate: "November 19, 2025"
 author: David Pitcairn
 title: "Essential Preflight Checklist for Flights Into Heritage Field"
 description: "Ensure safe and efficient flights into Heritage Field Airport (KPTW) with this essential preflight checklist for private pilots, recommended by Pitcairn Aviation."
@@ -59,5 +59,3 @@ Preflight planning is critical for a safe and smooth arrival at Heritage Field A
 ## Final Thoughts
 
 Using a structured preflight checklist reduces risk, improves efficiency, and enhances your overall flight experience into KPTW. Pitcairn Aviation supports pilots at every step, ensuring **safe, convenient, and enjoyable arrivals** at Heritage Field Airport.
-
-For more tips and resources, visit [Pitcairn Aviation Pilot Resources](/pilot-resources).
