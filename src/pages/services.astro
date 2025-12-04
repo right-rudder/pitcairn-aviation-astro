@@ -13,6 +13,8 @@ import AirportLounge from "../assets/heritage-field-airport-outside-pitcairn-fbo
 import JetTowing from "../assets/airplane-on-heritage-field-runway.jpg";
 import Fleet from "../assets/fleet-at-pitcairn-aviation-fbo.jpg";
 import HeroImage from "../assets/aviation-services-at-pitcairn-aviation-heritage-field-airport.jpg";
+import CessnaInHanger from "../assets/cessna-in-hangar-horizontal.jpg";
+import CessnaFlying from "../assets/cessna-flying-above-clouds.jpg";
 
 const services = [
   {
@@ -45,6 +47,16 @@ const services = [
     subtitle: "Secured airfield access and parking",
     id: "peace-of-mind",
   },
+  {
+    title: "Propeller balancing",
+    subtitle: "For the Cessna 100 series",
+    id: "cessna-100-prop-balancing",
+  },
+  {
+    title: "Control surface balancing",
+    subtitle: "For the Cessna 100 series",
+    id: "cessna-100-control-surface-balancing",
+  },
 ];
 ---
 
@@ -53,14 +65,8 @@ const services = [
   description="Explore the comprehensive FBO services offered by Pitcairn Aviation at Heritage Field Airport. Our services include aircraft fueling, maintenance, hangar rentals, ground support, and more. Experience exceptional aviation support in Pottstown, PA."
   keywords="FBO services, Pitcairn Aviation, Heritage Field Airport, aircraft fueling, aircraft maintenance, hangar rentals, ground support, aviation services Pottstown, PA, fixed-base operator"
 >
-  <Header2
-    slot="header"
-    image={HeroImage}
-    alt="Aviation services at Pitcairn Aviation Heritage Field Airport"
-  >
-    <Fragment slot="title"
-      >Our Aviation <span class="text-main-color">Services</span>
-    </Fragment>
+  <Header2 slot="header" image={HeroImage} alt="Aviation services at Pitcairn Aviation Heritage Field Airport">
+    <Fragment slot="title">Our Aviation <span class="text-main-color">Services</span> </Fragment>
   </Header2>
 
   <Intro
@@ -76,14 +82,8 @@ const services = [
   />
 
   <section class="bg-zinc-200 py-10">
-    <div
-      class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-5 px-5"
-    >
-      {
-        services.map((service) => (
-          <ServiceCard service={service} client:visible />
-        ))
-      }
+    <div class="max-w-7xl mx-auto grid sm:grid-cols-2 xl:grid-cols-4 gap-5 px-5">
+      {services.map((service) => <ServiceCard service={service} client:visible />)}
     </div>
   </section>
 
@@ -93,11 +93,7 @@ const services = [
     alt="Pitcairn aviation staff adding fuel to an aircraft"
     title="Hassle-Free Refueling"
     subtitle="Reliable Phillips 66 AvGas pumps"
-    content=`Our self-serve AvGas pumps make refueling simple and hassle-free.
-  Enjoy the convenience of topping up your tanks 24/7 with our reliable
-  Phillips 66 fuel. We offer both 100LL AvGas and Jet A options to meet
-  your aircraft's needs. Our pumps accept all major credit cards for
-  your convenience.`
+    content=`Our self-serve AvGas pumps make refueling simple and hassle-free. Enjoy the convenience of topping up your tanks 24/7 with our reliable Phillips 66 fuel. We offer both 100LL AvGas and Jet A options to meet your aircraft's needs. Our pumps accept all major credit cards for your convenience.`
     cta="View Fuel Prices"
     ctaLink="#fuel-prices"
   />
@@ -153,9 +149,25 @@ const services = [
     content=`We make security a top priority with controlled gate access requiring a secure code. Our ramp and parking areas are monitored 24/7 by surveillance cameras for added peace of mind during your stay.`
   />
 
+  <Section2
+    id="cessna-100-prop-balancing"
+    image={CessnaInHanger}
+    alt="Cessna inside airplane hanger"
+    title="Propeller Balancing"
+    subtitle="Prevent component damages"
+    content=`Aircraft prop balancing, is the process of measuring and correcting engine and propeller vibrations, making the flight smoother and protecting components.`
+  />
+
+  <Section1
+    id="cessna-100-control-surface-balancing"
+    image={CessnaFlying}
+    alt="Cessna flying above the clouds"
+    title="Control Surface Balancing"
+    subtitle="Ensured Safety"
+    content=`Control Surface Balancing is the process of ensuring that movable aerodynamic surfaces—such as ailerons, elevators, rudders, and trim tabs—are properly weighted so they do not flutter, vibrate, or behave unpredictably in flight.`
+  />
+
   <FuelPrices />
 
   <script src="../scripts/animate-on-scroll.js"></script>
-  
 </BaseLayout>
-
