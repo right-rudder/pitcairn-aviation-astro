@@ -4,6 +4,7 @@ import { MdEmojiTransportation } from "react-icons/md";
 import { GiSofa } from "react-icons/gi";
 import { ImPower } from "react-icons/im";
 import { MdOutlineSecurity } from "react-icons/md";
+import { FaBalanceScale } from "react-icons/fa";
 
 const ServiceCard = ({ service }) => {
   const iconMap = {
@@ -13,6 +14,8 @@ const ServiceCard = ({ service }) => {
     "Modern Amenities": GiSofa,
     "Attentive Ground Support": ImPower,
     "Peace of Mind": MdOutlineSecurity,
+    "Propeller balancing": FaBalanceScale,
+    "Control surface balancing": FaBalanceScale,
   };
 
   const Icon = iconMap[service.title];
