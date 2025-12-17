@@ -3,7 +3,7 @@ pubDate: "November 30, 2025"
 author: David Pitcairn
 title: "5 Common Mistakes Pilots Make When Flying Into KPTW (And How to Avoid Them)"
 description: "Learn about the most common mistakes pilots make when flying into Heritage Field Airport (KPTW) and how Pitcairn Aviation recommends avoiding them for a safe, smooth arrival."
-heroImage: "/src/assets/aviation-services-at-pitcairn-aviation-heritage-field-airport.jpg"
+heroImage: "/src/assets/heritage-field-airport.webp"
 readingTime: 5
 category: "Pilot Resources"
 tags:
@@ -45,5 +45,3 @@ Pitcairn Aviation staff are familiar with KPTW’s airspace, weather patterns, a
 ## Final Thoughts
 
 By addressing these common mistakes, pilots can enjoy safer, more efficient flights into KPTW. Pitcairn Aviation is dedicated to supporting pilots with **expert guidance, comprehensive services, and attentive care** on every visit.
-
-For more tips, visit [Pitcairn Aviation Pilot Resources](/pilot-resources).

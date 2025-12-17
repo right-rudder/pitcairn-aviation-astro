@@ -24,21 +24,31 @@ Heritage Field Airport (KPTW) is ideally located for pilots seeking **quick week
 
 ## 1. Lancaster, PA
 
+![Lancaster, PA downtown](/blog/lancaster-pa-historic-downtown-pitcairn-aviation-flight-school.webp)
+
 Famous for its Amish countryside, Lancaster offers scenic flying and charming local attractions. Enjoy farm tours, historic towns, and regional cuisine.
 
 ## 2. Ocean City, NJ
+
+![Ocean City, NJ, beach](/blog/ocean-city-nj-pitcairn-aviation-flight-training.jpg)
 
 A great destination for a beach weekend. Pilots can enjoy boardwalks, beaches, and seaside dining while practicing cross-country flight planning.
 
 ## 3. Reading, PA
 
+![Reading, PA](/blog/reading-pa-pitcairn-aviation-pilot-training.jpeg)
+
 Explore local history and outdoor activities, including parks, trails, and cultural attractions. Reading Regional Airport provides convenient landing options.
 
 ## 4. Hershey, PA
 
+![Hershey, PA, Hersheypark](/blog/hershey-pa-hersheypark-pitcairn-aviation-private-pilot.jpg)
+
 Known for Hersheypark and chocolate-themed attractions. A fun destination for families and aviation enthusiasts alike.
 
 ## 5. Allentown, PA
+
+![Allentown, PA, center square](/blog/allentown-pa-center-square-pitcairn-aviation-discovery-flight.jpg)
 
 Historic downtown, museums, and local dining make Allentown a great short flight away. Excellent facilities and FBO support for visiting aircraft.
 
